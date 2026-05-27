@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <g stroke="#047857" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Page body with folded top-right corner -->
+    <path d="M32 22 L82 22 L96 36 L96 102 L32 102 Z" fill="#047857" fill-opacity="0.04"/>
+    <!-- Folded corner -->
+    <path d="M82 22 L82 36 L96 36"/>
+    <!-- Placeholder lines fading out -->
+    <line x1="42" y1="52" x2="78" y2="52"/>
+    <line x1="42" y1="64" x2="74" y2="64" stroke-opacity="0.65"/>
+    <line x1="42" y1="76" x2="66" y2="76" stroke-opacity="0.35"/>
+    <!-- Magnifying glass overlapping bottom-right -->
+    <circle cx="92" cy="92" r="14" fill="#ffffff" stroke="#047857"/>
+    <circle cx="92" cy="92" r="14" fill="#047857" fill-opacity="0.06"/>
+    <line x1="102" y1="102" x2="112" y2="112" stroke-width="2.25"/>
+    <!-- Subtle question mark inside the lens -->
+    <path d="M88 88 q0 -4 4 -4 q4 0 4 4 q0 3 -4 4" stroke-opacity="0.55"/>
+    <circle cx="92" cy="97" r="0.9" fill="#047857" stroke="none"/>
+  </g>
+</svg>
