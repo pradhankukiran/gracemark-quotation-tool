@@ -1,3 +1,5 @@
+import "server-only";
+
 /**
  * Central side-effect module that registers every available provider on the
  * global registry. Importing this once at the top of an API route is enough

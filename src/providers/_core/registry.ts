@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { ProviderId, QuoteProvider } from "./types";
 
 const providers: Partial<Record<ProviderId, QuoteProvider>> = {};

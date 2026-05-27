@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useMemo, useState } from "react";
+import { Suspense, use, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Alert, Button, Skeleton, Space } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
@@ -39,7 +39,11 @@ export default function ReconciliationPage({ params }: PageProps) {
   // Next 15: params is a Promise — unwrap on the client (matches the
   // existing quote page).
   const { id } = use(params);
-  return <ReconciliationInner id={id} />;
+  return (
+    <Suspense fallback={<PageShell title="Recommended Provider">{null}</PageShell>}>
+      <ReconciliationInner id={id} />
+    </Suspense>
+  );
 }
 
 function ReconciliationInner({ id }: { id: string }) {

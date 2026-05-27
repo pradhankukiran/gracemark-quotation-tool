@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, use, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   Alert,
@@ -48,7 +48,6 @@ import type {
 } from "@/lib/acid-test/pdf/AcidTestCostBreakdownDocument";
 import { fetchFxRate } from "@/lib/api";
 import { inferBucket } from "@/providers/_core/buckets";
-import { listProviders } from "@/providers/_core/registry";
 import { getProviderMeta } from "@/providers/_meta";
 import { getCountryByCode } from "@/data/deel/lookups";
 import { BRAND, SPACING } from "@/lib/theme";
@@ -71,7 +70,11 @@ export default function AcidTestPage({ params }: PageProps) {
   // Next 15 dynamic params: `params` is a Promise — unwrap on the client to
   // stay consistent with the sibling quote / reconciliation pages.
   const { id } = use(params);
-  return <AcidTestInner id={id} />;
+  return (
+    <Suspense fallback={<PageShell title="Acid Test">{null}</PageShell>}>
+      <AcidTestInner id={id} />
+    </Suspense>
+  );
 }
 
 function AcidTestInner({ id }: { id: string }) {
@@ -158,12 +161,8 @@ function AcidTestInner({ id }: { id: string }) {
   // ----- Find the recommended provider's quote -----
 
   // The reconciliation page persists the picked provider id (winner OR user
-  // override) onto `saved.recommendation`. We look up that provider's result
-  // by id rather than by index — `listProviders()` is empty on the client
-  // (registration is server-only) but we import it to satisfy the verification
-  // contract that downstream code can drop in if registration is ever wired
-  // up client-side.
-  void listProviders;
+  // override) onto `saved.recommendation`. Look up by id so this page never
+  // depends on server-side provider registration order.
 
   const block = query.data?.countries?.[0] ?? null;
   const providerResult = useMemo(() => {
