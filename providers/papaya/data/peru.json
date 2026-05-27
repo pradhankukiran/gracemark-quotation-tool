@@ -1,0 +1,16 @@
+{
+  "country": "Peru",
+  "country_code": "PE",
+  "state": null,
+  "state_code": null,
+  "currency": "PEN",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 9.38, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 9.72, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "13th Salary", "rate_percent": 16.67, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 12.75, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 18
+}

@@ -1,0 +1,14 @@
+{
+  "country": "Moldova, Republic of",
+  "country_code": "MD",
+  "state": null,
+  "state_code": null,
+  "currency": "MDL",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 24.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 9.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 20
+}

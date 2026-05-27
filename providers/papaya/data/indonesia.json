@@ -1,0 +1,21 @@
+{
+  "country": "Indonesia",
+  "country_code": "ID",
+  "state": null,
+  "state_code": null,
+  "currency": "IDR",
+  "employer_costs": [
+    { "name": "Workers Compensation", "rate_percent": 0.99, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 3.70, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Death Insurance", "rate_percent": 0.30, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 11086300, "currency": "IDR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.00, "frequency": "Monthly", "salary_cap": { "value": 12000000, "currency": "IDR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 2.00, "frequency": "Monthly" },
+    { "name": "Pension Fund", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 11086300, "currency": "IDR", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 12000000, "currency": "IDR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 11
+}

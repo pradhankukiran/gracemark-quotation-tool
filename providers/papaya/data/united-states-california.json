@@ -1,0 +1,20 @@
+{
+  "country": "United States",
+  "country_code": "US",
+  "state": "California",
+  "state_code": "CA",
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Unemployment Insurance (State)", "rate_percent": 3.85, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance (Federal)", "rate_percent": 3.30, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "State Disability Insurance", "rate_percent": 1.20, "frequency": "Monthly" },
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly" },
+    { "name": "CalSavers", "rate_percent": 5.00, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 7.25
+}

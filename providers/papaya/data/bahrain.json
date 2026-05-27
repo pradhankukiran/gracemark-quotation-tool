@@ -1,0 +1,15 @@
+{
+  "country": "Bahrain",
+  "country_code": "BH",
+  "state": null,
+  "state_code": null,
+  "currency": "BHD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 16.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 6.30, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 8.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 10
+}

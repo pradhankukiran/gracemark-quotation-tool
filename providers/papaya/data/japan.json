@@ -1,0 +1,24 @@
+{
+  "country": "Japan",
+  "country_code": "JP",
+  "state": null,
+  "state_code": null,
+  "currency": "JPY",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 9.15, "frequency": "Monthly", "salary_cap": { "value": 650000, "currency": "JPY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.94, "frequency": "Monthly", "salary_cap": { "value": 1390000, "currency": "JPY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Nursing Care Insurance", "rate_percent": 0.80, "frequency": "Monthly", "salary_cap": { "value": 1390000, "currency": "JPY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.88, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 4.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Child-rearing Contribution", "rate_percent": 0.36, "frequency": "Monthly", "salary_cap": { "value": 650000, "currency": "JPY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Childcare Support Contribution", "rate_percent": 0.06, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 9.15, "frequency": "Monthly" },
+    { "name": "Childcare Support Contribution", "rate_percent": 0.06, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 4.94, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.53, "frequency": "Monthly" },
+    { "name": "Nursing Care Insurance", "rate_percent": 0.80, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 10
+}

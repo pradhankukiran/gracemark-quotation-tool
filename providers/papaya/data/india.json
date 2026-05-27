@@ -1,0 +1,18 @@
+{
+  "country": "India",
+  "country_code": "IN",
+  "state": null,
+  "state_code": null,
+  "currency": "INR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 12.00, "frequency": "Monthly", "salary_cap": { "value": 15000, "currency": "INR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 3.25, "frequency": "Monthly", "salary_cap": { "value": 21000, "currency": "INR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Deposit Linked Insurance", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 4.11, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 12.00, "frequency": "Monthly", "salary_cap": { "value": 15000, "currency": "INR", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 0.75, "frequency": "Monthly", "salary_cap": { "value": 21000, "currency": "INR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": null
+}

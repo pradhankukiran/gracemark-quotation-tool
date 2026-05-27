@@ -1,0 +1,15 @@
+{
+  "country": "New Zealand",
+  "country_code": "NZ",
+  "state": null,
+  "state_code": null,
+  "currency": "NZD",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 3.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 1.53, "frequency": "Monthly", "salary_cap": { "value": 142283, "currency": "NZD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 3.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 15
+}

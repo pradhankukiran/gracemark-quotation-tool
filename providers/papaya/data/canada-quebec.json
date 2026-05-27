@@ -1,0 +1,21 @@
+{
+  "country": "Canada",
+  "country_code": "CA",
+  "state": "Quebec",
+  "state_code": "QC",
+  "currency": "CAD",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 2.755, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.78, "frequency": "Monthly", "salary_cap": { "value": 65700, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Parental Insurance", "rate_percent": 0.692, "frequency": "Monthly", "salary_cap": { "value": 98000, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Pension Fund (QPP2)", "rate_percent": 5.40, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 71300, "currency": "CAD", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Labor Standards", "rate_percent": 0.06, "frequency": "Monthly", "salary_cap": { "value": 98000, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Unemployment Insurance", "rate_percent": 1.31, "frequency": "Monthly", "salary_cap": { "value": 65700, "currency": "CAD", "frequency": "Annual" } },
+    { "name": "Parental Insurance", "rate_percent": 0.494, "frequency": "Monthly", "salary_cap": { "value": 98000, "currency": "CAD", "frequency": "Annual" } },
+    { "name": "Pension Fund (QPP2)", "rate_percent": 5.40, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 71300, "currency": "CAD", "frequency": "Annual" } } }
+  ],
+  "vat_standard_percent": 5
+}

@@ -1,0 +1,18 @@
+{
+  "country": "Kenya",
+  "country_code": "KE",
+  "state": null,
+  "state_code": null,
+  "currency": "KES",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 6.00, "frequency": "Monthly", "salary_cap": { "value": 108000, "currency": "KES", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Housing Fund", "rate_percent": 1.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "fixed_amount": { "value": 50, "currency": "KES" }, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.00, "frequency": "Monthly", "salary_cap": { "value": 9000, "currency": "KES", "frequency": "Monthly" } },
+    { "name": "Housing Fund", "rate_percent": 1.50, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 2.75, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 16
+}

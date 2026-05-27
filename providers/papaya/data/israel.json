@@ -1,0 +1,21 @@
+{
+  "country": "Israel",
+  "country_code": "IL",
+  "state": null,
+  "state_code": null,
+  "currency": "ILS",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 3.55, "frequency": "Monthly", "salary_cap": { "value": 7522, "currency": "ILS", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 7.60, "frequency": "Monthly", "salary_band": { "min": { "value": 7522, "currency": "ILS", "frequency": "Monthly" }, "max": { "value": 49030, "currency": "ILS", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 6.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 0.40, "frequency": "Monthly", "salary_cap": { "value": 7522, "currency": "ILS", "frequency": "Monthly" } },
+    { "name": "Social Security", "rate_percent": 7.00, "frequency": "Monthly", "salary_band": { "min": { "value": 7522, "currency": "ILS", "frequency": "Monthly" }, "max": { "value": 50695, "currency": "ILS", "frequency": "Monthly" } } },
+    { "name": "Health Insurance", "rate_percent": 3.10, "frequency": "Monthly", "salary_cap": { "value": 7522, "currency": "ILS", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 5.00, "frequency": "Monthly", "salary_band": { "min": { "value": 7522, "currency": "ILS", "frequency": "Monthly" }, "max": { "value": 49030, "currency": "ILS", "frequency": "Monthly" } } },
+    { "name": "Pension Fund", "rate_percent": 6.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 18
+}

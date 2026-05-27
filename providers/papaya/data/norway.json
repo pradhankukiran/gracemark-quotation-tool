@@ -1,0 +1,15 @@
+{
+  "country": "Norway",
+  "country_code": "NO",
+  "state": null,
+  "state_code": null,
+  "currency": "NOK",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 16.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 10.20, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 8.20, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 25
+}

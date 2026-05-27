@@ -1,0 +1,11 @@
+{
+  "country": "Switzerland",
+  "country_code": "CH",
+  "state": null,
+  "state_code": null,
+  "currency": "CHF",
+  "employer_costs": [],
+  "employee_deductions": [],
+  "vat_standard_percent": null,
+  "_note": "sparse source data"
+}

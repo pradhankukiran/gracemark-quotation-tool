@@ -1,0 +1,20 @@
+{
+  "country": "Puerto Rico",
+  "country_code": "PR",
+  "state": null,
+  "state_code": null,
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 3.30, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "State Unemployment Tax", "rate_percent": 3.40, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 600, "currency": "USD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 6.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 11.5
+}

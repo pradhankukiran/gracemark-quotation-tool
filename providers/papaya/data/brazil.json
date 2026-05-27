@@ -1,0 +1,24 @@
+{
+  "country": "Brazil",
+  "country_code": "BR",
+  "state": null,
+  "state_code": null,
+  "currency": "BRL",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 23.40, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 2.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "FGTS", "rate_percent": 8.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Terceiros", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 338880, "currency": "BRL", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Vacation Bonus", "rate_percent": 2.78, "frequency": "Monthly", "type": "accrual" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "FGTS Termination Penalty", "rate_percent": 3.20, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Meal Voucher", "fixed_amount": { "value": 35, "currency": "BRL" }, "frequency": "Daily", "type": "mandatory_allowance" },
+    { "name": "Grocery Voucher", "fixed_amount": { "value": 163.83, "currency": "BRL" }, "frequency": "Monthly", "type": "mandatory_allowance" },
+    { "name": "Transport Allowance", "fixed_amount": { "value": 350, "currency": "BRL" }, "frequency": "Monthly", "type": "mandatory_allowance" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 10.75, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 17
+}

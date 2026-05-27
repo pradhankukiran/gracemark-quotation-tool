@@ -1,0 +1,15 @@
+{
+  "country": "Croatia",
+  "country_code": "HR",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 16.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 15.00, "frequency": "Monthly", "salary_cap": { "value": 87000, "currency": "EUR", "frequency": "Annual" } },
+    { "name": "Pension Fund Pillar II", "rate_percent": 5.00, "frequency": "Monthly", "salary_cap": { "value": 7300, "currency": "EUR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 25.00
+}

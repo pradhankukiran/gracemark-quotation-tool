@@ -1,0 +1,24 @@
+{
+  "country": "Greece",
+  "country_code": "GR",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 13.33, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.30, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health in Benefit", "rate_percent": 0.25, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Supplementary Insurance", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.41, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "14th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 6.67, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 2.15, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Health in Benefit", "rate_percent": 0.40, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Supplementary Insurance", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.65, "frequency": "Monthly", "salary_cap": { "value": 7572.62, "currency": "EUR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 24
+}

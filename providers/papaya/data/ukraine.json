@@ -1,0 +1,13 @@
+{
+  "country": "Ukraine",
+  "country_code": "UA",
+  "state": null,
+  "state_code": null,
+  "currency": "UAH",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 22.00, "frequency": "Monthly", "salary_cap": { "value": 160000, "currency": "UAH", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Military Tax", "rate_percent": 5.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [],
+  "vat_standard_percent": 20
+}

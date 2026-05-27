@@ -1,0 +1,22 @@
+{
+  "country": "Spain",
+  "country_code": "ES",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 24.27, "frequency": "Monthly", "salary_band": { "min": { "value": 1260, "currency": "EUR", "frequency": "Monthly" }, "max": { "value": 5101.20, "currency": "EUR", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 5.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Salary Guarantee Fund", "rate_percent": 0.20, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 0.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 2.05, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Solidarity Tax", "rate_percent": 0.865, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.83, "frequency": "Monthly", "salary_band": { "min": { "value": 1260, "currency": "EUR", "frequency": "Monthly" }, "max": { "value": 4909.50, "currency": "EUR", "frequency": "Monthly" } } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.55, "frequency": "Monthly", "salary_band": { "min": { "value": 1260, "currency": "EUR", "frequency": "Monthly" }, "max": { "value": 4909.50, "currency": "EUR", "frequency": "Monthly" } } },
+    { "name": "Training Fund", "rate_percent": 0.10, "frequency": "Monthly", "salary_band": { "min": { "value": 1260, "currency": "EUR", "frequency": "Monthly" }, "max": { "value": 4909.50, "currency": "EUR", "frequency": "Monthly" } } },
+    { "name": "Solidarity Tax", "rate_percent": 0.18, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 21
+}

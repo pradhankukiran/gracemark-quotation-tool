@@ -1,0 +1,44 @@
+{
+  "country": "Uzbekistan",
+  "country_code": "UZ",
+  "state": null,
+  "state_code": null,
+  "currency": "UZS",
+  "employer_costs": [
+    {
+      "name": "Social Security",
+      "rate_percent": 12.00,
+      "frequency": "Monthly",
+      "type": "statutory"
+    },
+    {
+      "name": "Pension Fund",
+      "rate_percent": 0.10,
+      "frequency": "Monthly",
+      "type": "statutory"
+    }
+  ],
+  "employee_deductions": [
+    {
+      "name": "Social Security",
+      "rate_percent": 4.00,
+      "frequency": "Monthly"
+    },
+    {
+      "name": "Unemployment Insurance",
+      "rate_percent": 0.50,
+      "frequency": "Monthly"
+    },
+    {
+      "name": "Housing Fund",
+      "rate_percent": 1.00,
+      "frequency": "Monthly"
+    },
+    {
+      "name": "Training Fund",
+      "rate_percent": 0.50,
+      "frequency": "Monthly"
+    }
+  ],
+  "vat_standard_percent": 12
+}

@@ -1,0 +1,19 @@
+{
+  "country": "Tunisia",
+  "country_code": "TN",
+  "state": null,
+  "state_code": null,
+  "currency": "TND",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 16.57, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Housing Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 2.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 3.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 9.18, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 19
+}

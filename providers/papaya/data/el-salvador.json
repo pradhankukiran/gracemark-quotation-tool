@@ -1,0 +1,19 @@
+{
+  "country": "El Salvador",
+  "country_code": "SV",
+  "state": null,
+  "state_code": null,
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 7.50, "frequency": "Monthly", "salary_cap": { "value": 1000, "currency": "USD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 7.75, "frequency": "Monthly", "salary_cap": { "value": 6523.20, "currency": "USD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 1000, "currency": "USD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 5.00, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 1000, "currency": "USD", "frequency": "Monthly" } },
+    { "name": "Pension Fund", "rate_percent": 7.25, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 13
+}

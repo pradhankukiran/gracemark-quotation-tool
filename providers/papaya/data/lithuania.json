@@ -1,0 +1,14 @@
+{
+  "country": "Lithuania",
+  "country_code": "LT",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 2.13, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 19.50, "frequency": "Monthly", "salary_cap": { "value": 126532, "currency": "EUR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 21
+}

@@ -1,0 +1,27 @@
+{
+  "country": "France",
+  "country_code": "FR",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 10.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Solidarity Tax", "rate_percent": 0.30, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 8.55, "frequency": "Monthly", "salary_cap": { "value": 3864, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Social Security Uncapped", "rate_percent": 1.90, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Family Allowance Fund", "rate_percent": 4.35, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 4.25, "frequency": "Monthly", "salary_cap": { "value": 15456, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Wage Guarantee Insurance", "rate_percent": 0.15, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 6.22, "frequency": "Monthly", "salary_cap": { "value": 3864, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Pension Fund Tier 2", "rate_percent": 14.78, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.90, "frequency": "Monthly", "salary_cap": { "value": 3864, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Social Security Uncapped", "rate_percent": 0.40, "frequency": "Monthly" },
+    { "name": "Solidarity Tax", "rate_percent": 9.20, "frequency": "Monthly" },
+    { "name": "Pension Fund", "rate_percent": 4.01, "frequency": "Monthly", "salary_cap": { "value": 3864, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Pension Fund Tier 2", "rate_percent": 9.72, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 20
+}

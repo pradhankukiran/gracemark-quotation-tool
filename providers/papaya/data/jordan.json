@@ -1,0 +1,14 @@
+{
+  "country": "Jordan",
+  "country_code": "JO",
+  "state": null,
+  "state_code": null,
+  "currency": "JOD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 14.25, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 7.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 16
+}

@@ -1,0 +1,17 @@
+{
+  "country": "Cambodia",
+  "country_code": "KH",
+  "state": null,
+  "state_code": null,
+  "currency": "KHR",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 2.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 0.80, "frequency": "Monthly", "salary_cap": { "value": 1200000, "currency": "KHR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 1200000, "currency": "KHR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 4.17, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 1200000, "currency": "KHR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 10
+}

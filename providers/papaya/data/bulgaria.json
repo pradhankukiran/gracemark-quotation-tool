@@ -1,0 +1,17 @@
+{
+  "country": "Bulgaria",
+  "country_code": "BG",
+  "state": null,
+  "state_code": null,
+  "currency": "BGN",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 13.72, "frequency": "Monthly", "salary_band": { "min": { "value": 1077, "currency": "BGN", "frequency": "Monthly" }, "max": { "value": 4130, "currency": "BGN", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.80, "frequency": "Monthly", "salary_band": { "min": { "value": 1077, "currency": "BGN", "frequency": "Monthly" }, "max": { "value": 4130, "currency": "BGN", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.75, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 10.58, "frequency": "Monthly", "salary_band": { "min": { "value": 1077, "currency": "BGN", "frequency": "Monthly" }, "max": { "value": 4130, "currency": "BGN", "frequency": "Monthly" } } },
+    { "name": "Health Insurance", "rate_percent": 3.20, "frequency": "Monthly", "salary_band": { "min": { "value": 1077, "currency": "BGN", "frequency": "Monthly" }, "max": { "value": 4130, "currency": "BGN", "frequency": "Monthly" } } }
+  ],
+  "vat_standard_percent": 20
+}

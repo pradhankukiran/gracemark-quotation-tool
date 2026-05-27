@@ -1,0 +1,19 @@
+{
+  "country": "United States",
+  "country_code": "US",
+  "state": "District Of Columbia",
+  "state_code": "DC",
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Unemployment Insurance (State)", "rate_percent": 4.65, "frequency": "Monthly", "salary_cap": { "value": 9000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 160200, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance (Federal)", "rate_percent": 3.30, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.60, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 5.75
+}

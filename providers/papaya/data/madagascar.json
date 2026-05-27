@@ -1,0 +1,19 @@
+{
+  "country": "Madagascar",
+  "country_code": "MG",
+  "state": null,
+  "state_code": null,
+  "currency": "MGA",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 13.00, "frequency": "Monthly", "salary_cap": { "value": 1910400, "currency": "MGA", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 5.00, "frequency": "Monthly", "salary_cap": { "value": 1910400, "currency": "MGA", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 14.00, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 2.74, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 1910400, "currency": "MGA", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 1910400, "currency": "MGA", "frequency": "Monthly" } },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 1910400, "currency": "MGA", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 20
+}

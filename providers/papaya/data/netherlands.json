@@ -1,0 +1,19 @@
+{
+  "country": "Netherlands",
+  "country_code": "NL",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 6.55, "frequency": "Monthly", "salary_cap": { "value": 75864, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 5.24, "frequency": "Monthly", "salary_cap": { "value": 75864, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 6.57, "frequency": "Monthly", "salary_cap": { "value": 75864, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "WHK Work Resumption Fund", "rate_percent": 1.74, "frequency": "Monthly", "salary_cap": { "value": 75864, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Family Allowance Fund", "rate_percent": 0.50, "frequency": "Monthly", "salary_cap": { "value": 75864, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 8.00, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 2.78, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [],
+  "vat_standard_percent": 21
+}

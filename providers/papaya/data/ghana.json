@@ -1,0 +1,14 @@
+{
+  "country": "Ghana",
+  "country_code": "GH",
+  "state": null,
+  "state_code": null,
+  "currency": "GHS",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 13.00, "frequency": "Monthly", "salary_cap": { "value": 61000, "currency": "GHS", "frequency": "Monthly" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 5.50, "frequency": "Monthly", "salary_cap": { "value": 61000, "currency": "GHS", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 15
+}

@@ -1,0 +1,19 @@
+{
+  "country": "Denmark",
+  "country_code": "DK",
+  "state": null,
+  "state_code": null,
+  "currency": "DKK",
+  "employer_costs": [
+    { "name": "Pension Fund", "fixed_amount": { "value": 2376, "currency": "DKK" }, "frequency": "Annual", "type": "statutory" },
+    { "name": "Social Security", "fixed_amount": { "value": 5300, "currency": "DKK" }, "frequency": "Annual", "type": "statutory" },
+    { "name": "Workers Compensation", "fixed_amount": { "value": 5000, "currency": "DKK" }, "frequency": "Annual", "type": "statutory" },
+    { "name": "Maternity Leave Fund", "fixed_amount": { "value": 1500, "currency": "DKK" }, "frequency": "Annual", "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 1.00, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "fixed_amount": { "value": 1188, "currency": "DKK" }, "frequency": "Annual" },
+    { "name": "Labour Market Tax", "rate_percent": 8.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 25.00
+}

@@ -1,0 +1,15 @@
+{
+  "country": "South Africa",
+  "country_code": "ZA",
+  "state": null,
+  "state_code": null,
+  "currency": "ZAR",
+  "employer_costs": [
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 212544, "currency": "ZAR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 212544, "currency": "ZAR", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Unemployment Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 212544, "currency": "ZAR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 15
+}

@@ -1,0 +1,19 @@
+{
+  "country": "Jamaica",
+  "country_code": "JM",
+  "state": null,
+  "state_code": null,
+  "currency": "JMD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 5000000, "currency": "JMD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Housing Fund", "rate_percent": 3.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Education Tax", "rate_percent": 3.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 3.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 5000000, "currency": "JMD", "frequency": "Annual" } },
+    { "name": "Housing Fund", "rate_percent": 2.00, "frequency": "Monthly" },
+    { "name": "Education Tax", "rate_percent": 2.25, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 15
+}

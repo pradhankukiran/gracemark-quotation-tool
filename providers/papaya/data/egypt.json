@@ -1,0 +1,15 @@
+{
+  "country": "Egypt",
+  "country_code": "EG",
+  "state": null,
+  "state_code": null,
+  "currency": "EGP",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 18.75, "frequency": "Monthly", "salary_band": { "min": { "value": 2700, "currency": "EGP", "frequency": "Annual" }, "max": { "value": 16700, "currency": "EGP", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Emergency Relief Fund", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 2540, "currency": "EGP", "frequency": "Monthly" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 11.00, "frequency": "Monthly", "salary_band": { "min": { "value": 2300, "currency": "EGP", "frequency": "Annual" }, "max": { "value": 14500, "currency": "EGP", "frequency": "Annual" } } }
+  ],
+  "vat_standard_percent": 14.00
+}

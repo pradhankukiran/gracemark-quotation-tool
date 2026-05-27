@@ -1,0 +1,26 @@
+{
+  "country": "Slovakia",
+  "country_code": "SK",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 14.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 1.40, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Guarantee Insurance", "rate_percent": 0.25, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.80, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Solidarity Reserve Fund", "rate_percent": 4.75, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 11.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Meal Voucher", "fixed_amount": { "value": 3.43, "currency": "EUR" }, "frequency": "Daily", "type": "mandatory_allowance" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 4.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Social Security", "rate_percent": 1.40, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 15730, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 4.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 20
+}

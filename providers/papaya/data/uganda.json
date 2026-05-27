@@ -1,0 +1,14 @@
+{
+  "country": "Uganda",
+  "country_code": "UG",
+  "state": null,
+  "state_code": null,
+  "currency": "UGX",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 10.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 5.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": null
+}

@@ -1,0 +1,16 @@
+{
+  "country": "Malta",
+  "country_code": "MT",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 10.00, "frequency": "Monthly", "salary_cap": { "value": 27679, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Statutory Bonus", "fixed_amount": { "value": 512.52, "currency": "EUR" }, "frequency": "Annual", "type": "mandatory_allowance" },
+    { "name": "Cost of Living Allowance (COLA)", "fixed_amount": { "value": 272.48, "currency": "EUR" }, "frequency": "Annual", "type": "mandatory_allowance" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 10.00, "frequency": "Monthly", "salary_cap": { "value": 27679, "currency": "EUR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 18
+}

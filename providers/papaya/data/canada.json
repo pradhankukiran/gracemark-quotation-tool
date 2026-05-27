@@ -1,0 +1,18 @@
+{
+  "country": "Canada",
+  "country_code": "CA",
+  "state": null,
+  "state_code": null,
+  "currency": "CAD",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 5.95, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 68500, "currency": "CAD", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Pension Fund CPP2", "rate_percent": 4.00, "frequency": "Monthly", "salary_band": { "min": { "value": 68500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 73200, "currency": "CAD", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 2.32, "frequency": "Monthly", "salary_cap": { "value": 61500, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 5.95, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 68500, "currency": "CAD", "frequency": "Annual" } } },
+    { "name": "Pension Fund CPP2", "rate_percent": 4.00, "frequency": "Monthly", "salary_band": { "min": { "value": 68500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 73200, "currency": "CAD", "frequency": "Annual" } } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.66, "frequency": "Monthly", "salary_cap": { "value": 61500, "currency": "CAD", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 5.00
+}

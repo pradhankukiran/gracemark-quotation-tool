@@ -1,0 +1,19 @@
+{
+  "country": "Canada",
+  "country_code": "CA",
+  "state": "Nova Scotia",
+  "state_code": "NS",
+  "currency": "CAD",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 5.95, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 71300, "currency": "CAD", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Pension Fund (CPP2)", "rate_percent": 4.00, "frequency": "Monthly", "salary_band": { "min": { "value": 71300, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 81200, "currency": "CAD", "frequency": "Annual" } }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.64, "frequency": "Monthly", "salary_cap": { "value": 65700, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 2.65, "frequency": "Monthly", "salary_cap": { "value": 76300, "currency": "CAD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 5.95, "frequency": "Monthly", "salary_band": { "min": { "value": 3500, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 71300, "currency": "CAD", "frequency": "Annual" } } },
+    { "name": "Pension Fund (CPP2)", "rate_percent": 4.00, "frequency": "Monthly", "salary_band": { "min": { "value": 71300, "currency": "CAD", "frequency": "Annual" }, "max": { "value": 81200, "currency": "CAD", "frequency": "Annual" } } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.64, "frequency": "Monthly", "salary_cap": { "value": 65700, "currency": "CAD", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 15.00
+}

@@ -1,0 +1,16 @@
+{
+  "country": "Italy",
+  "country_code": "IT",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 30.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.70, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Termination Indemnity", "rate_percent": 7.41, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 9.19, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 22
+}

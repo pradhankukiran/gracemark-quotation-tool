@@ -1,0 +1,17 @@
+{
+  "country": "Iceland",
+  "country_code": "IS",
+  "state": null,
+  "state_code": null,
+  "currency": "ISK",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 6.35, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 12.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 10.17, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.00, "frequency": "Monthly" },
+    { "name": "Pension Fund", "rate_percent": 4.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": null
+}

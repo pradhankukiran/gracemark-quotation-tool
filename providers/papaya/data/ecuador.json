@@ -1,0 +1,18 @@
+{
+  "country": "Ecuador",
+  "country_code": "EC",
+  "state": null,
+  "state_code": null,
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 12.15, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Reserve Fund", "rate_percent": 8.33, "frequency": "Monthly", "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "14th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 9.45, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 15.00
+}

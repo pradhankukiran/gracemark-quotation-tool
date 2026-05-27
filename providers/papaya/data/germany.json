@@ -1,0 +1,22 @@
+{
+  "country": "Germany",
+  "country_code": "DE",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 8.15, "frequency": "Monthly", "salary_cap": { "value": 5512.50, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 9.30, "frequency": "Monthly", "salary_cap": { "value": 8050, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.30, "frequency": "Monthly", "salary_cap": { "value": 8050, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Long-Term Care Insurance", "rate_percent": 1.70, "frequency": "Monthly", "salary_cap": { "value": 5512.50, "currency": "EUR", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Umlage U1/U2/U3", "rate_percent": 0.64, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 1.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 8.10, "frequency": "Monthly", "salary_cap": { "value": 5512.50, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Long-Term Care Insurance", "rate_percent": 1.70, "frequency": "Monthly", "salary_cap": { "value": 5512.50, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Pension Fund", "rate_percent": 9.30, "frequency": "Monthly", "salary_cap": { "value": 8050, "currency": "EUR", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.30, "frequency": "Monthly", "salary_cap": { "value": 8050, "currency": "EUR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 19
+}

@@ -1,0 +1,23 @@
+{
+  "country": "Argentina",
+  "country_code": "AR",
+  "state": null,
+  "state_code": null,
+  "currency": "ARS",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 12.16, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 6.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 6.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 3.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Life Insurance", "fixed_amount": { "value": 334.67, "currency": "ARS" }, "frequency": "Monthly", "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 11.00, "frequency": "Monthly", "salary_band": { "min": { "value": 7003.68, "currency": "ARS", "frequency": "Monthly" }, "max": { "value": 1471616.10, "currency": "ARS", "frequency": "Monthly" } } },
+    { "name": "Social Security", "rate_percent": 3.00, "frequency": "Monthly", "salary_band": { "min": { "value": 7003.68, "currency": "ARS", "frequency": "Monthly" }, "max": { "value": 1471616.10, "currency": "ARS", "frequency": "Monthly" } } },
+    { "name": "Health Insurance", "rate_percent": 3.00, "frequency": "Monthly", "salary_band": { "min": { "value": 7003.68, "currency": "ARS", "frequency": "Monthly" }, "max": { "value": 1471616.10, "currency": "ARS", "frequency": "Monthly" } } }
+  ],
+  "vat_standard_percent": 21
+}

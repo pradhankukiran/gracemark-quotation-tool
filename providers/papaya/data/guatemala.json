@@ -1,0 +1,19 @@
+{
+  "country": "Guatemala",
+  "country_code": "GT",
+  "state": null,
+  "state_code": null,
+  "currency": "GTQ",
+  "employer_costs": [
+    { "name": "Workers Recreational Institute", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 10.67, "frequency": "Monthly", "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "14th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.83, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 12
+}

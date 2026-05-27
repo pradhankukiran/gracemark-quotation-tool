@@ -1,0 +1,14 @@
+{
+  "country": "Belgium",
+  "country_code": "BE",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 28.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 13.07, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 21
+}

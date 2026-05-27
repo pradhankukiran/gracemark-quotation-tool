@@ -1,0 +1,19 @@
+{
+  "country": "Cameroon",
+  "country_code": "CM",
+  "state": null,
+  "state_code": null,
+  "currency": "XAF",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 4.20, "frequency": "Monthly", "salary_cap": { "value": 750000, "currency": "XAF", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Family Allowance Fund", "rate_percent": 7.00, "frequency": "Monthly", "salary_cap": { "value": 750000, "currency": "XAF", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Housing Fund", "rate_percent": 1.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 3.375, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.20, "frequency": "Monthly", "salary_cap": { "value": 750000, "currency": "XAF", "frequency": "Monthly" } },
+    { "name": "Housing Fund", "rate_percent": 1.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 19.25
+}

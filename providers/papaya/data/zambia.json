@@ -1,0 +1,48 @@
+{
+  "country": "Zambia",
+  "country_code": "ZM",
+  "state": null,
+  "state_code": null,
+  "currency": "ZMW",
+  "employer_costs": [
+    {
+      "name": "Pension Fund",
+      "rate_percent": 5.00,
+      "frequency": "Monthly",
+      "salary_cap": { "value": 1708.20, "currency": "ZMW", "frequency": "Monthly" },
+      "type": "statutory"
+    },
+    {
+      "name": "Health Insurance",
+      "rate_percent": 1.00,
+      "frequency": "Monthly",
+      "type": "statutory"
+    },
+    {
+      "name": "Training Fund",
+      "rate_percent": 0.50,
+      "frequency": "Monthly",
+      "type": "statutory"
+    },
+    {
+      "name": "Notice Pay-in-Lieu",
+      "rate_percent": 8.33,
+      "frequency": "Monthly",
+      "type": "termination_liability"
+    }
+  ],
+  "employee_deductions": [
+    {
+      "name": "Pension Fund",
+      "rate_percent": 5.00,
+      "frequency": "Monthly",
+      "salary_cap": { "value": 1708.20, "currency": "ZMW", "frequency": "Monthly" }
+    },
+    {
+      "name": "Health Insurance",
+      "rate_percent": 1.00,
+      "frequency": "Monthly"
+    }
+  ],
+  "vat_standard_percent": null
+}

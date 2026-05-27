@@ -1,0 +1,18 @@
+{
+  "country": "United Kingdom",
+  "country_code": "GB",
+  "state": null,
+  "state_code": null,
+  "currency": "GBP",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 3.00, "frequency": "Monthly", "salary_band": { "min": { "value": 520, "currency": "GBP", "frequency": "Monthly" }, "max": { "value": 4189, "currency": "GBP", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 0.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 13.80, "frequency": "Monthly", "salary_band": { "min": { "value": 417, "currency": "GBP", "frequency": "Monthly" } }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 5.00, "frequency": "Monthly", "salary_band": { "min": { "value": 520, "currency": "GBP", "frequency": "Monthly" }, "max": { "value": 4189, "currency": "GBP", "frequency": "Monthly" } } },
+    { "name": "Social Security", "rate_percent": 10.00, "frequency": "Monthly", "salary_band": { "min": { "value": 1408, "currency": "GBP", "frequency": "Monthly" }, "max": { "value": 4189, "currency": "GBP", "frequency": "Monthly" } } },
+    { "name": "Social Security", "rate_percent": 2.00, "frequency": "Monthly", "salary_band": { "min": { "value": 4189, "currency": "GBP", "frequency": "Monthly" } } }
+  ],
+  "vat_standard_percent": 20
+}

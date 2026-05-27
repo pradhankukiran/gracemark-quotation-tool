@@ -1,0 +1,18 @@
+{
+  "country": "Senegal",
+  "country_code": "SN",
+  "state": null,
+  "state_code": null,
+  "currency": "XOF",
+  "employer_costs": [
+    { "name": "Family Allowance Fund", "rate_percent": 7.00, "frequency": "Monthly", "salary_cap": { "value": 63000, "currency": "XOF", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 3.00, "frequency": "Monthly", "salary_cap": { "value": 63000, "currency": "XOF", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.75, "frequency": "Monthly", "salary_cap": { "value": 250000, "currency": "XOF", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 10.20, "frequency": "Monthly", "salary_cap": { "value": 432000, "currency": "XOF", "frequency": "Monthly" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 4.75, "frequency": "Monthly", "salary_cap": { "value": 250000, "currency": "XOF", "frequency": "Monthly" } },
+    { "name": "Pension Fund", "rate_percent": 7.30, "frequency": "Monthly", "salary_cap": { "value": 432000, "currency": "XOF", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 18
+}

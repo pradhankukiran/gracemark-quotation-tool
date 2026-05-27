@@ -1,0 +1,20 @@
+{
+  "country": "Nepal",
+  "country_code": "NP",
+  "state": null,
+  "state_code": null,
+  "currency": "NPR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 10.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 8.33, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 1.67, "frequency": "Monthly", "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 10.00, "frequency": "Monthly" },
+    { "name": "Social Security", "rate_percent": 1.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 13
+}

@@ -1,0 +1,21 @@
+{
+  "country": "Dominican Republic",
+  "country_code": "DO",
+  "state": null,
+  "state_code": null,
+  "currency": "DOP",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 7.10, "frequency": "Monthly", "salary_cap": { "value": 269640, "currency": "DOP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 7.09, "frequency": "Monthly", "salary_cap": { "value": 134820, "currency": "DOP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 1.20, "frequency": "Monthly", "salary_cap": { "value": 53928, "currency": "DOP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "13th Salary", "rate_percent": 8.33, "frequency": "Monthly", "type": "accrual" },
+    { "name": "Severance Liability", "rate_percent": 5.75, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 2.87, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 3.04, "frequency": "Monthly" },
+    { "name": "Training Fund", "rate_percent": 0.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 18.00
+}

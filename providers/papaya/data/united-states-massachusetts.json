@@ -1,0 +1,20 @@
+{
+  "country": "United States",
+  "country_code": "US",
+  "state": "Massachusetts",
+  "state_code": "MA",
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Unemployment Insurance (State)", "rate_percent": 2.72, "frequency": "Monthly", "salary_cap": { "value": 15000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Employer Medical Assistance Contribution (EMAC)", "rate_percent": 0.23, "frequency": "Monthly", "salary_cap": { "value": 15000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Workforce Training Fund", "rate_percent": 0.056, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance (Federal)", "rate_percent": 3.30, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 6.25
+}

@@ -1,0 +1,19 @@
+{
+  "country": "Cyprus",
+  "country_code": "CY",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 8.80, "frequency": "Monthly", "salary_cap": { "value": 66612, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Social Cohesion Fund", "rate_percent": 2.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Severance Fund", "rate_percent": 1.20, "frequency": "Monthly", "salary_cap": { "value": 66612, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 0.50, "frequency": "Monthly", "salary_cap": { "value": 66612, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 2.90, "frequency": "Monthly", "salary_cap": { "value": 180000, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 8.80, "frequency": "Monthly", "salary_cap": { "value": 66612, "currency": "EUR", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 2.65, "frequency": "Monthly", "salary_cap": { "value": 180000, "currency": "EUR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 19.00
+}

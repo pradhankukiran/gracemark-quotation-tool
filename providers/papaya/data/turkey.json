@@ -1,0 +1,20 @@
+{
+  "country": "Turkey",
+  "country_code": "TR",
+  "state": null,
+  "state_code": null,
+  "currency": "TRY",
+  "employer_costs": [
+    { "name": "Workers Compensation", "rate_percent": 2.25, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 11.00, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 7.50, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "salary_cap": { "value": 46655.43, "currency": "TRY", "frequency": "Monthly" }, "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 9.00, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 5.00, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 195041.40, "currency": "TRY", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 18
+}

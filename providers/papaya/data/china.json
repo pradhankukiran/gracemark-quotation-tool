@@ -1,0 +1,21 @@
+{
+  "country": "China",
+  "country_code": "CN",
+  "state": null,
+  "state_code": null,
+  "currency": "CNY",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 16.00, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.50, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 9.80, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 1.05, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Housing Fund", "rate_percent": 8.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 8.00, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 0.50, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 35283, "currency": "CNY", "frequency": "Monthly" } },
+    { "name": "Housing Fund", "rate_percent": 8.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 13.00
+}

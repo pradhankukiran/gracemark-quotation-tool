@@ -1,0 +1,15 @@
+{
+  "country": "Singapore",
+  "country_code": "SG",
+  "state": null,
+  "state_code": null,
+  "currency": "SGD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 17.00, "frequency": "Monthly", "salary_cap": { "value": 8000, "currency": "SGD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 0.25, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 20.00, "frequency": "Monthly", "salary_cap": { "value": 7400, "currency": "SGD", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 9
+}

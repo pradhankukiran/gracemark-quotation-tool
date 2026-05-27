@@ -1,0 +1,17 @@
+{
+  "country": "United States",
+  "country_code": "US",
+  "state": "Federal",
+  "state_code": "FED",
+  "currency": "USD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 3.30, "frequency": "Monthly", "salary_cap": { "value": 7000, "currency": "USD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 6.20, "frequency": "Monthly", "salary_cap": { "value": 176100, "currency": "USD", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 1.45, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": null
+}

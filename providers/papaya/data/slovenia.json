@@ -1,0 +1,23 @@
+{
+  "country": "Slovenia",
+  "country_code": "SI",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 8.85, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 6.56, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.06, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.53, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Family Allowance Fund", "rate_percent": 0.10, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Meal Voucher", "fixed_amount": { "value": 7.96, "currency": "EUR" }, "frequency": "Daily", "type": "mandatory_allowance" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 15.50, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 6.36, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.14, "frequency": "Monthly" },
+    { "name": "Family Allowance Fund", "rate_percent": 0.10, "frequency": "Monthly" },
+    { "name": "Medical Contribution", "fixed_amount": { "value": 37, "currency": "EUR" }, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 22
+}

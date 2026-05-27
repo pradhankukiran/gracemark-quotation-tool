@@ -1,0 +1,14 @@
+{
+  "country": "Macao",
+  "country_code": "MO",
+  "state": null,
+  "state_code": null,
+  "currency": "MOP",
+  "employer_costs": [
+    { "name": "Social Security", "fixed_amount": { "value": 60, "currency": "MOP" }, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "fixed_amount": { "value": 30, "currency": "MOP" }, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": null
+}

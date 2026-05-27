@@ -1,0 +1,18 @@
+{
+  "country": "Kazakhstan",
+  "country_code": "KZ",
+  "state": null,
+  "state_code": null,
+  "currency": "KZT",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 5.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 3.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Tax", "rate_percent": 11.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 2.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 2.00, "frequency": "Monthly", "salary_cap": { "value": 850000, "currency": "KZT", "frequency": "Monthly" } },
+    { "name": "Pension Fund", "rate_percent": 10.00, "frequency": "Monthly", "salary_cap": { "value": 4250000, "currency": "KZT", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 12
+}

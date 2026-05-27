@@ -1,0 +1,19 @@
+{
+  "country": "Malaysia",
+  "country_code": "MY",
+  "state": null,
+  "state_code": null,
+  "currency": "MYR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 12.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 1.75, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.20, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 11.00, "frequency": "Monthly" },
+    { "name": "Social Security", "rate_percent": 0.50, "frequency": "Monthly", "salary_cap": { "value": 6000, "currency": "MYR", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 0.20, "frequency": "Monthly", "salary_cap": { "value": 6000, "currency": "MYR", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 8
+}

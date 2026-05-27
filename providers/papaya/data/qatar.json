@@ -1,0 +1,16 @@
+{
+  "country": "Qatar",
+  "country_code": "QA",
+  "state": null,
+  "state_code": null,
+  "currency": "QAR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 14.00, "frequency": "Monthly", "salary_cap": { "value": 100000, "currency": "QAR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Nationalization Fee", "rate_percent": 5.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 5.75, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 7.00, "frequency": "Monthly", "salary_cap": { "value": 100000, "currency": "QAR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": null
+}

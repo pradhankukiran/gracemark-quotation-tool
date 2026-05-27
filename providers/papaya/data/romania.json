@@ -1,0 +1,16 @@
+{
+  "country": "Romania",
+  "country_code": "RO",
+  "state": null,
+  "state_code": null,
+  "currency": "RON",
+  "employer_costs": [
+    { "name": "Unemployment Insurance", "rate_percent": 2.25, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 4.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 25.00, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 10.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 19
+}

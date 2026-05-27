@@ -1,0 +1,14 @@
+{
+  "country": "Georgia",
+  "country_code": "GE",
+  "state": null,
+  "state_code": null,
+  "currency": "GEL",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 2.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 2.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 18
+}

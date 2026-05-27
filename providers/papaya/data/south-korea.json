@@ -1,0 +1,22 @@
+{
+  "country": "South Korea",
+  "country_code": "KR",
+  "state": null,
+  "state_code": null,
+  "currency": "KRW",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 4.75, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 3.595, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Long-Term Care Insurance", "rate_percent": 0.9448, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.76, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.15, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 4.75, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 3.595, "frequency": "Monthly" },
+    { "name": "Long-Term Care Insurance", "rate_percent": 0.9448, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.90, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 10
+}

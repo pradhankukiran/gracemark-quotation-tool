@@ -1,0 +1,16 @@
+{
+  "country": "Ireland",
+  "country_code": "IE",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 10.025, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 1.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.01, "frequency": "Monthly" },
+    { "name": "Pension Fund", "rate_percent": 1.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 23
+}

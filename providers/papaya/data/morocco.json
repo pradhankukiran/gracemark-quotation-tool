@@ -1,0 +1,20 @@
+{
+  "country": "Morocco",
+  "country_code": "MA",
+  "state": null,
+  "state_code": null,
+  "currency": "MAD",
+  "employer_costs": [
+    { "name": "Family Allowance Fund", "rate_percent": 6.40, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 8.60, "frequency": "Monthly", "salary_cap": { "value": 6000, "currency": "MAD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 4.11, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Training Fund", "rate_percent": 1.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Solidarity Tax", "rate_percent": 2.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 4.29, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 2.26, "frequency": "Monthly" },
+    { "name": "Solidarity Tax", "rate_percent": 0.75, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 20
+}

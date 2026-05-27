@@ -1,0 +1,16 @@
+{
+  "country": "Australia",
+  "country_code": "AU",
+  "state": null,
+  "state_code": null,
+  "currency": "AUD",
+  "employer_costs": [
+    { "name": "State Payroll Tax", "rate_percent": 5.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 3.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 12.00, "frequency": "Monthly", "salary_cap": { "value": 30000, "currency": "AUD", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 2.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 10
+}

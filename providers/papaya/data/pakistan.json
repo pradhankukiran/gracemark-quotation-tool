@@ -1,0 +1,17 @@
+{
+  "country": "Pakistan",
+  "country_code": "PK",
+  "state": null,
+  "state_code": null,
+  "currency": "PKR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 5.00, "frequency": "Monthly", "salary_cap": { "value": 444000, "currency": "PKR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 1.00, "frequency": "Monthly", "salary_cap": { "value": 444000, "currency": "PKR", "frequency": "Annual" } },
+    { "name": "Health Insurance", "fixed_amount": { "value": 40, "currency": "PKR" }, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 17
+}

@@ -1,0 +1,17 @@
+{
+  "country": "United Arab Emirates",
+  "country_code": "AE",
+  "state": null,
+  "state_code": null,
+  "currency": "AED",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 12.50, "frequency": "Monthly", "salary_band": { "min": { "value": 20000, "currency": "AED", "frequency": "Monthly" }, "max": { "value": 70000, "currency": "AED", "frequency": "Monthly" } }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.175, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 5.75, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 11.00, "frequency": "Monthly", "salary_band": { "min": { "value": 20000, "currency": "AED", "frequency": "Monthly" }, "max": { "value": 50000, "currency": "AED", "frequency": "Monthly" } } },
+    { "name": "Unemployment Insurance", "fixed_amount": { "value": 7.50, "currency": "AED" }, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 5
+}

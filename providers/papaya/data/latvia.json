@@ -1,0 +1,16 @@
+{
+  "country": "Latvia",
+  "country_code": "LV",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 22.18, "frequency": "Monthly", "salary_cap": { "value": 105300, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 10.50, "frequency": "Monthly", "salary_cap": { "value": 105300, "currency": "EUR", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 21
+}

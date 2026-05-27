@@ -1,0 +1,18 @@
+{
+  "country": "Finland",
+  "country_code": "FI",
+  "state": null,
+  "state_code": null,
+  "currency": "EUR",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 17.40, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 1.87, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.27, "frequency": "Monthly", "salary_cap": { "value": 2478000, "currency": "EUR", "frequency": "Annual" }, "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 7.90, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 0.84, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 0.59, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 24
+}

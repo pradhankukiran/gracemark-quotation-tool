@@ -1,0 +1,21 @@
+{
+  "country": "Sweden",
+  "country_code": "SE",
+  "state": null,
+  "state_code": null,
+  "currency": "SEK",
+  "employer_costs": [
+    { "name": "Health Insurance", "rate_percent": 3.55, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Family Allowance Fund", "rate_percent": 2.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Pension Fund", "rate_percent": 10.21, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Survivors Pension", "rate_percent": 0.60, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 2.65, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.20, "frequency": "Monthly", "type": "statutory" },
+    { "name": "General Payroll Tax", "rate_percent": 11.62, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Holiday Allowance", "rate_percent": 12.00, "frequency": "Monthly", "type": "accrual" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 7.00, "frequency": "Monthly", "salary_cap": { "value": 599250, "currency": "SEK", "frequency": "Annual" } }
+  ],
+  "vat_standard_percent": 25
+}

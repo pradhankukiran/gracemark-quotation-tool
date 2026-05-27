@@ -1,0 +1,14 @@
+{
+  "country": "Ethiopia",
+  "country_code": "ET",
+  "state": null,
+  "state_code": null,
+  "currency": "ETB",
+  "employer_costs": [
+    { "name": "Pension Fund", "rate_percent": 11.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 7.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 15
+}

@@ -1,0 +1,15 @@
+{
+  "country": "Namibia",
+  "country_code": "NA",
+  "state": null,
+  "state_code": null,
+  "currency": "NAD",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 0.90, "frequency": "Monthly", "salary_cap": { "value": 9000, "currency": "NAD", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 4.50, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 0.90, "frequency": "Monthly", "salary_cap": { "value": 9000, "currency": "NAD", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": null
+}

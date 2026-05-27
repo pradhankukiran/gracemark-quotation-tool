@@ -1,0 +1,16 @@
+{
+  "country": "Czech Republic",
+  "country_code": "CZ",
+  "state": null,
+  "state_code": null,
+  "currency": "CZK",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 24.80, "frequency": "Monthly", "salary_cap": { "value": 2234736, "currency": "CZK", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Health Insurance", "rate_percent": 9.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 7.10, "frequency": "Monthly", "salary_cap": { "value": 2234736, "currency": "CZK", "frequency": "Annual" } },
+    { "name": "Health Insurance", "rate_percent": 4.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 21.00
+}

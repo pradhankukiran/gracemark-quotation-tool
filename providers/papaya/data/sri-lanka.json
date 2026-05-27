@@ -1,0 +1,18 @@
+{
+  "country": "Sri Lanka",
+  "country_code": "LK",
+  "state": null,
+  "state_code": null,
+  "currency": "LKR",
+  "employer_costs": [
+    { "name": "Family Allowance Fund", "rate_percent": 5.75, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 3.50, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Social Security", "rate_percent": 12.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Employees Trust Fund", "rate_percent": 3.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Gratuity", "rate_percent": 4.17, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 8.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 8
+}

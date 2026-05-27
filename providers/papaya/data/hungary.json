@@ -1,0 +1,16 @@
+{
+  "country": "Hungary",
+  "country_code": "HU",
+  "state": null,
+  "state_code": null,
+  "currency": "HUF",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 13.00, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Health Insurance", "rate_percent": 7.00, "frequency": "Monthly" },
+    { "name": "Pension Fund", "rate_percent": 10.00, "frequency": "Monthly" },
+    { "name": "Unemployment Insurance", "rate_percent": 1.50, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 27
+}

@@ -1,0 +1,20 @@
+{
+  "country": "Chile",
+  "country_code": "CL",
+  "state": null,
+  "state_code": null,
+  "currency": "CLP",
+  "employer_costs": [
+    { "name": "Unemployment Insurance", "rate_percent": 2.40, "frequency": "Monthly", "salary_cap": { "value": 4859205.27, "currency": "CLP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Disability Insurance", "rate_percent": 1.50, "frequency": "Monthly", "salary_cap": { "value": 3234966.14, "currency": "CLP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 0.95, "frequency": "Monthly", "salary_cap": { "value": 3234966.14, "currency": "CLP", "frequency": "Monthly" }, "type": "statutory" },
+    { "name": "Severance Liability", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" },
+    { "name": "Notice Pay-in-Lieu", "rate_percent": 8.33, "frequency": "Monthly", "type": "termination_liability" }
+  ],
+  "employee_deductions": [
+    { "name": "Pension Fund", "rate_percent": 10.00, "frequency": "Monthly", "salary_cap": { "value": 3234966.14, "currency": "CLP", "frequency": "Monthly" } },
+    { "name": "Unemployment Insurance", "rate_percent": 0.60, "frequency": "Monthly", "salary_cap": { "value": 4859205.27, "currency": "CLP", "frequency": "Monthly" } },
+    { "name": "Health Insurance", "rate_percent": 7.00, "frequency": "Monthly", "salary_cap": { "value": 3234966.14, "currency": "CLP", "frequency": "Monthly" } }
+  ],
+  "vat_standard_percent": 19
+}

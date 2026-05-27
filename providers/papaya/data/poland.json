@@ -1,0 +1,21 @@
+{
+  "country": "Poland",
+  "country_code": "PL",
+  "state": null,
+  "state_code": null,
+  "currency": "PLN",
+  "employer_costs": [
+    { "name": "Social Security", "rate_percent": 9.76, "frequency": "Monthly", "salary_cap": { "value": 260190, "currency": "PLN", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Disability Fund", "rate_percent": 6.50, "frequency": "Monthly", "salary_cap": { "value": 260190, "currency": "PLN", "frequency": "Annual" }, "type": "statutory" },
+    { "name": "Workers Compensation", "rate_percent": 2.00, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Unemployment Insurance", "rate_percent": 2.45, "frequency": "Monthly", "type": "statutory" },
+    { "name": "Guaranteed Employee Benefits Fund", "rate_percent": 0.10, "frequency": "Monthly", "type": "statutory" }
+  ],
+  "employee_deductions": [
+    { "name": "Social Security", "rate_percent": 9.76, "frequency": "Monthly", "salary_cap": { "value": 234720, "currency": "PLN", "frequency": "Annual" } },
+    { "name": "Disability Fund", "rate_percent": 1.50, "frequency": "Monthly", "salary_cap": { "value": 260190, "currency": "PLN", "frequency": "Annual" } },
+    { "name": "Sickness Fund", "rate_percent": 2.45, "frequency": "Monthly" },
+    { "name": "Health Insurance", "rate_percent": 9.00, "frequency": "Monthly" }
+  ],
+  "vat_standard_percent": 23
+}
