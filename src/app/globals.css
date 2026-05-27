@@ -1,0 +1,383 @@
+:root,
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+html,
+body {
+  background-color: #f5f3ee;
+  color: #1c1917;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================ */
+/* PageShell layout — single container variant + wide (comparison) variant.   */
+/* Logo lives inside PageShell so all positioning rules are scoped to it.     */
+/* ========================================================================= */
+:root {
+  --site-logo-left: 32px;
+  --site-logo-top: 60px;
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 32px 64px;
+}
+.page-shell.is-wide {
+  max-width: 1700px;
+}
+
+/* Header container — always 1100px so the title/actions row stays in the same
+   horizontal position across single and comparison views (matches the logo and
+   provider tabs above, which also don't shift between modes). */
+.page-shell-header-container {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.page-shell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-logo {
+  position: fixed;
+  top: var(--site-logo-top);
+  left: var(--site-logo-left);
+  z-index: 10;
+  display: inline-block;
+  line-height: 0;
+}
+.page-logo img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+/* Single mode at narrow viewports — logo would overlap the centered content
+   (1100 max + 32px padding × 2 = 1164 minimum, need clearance for logo).
+   Hide it; branding still lives via the page title. */
+@media (max-width: 1300px) {
+  .page-shell:not(.is-wide) .page-logo {
+    display: none;
+  }
+}
+
+/* Wide mode: logo scrolls away with the page (position: absolute relative
+   to the initial containing block keeps it at left:32px horizontally). */
+.page-shell.is-wide .page-logo {
+  position: absolute;
+}
+
+/* Type switcher (single/comparison Segmented) — mirrors the logo's
+   positioning on the right side so the two corner anchors are symmetric. */
+.page-type-switcher {
+  position: fixed;
+  top: var(--site-logo-top);
+  right: var(--site-logo-left);
+  z-index: 10;
+}
+
+/* Narrow mode (single-country): hide the switcher below 1300px viewport,
+   same as the logo, so it doesn't overlap content on smaller screens. */
+@media (max-width: 1300px) {
+  .page-shell:not(.is-wide) .page-type-switcher {
+    display: none;
+  }
+}
+
+/* Wide mode (comparison): switcher scrolls with the page (absolute),
+   matching the logo's behavior. */
+.page-shell.is-wide .page-type-switcher {
+  position: absolute;
+}
+
+/* ============================================================ */
+/* Polish on top of antd defaults                               */
+/* ============================================================ */
+
+/* ---- Card elevation -------------------------------------------- */
+.ant-card {
+  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.06),
+    0 1px 2px rgba(28, 25, 23, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px -8px rgba(28, 25, 23, 0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ant-card {
+    transition: none;
+  }
+  .ant-card:hover {
+    transform: none;
+  }
+}
+
+/* ---- Tabs ----------------------------------------------------- */
+/* Thicker active indicator so the selected tab is obvious. */
+.ant-tabs-ink-bar {
+  height: 3px !important;
+  border-radius: 2px 2px 0 0;
+}
+.ant-tabs-tab {
+  padding: 16px 12px !important;
+}
+.ant-tabs-tab + .ant-tabs-tab {
+  margin: 0 0 0 24px !important;
+}
+
+/* ============================================================ */
+/* Modern table styling                                          */
+/* ============================================================ */
+
+/* Strip the heavy outer border — let the table breathe inside the Card. */
+.ant-table {
+  background: transparent !important;
+}
+.ant-table-container,
+.ant-table-content {
+  border-inline-start: none !important;
+}
+
+/* Header: small, uppercase, tracked. Acts as a label not a row. */
+.ant-table-thead > tr > th {
+  background-color: transparent !important;
+  border-bottom: 1px solid #e8e3d8 !important;
+  color: #a8a29e !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  padding: 10px 16px !important;
+}
+.ant-table-thead > tr > th::before {
+  display: none !important;
+}
+
+/* Rows: airy padding, subtle dividers. Tabular numerals applied globally
+   below via .ant-table-cell / .ant-typography / .ant-input-number-input. */
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(232, 227, 216, 0.6) !important;
+  padding: 18px 16px !important;
+  font-size: 15px;
+}
+
+/* Bold the Item column for readability. */
+.ant-table-tbody > tr > td:first-child {
+  font-weight: 500;
+  color: #1c1917;
+}
+
+/* Bigger, weightier numeric column on the right. */
+.ant-table-tbody > tr > td:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1917;
+}
+
+/* Hover state on rows — subtle emerald wash at 4% to nudge the eye along the
+   cost-line a user is reading without competing with the totals row. */
+.ant-table-tbody > tr:hover > td,
+.ant-table-tbody > tr.ant-table-row-hover > td {
+  background: rgba(4, 120, 87, 0.04) !important;
+  transition: background-color 150ms ease;
+}
+
+/* ---- Total row (Table summary) -------------------------------- */
+.ant-table-summary {
+  border-top: 2px solid #1c1917;
+}
+.ant-table-summary > tr > td {
+  background-color: rgba(4, 120, 87, 0.06) !important;
+  font-size: 17px !important;
+  padding: 20px 16px !important;
+}
+
+/* ============================================================ */
+/* Buttons — depth + intent                                      */
+/* ============================================================ */
+
+/* Default button: subtle elevation, clean border. */
+.ant-btn-default {
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04);
+  font-weight: 500;
+}
+.ant-btn-default:hover {
+  box-shadow: 0 2px 4px rgba(28, 25, 23, 0.08);
+}
+
+/* Primary button: lift, emerald glow. */
+.ant-btn-primary {
+  box-shadow: 0 1px 2px rgba(4, 120, 87, 0.2),
+    0 1px 3px rgba(4, 120, 87, 0.12);
+  font-weight: 500;
+}
+.ant-btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.26),
+    0 2px 4px rgba(4, 120, 87, 0.14);
+  transform: translateY(-1px);
+  transition: transform 100ms ease, box-shadow 200ms ease;
+}
+
+/* ============================================================ */
+/* Segmented (Monthly/Annual toggle)                             */
+/* ============================================================ */
+.ant-segmented {
+  background-color: #efece5;
+  padding: 3px;
+}
+.ant-segmented-item {
+  color: #57534e;
+  transition: color 160ms ease;
+}
+.ant-segmented-item:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled) {
+  color: #1c1917;
+}
+.ant-segmented-item-selected {
+  /* Soft emerald wash (BRAND.primarySoft) — stays in the brand color family
+     and reads as "active" against the warm cream container. */
+  background-color: #d1fae5 !important;
+  color: #047857 !important;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(4, 120, 87, 0.14) !important;
+}
+/* Thumb is the sliding background that animates between selections —
+   match the active item so the wash stays continuous during the slide. */
+.ant-segmented-thumb {
+  background-color: #d1fae5 !important;
+  box-shadow: 0 1px 2px rgba(4, 120, 87, 0.14) !important;
+}
+
+/* ============================================================ */
+/* Tag — softer pill style                                       */
+/* ============================================================ */
+.ant-tag {
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+}
+
+/* ============================================================ */
+/* Tabular numerals — applied broadly so all monetary cells
+   (table cells, summary rows, USD column, hero stats, input
+   numbers) align on the same numeric grid.                      */
+/* ============================================================ */
+.ant-table-cell,
+.ant-input-number-input,
+.ant-typography {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================ */
+/* Focus rings — keyboard accessibility                          */
+/* ============================================================ */
+*:focus-visible {
+  outline: 2px solid #047857;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Don't double up rings on antd inputs that already paint their own
+   border on focus. */
+.ant-input:focus-visible,
+.ant-input-number-input:focus-visible,
+.ant-select-selector:focus-visible {
+  outline: none;
+}
+
+/* ============================================================ */
+/* Print stylesheet                                              */
+/* Goal: a clean paper layout that shows ALL provider cards
+   stacked vertically (not just the active tab), with brand
+   chrome and interactive controls stripped out.                 */
+/* ============================================================ */
+@media print {
+  /* Force backgrounds / colors to print so the cost-line category
+     tag colors and surface tints survive. */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide brand chrome — logo + type switcher live in the page-shell. */
+  .page-logo,
+  .page-type-switcher {
+    display: none !important;
+  }
+
+  /* Hide the action buttons in the page header (New quote, Edit
+     inputs). The header is .page-shell-header — the Title is an h1,
+     so the only direct <div> child is the actions wrapper. */
+  .page-shell-header > div {
+    display: none !important;
+  }
+
+  /* Hide the stale-banner Refresh button without hiding the banner
+     text itself (Ant Design renders the action in .ant-alert-action). */
+  .ant-alert-action {
+    display: none !important;
+  }
+
+  /* Hide the per-provider "Raw response" Collapse panel. */
+  .ant-collapse {
+    display: none !important;
+  }
+
+  /* Tabs: hide the nav strip but show ALL tab panes stacked. */
+  .ant-tabs-nav {
+    display: none !important;
+  }
+  .ant-tabs-tabpane:not(.ant-tabs-tabpane-active) {
+    display: block !important;
+  }
+  /* Add separation between stacked tab panes so adjacent provider
+     cards don't visually collide. */
+  .ant-tabs-tabpane + .ant-tabs-tabpane {
+    margin-top: 24px;
+  }
+
+  /* Avoid page breaks inside cards. */
+  .ant-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e5e5e5;
+  }
+
+  /* Tighten table padding for paper economy. */
+  .ant-table-thead > tr > th {
+    padding: 6px 10px !important;
+  }
+  .ant-table-tbody > tr > td {
+    padding: 8px 10px !important;
+  }
+  .ant-table-summary > tr > td {
+    padding: 10px 10px !important;
+  }
+
+  /* Ensure tag colors still print (covered by the universal
+     color-adjust rule above, but explicit here for category tags
+     used on cost-line rows). */
+  .ant-tag {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
