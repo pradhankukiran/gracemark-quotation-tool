@@ -1,0 +1,98 @@
+[
+  {
+    "category": "lookups",
+    "name": "countries",
+    "path": "/lookups/countries",
+    "http_code": 200,
+    "item_count": 112,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "lookups",
+    "name": "currencies",
+    "path": "/lookups/currencies",
+    "http_code": 200,
+    "item_count": 159,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "lookups",
+    "name": "seniority-levels",
+    "path": "/lookups/seniorities",
+    "http_code": 200,
+    "item_count": 11,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "lookups",
+    "name": "job-titles",
+    "path": "/lookups/job-titles",
+    "http_code": 200,
+    "item_count": 99,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "lookups",
+    "name": "time-off-types",
+    "path": "/lookups/time-off-types",
+    "http_code": 200,
+    "item_count": 4,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "lookups",
+    "name": "industries",
+    "path": "/industries",
+    "http_code": 200,
+    "item_count": 144,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "current",
+    "path": "/organizations",
+    "http_code": 200,
+    "item_count": 1,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "legal-entities",
+    "path": "/legal-entities",
+    "http_code": 200,
+    "item_count": 2,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "teams",
+    "path": "/teams",
+    "http_code": 200,
+    "item_count": 3,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "roles",
+    "path": "/roles",
+    "http_code": 200,
+    "item_count": 83,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "departments",
+    "path": "/departments",
+    "http_code": 200,
+    "item_count": 0,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  },
+  {
+    "category": "organization",
+    "name": "working-locations",
+    "path": "/working-locations",
+    "http_code": 200,
+    "item_count": 0,
+    "fetched_at": "2026-05-22T10:54:06Z"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-05-22T10:57:59.296Z",
+  "salary": "12500",
+  "currency": "BRL",
+  "country": "Brazil",
+  "state": {},
+  "country_code": "BR",
+  "deel_fee": "1251.42",
+  "severance_accural": "0.00",
+  "total_costs": "19159.49",
+  "employer_costs": "5408.06",
+  "costs": [
+    {
+      "name": "FGTS Contribution",
+      "amount": "1000.00",
+      "frequency": "Monthly",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "Company Social Security Contribution",
+      "amount": "3412.50",
+      "frequency": "Monthly",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "Meal Voucher",
+      "amount": "880.00",
+      "frequency": "Monthly",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "Life Insurance",
+      "amount": "5.56",
+      "frequency": "Monthly",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "Union Bonus - Good Attendance",
+      "amount": "110.00",
+      "frequency": "Monthly",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "13th salary",
+      "amount": "12500.00",
+      "frequency": "Annual",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "CBA/Union Bonus (Profit Sharing)",
+      "amount": "351.60",
+      "frequency": "Annual",
+      "country": "Brazil",
+      "country_code": "BR"
+    },
+    {
+      "name": "Vacation Bonus",
+      "amount": "4109.18",
+      "frequency": "Annual",
+      "country": "Brazil",
+      "country_code": "BR"
+    }
+  ],
+  "benefits_data": [],
+  "additional_data": {
+    "additional_notes": [
+      "The above amounts are calculated based on employer’s costs for current year and are subject to change depending on local regulations.",
+      "The cost of this service is the Deel platform fee in the breakdown above, VAT might apply.",
+      "These figures do not include statutory costs and indemnities to the employee which may be applied upon termination.",
+      "You will be able to perform the payment in USD via the Deel platform at the best FX rates.The USD rate figures on this quote are rough estimate.",
+      "Benefit Insurance is an estimate, the final amount will depend on the employee enrollment, their benefit parameters and local taxes.",
+      "According to the new collective bargaining agreement of 2024, Brazil employees that started work prior to January 1, 2024 and with a salary below R$ 15.572,04 (BRL) are entitled to receive 5,00% readjust of salary increase. Eligible Employees: Only employees who receive a monthly salary of up to R$ 15.572,04 (BRL).",
+      "Please note Severance Funding Accrual is separate line item to Employer Costs. For more information, please refer to our internal guide related to Severance Payment https://help.letsdeel.com/hc/en-gb/articles/12080901688593-About-Severance-Payment-Accrual-for-EOR-Employees"
+    ]
+  }
+}

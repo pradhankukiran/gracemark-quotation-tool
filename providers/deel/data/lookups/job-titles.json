@@ -1,0 +1,403 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "3D Artist"
+    },
+    {
+      "id": 1341,
+      "name": "Academic Advisor"
+    },
+    {
+      "id": 298,
+      "name": "Access Field Technician"
+    },
+    {
+      "id": 299,
+      "name": "Accommodation Manager"
+    },
+    {
+      "id": 4,
+      "name": "Accountant"
+    },
+    {
+      "id": 1342,
+      "name": "Account Coordinator"
+    },
+    {
+      "id": 2,
+      "name": "Account Executive"
+    },
+    {
+      "id": 1343,
+      "name": "Accounting"
+    },
+    {
+      "id": 302,
+      "name": "Accounting Assistant"
+    },
+    {
+      "id": 1344,
+      "name": "Accounting Manager"
+    },
+    {
+      "id": 1345,
+      "name": "Accounting Supervisor"
+    },
+    {
+      "id": 3,
+      "name": "Account Manager"
+    },
+    {
+      "id": 1346,
+      "name": "Account Representative"
+    },
+    {
+      "id": 303,
+      "name": "Accounts Assistant"
+    },
+    {
+      "id": 304,
+      "name": "Accounts Executive"
+    },
+    {
+      "id": 305,
+      "name": "Accounts Manager"
+    },
+    {
+      "id": 306,
+      "name": "Accounts Payable"
+    },
+    {
+      "id": 1347,
+      "name": "Accounts Payable Assistant"
+    },
+    {
+      "id": 307,
+      "name": "Account Specialist"
+    },
+    {
+      "id": 1348,
+      "name": "Accounts Receivable"
+    },
+    {
+      "id": 1349,
+      "name": "Account Strategist"
+    },
+    {
+      "id": 1350,
+      "name": "Account Supervisor"
+    },
+    {
+      "id": 1352,
+      "name": "Actuarial"
+    },
+    {
+      "id": 310,
+      "name": "Actuarial Analyst"
+    },
+    {
+      "id": 311,
+      "name": "Actuarial Consultant"
+    },
+    {
+      "id": 1353,
+      "name": "Actuarial Trainnee"
+    },
+    {
+      "id": 1354,
+      "name": "Actuary"
+    },
+    {
+      "id": 313,
+      "name": "Addiction Support Worker"
+    },
+    {
+      "id": 1355,
+      "name": "Admin"
+    },
+    {
+      "id": 1356,
+      "name": "Admin Assistant"
+    },
+    {
+      "id": 314,
+      "name": "Administration"
+    },
+    {
+      "id": 1357,
+      "name": "Administration Support"
+    },
+    {
+      "id": 6,
+      "name": "Administrative Assistant"
+    },
+    {
+      "id": 1358,
+      "name": "Administrative Coordinator"
+    },
+    {
+      "id": 1359,
+      "name": "Administrative Manager"
+    },
+    {
+      "id": 1360,
+      "name": "Administrative Officer"
+    },
+    {
+      "id": 315,
+      "name": "Administrator"
+    },
+    {
+      "id": 1361,
+      "name": "Admissions Counselor"
+    },
+    {
+      "id": 316,
+      "name": "Ad Ops Executive"
+    },
+    {
+      "id": 317,
+      "name": "Advanced Consultant"
+    },
+    {
+      "id": 318,
+      "name": "Advanced Design Engineer"
+    },
+    {
+      "id": 319,
+      "name": "Advisor"
+    },
+    {
+      "id": 320,
+      "name": "Aerospace Engineer"
+    },
+    {
+      "id": 321,
+      "name": "Agent"
+    },
+    {
+      "id": 322,
+      "name": "Agile Transformation Manager"
+    },
+    {
+      "id": 323,
+      "name": "Aircraft Mechanic"
+    },
+    {
+      "id": 325,
+      "name": "Airline Pilot"
+    },
+    {
+      "id": 326,
+      "name": "Air Traffic Controller"
+    },
+    {
+      "id": 327,
+      "name": "Air Traffic Services Assistant"
+    },
+    {
+      "id": 328,
+      "name": "Algorithm Engineer"
+    },
+    {
+      "id": 330,
+      "name": "Ambassador"
+    },
+    {
+      "id": 1362,
+      "name": "AML Analyst"
+    },
+    {
+      "id": 332,
+      "name": "Analyst"
+    },
+    {
+      "id": 333,
+      "name": "Analyst Consultant"
+    },
+    {
+      "id": 1363,
+      "name": "Analyst Programmer"
+    },
+    {
+      "id": 334,
+      "name": "Analytics Consultant"
+    },
+    {
+      "id": 335,
+      "name": "Analytics Manager"
+    },
+    {
+      "id": 1364,
+      "name": "Android Developer"
+    },
+    {
+      "id": 205,
+      "name": "Android Engineer"
+    },
+    {
+      "id": 336,
+      "name": "Animator"
+    },
+    {
+      "id": 1365,
+      "name": "Applications Development Programmer Analyst"
+    },
+    {
+      "id": 339,
+      "name": "Applications Engineer"
+    },
+    {
+      "id": 1366,
+      "name": "Applications Support Analyst"
+    },
+    {
+      "id": 1367,
+      "name": "Applications Support Engineer"
+    },
+    {
+      "id": 1368,
+      "name": "Applications Support Specialist"
+    },
+    {
+      "id": 340,
+      "name": "Appointment Setter"
+    },
+    {
+      "id": 342,
+      "name": "Approved Electrician"
+    },
+    {
+      "id": 343,
+      "name": "Architect"
+    },
+    {
+      "id": 344,
+      "name": "Architectural Assistant"
+    },
+    {
+      "id": 1369,
+      "name": "Architectural Designer"
+    },
+    {
+      "id": 1370,
+      "name": "Architecture Consultant"
+    },
+    {
+      "id": 346,
+      "name": "Area Manager"
+    },
+    {
+      "id": 347,
+      "name": "Area Sales Manager"
+    },
+    {
+      "id": 348,
+      "name": "Area Supervisor"
+    },
+    {
+      "id": 349,
+      "name": "Artworker"
+    },
+    {
+      "id": 1372,
+      "name": "Asbestos Analyst P401"
+    },
+    {
+      "id": 352,
+      "name": "Assembly Line Operative"
+    },
+    {
+      "id": 353,
+      "name": "Assessor"
+    },
+    {
+      "id": 354,
+      "name": "Asset Investment Manager"
+    },
+    {
+      "id": 1373,
+      "name": "Asset Manager"
+    },
+    {
+      "id": 355,
+      "name": "Assistant"
+    },
+    {
+      "id": 1374,
+      "name": "Assistant Account Executive"
+    },
+    {
+      "id": 356,
+      "name": "Assistant Branch Manager"
+    },
+    {
+      "id": 1375,
+      "name": "Assistant Brand Manager"
+    },
+    {
+      "id": 357,
+      "name": "Assistant Buyer"
+    },
+    {
+      "id": 2068,
+      "name": "Assistant Case Manager"
+    },
+    {
+      "id": 358,
+      "name": "Assistant Category Manager"
+    },
+    {
+      "id": 359,
+      "name": "Assistant Civil Engineer"
+    },
+    {
+      "id": 360,
+      "name": "Assistant Consultant"
+    },
+    {
+      "id": 1376,
+      "name": "Assistant Controller"
+    },
+    {
+      "id": 361,
+      "name": "Assistant Cost Consultant"
+    },
+    {
+      "id": 1377,
+      "name": "Assistant Cost Manager"
+    },
+    {
+      "id": 362,
+      "name": "Assistant Design Engineer"
+    },
+    {
+      "id": 1378,
+      "name": "Assistant Designer"
+    },
+    {
+      "id": 1379,
+      "name": "Assistant Design Manager"
+    },
+    {
+      "id": 364,
+      "name": "Assistant Engineer"
+    },
+    {
+      "id": 1380,
+      "name": "Assistant Front Office Manager"
+    },
+    {
+      "id": 366,
+      "name": "Assistant General Manager"
+    },
+    {
+      "id": 367,
+      "name": "Assistant Geotechnical Engineer"
+    }
+  ],
+  "page": {
+    "cursor": "eyJvZmZzZXQiOjk5LCJsaW1pdCI6OTksImZpbHRlclR5cGUiOiJhbGwifQ"
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "data": [
+    {
+      "id": -2,
+      "scope": "ORGANIZATION",
+      "name": "Organization Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -48,
+      "scope": "ORGANIZATION",
+      "name": "Talent Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -5,
+      "scope": "ORGANIZATION",
+      "name": "Integrations Admin - Bookkeeper",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2008,
+      "scope": "ORGANIZATION",
+      "name": "Partner Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2001,
+      "scope": "ORGANIZATION",
+      "name": "IT Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2006,
+      "scope": "ORGANIZATION",
+      "name": "Compensation Management Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2007,
+      "scope": "ORGANIZATION",
+      "name": "Partner Portal Reseller",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2002,
+      "scope": "ORGANIZATION",
+      "name": "IT Admin + Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2003,
+      "scope": "ORGANIZATION",
+      "name": "IT Admin + Approver + Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2004,
+      "scope": "ORGANIZATION",
+      "name": "IT Admin + Approver + Manager + Configurer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -3,
+      "scope": "ORGANIZATION",
+      "name": "IT Developer Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -45,
+      "scope": "ORGANIZATION",
+      "name": "Engage Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -2005,
+      "scope": "ORGANIZATION",
+      "name": "Partner Portal Accountant",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -4,
+      "scope": "ORGANIZATION",
+      "name": "Integrations Admin - People",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -35,
+      "scope": "TEAM",
+      "name": "Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -46,
+      "scope": "TEAM",
+      "name": "Team role scope for entity roles",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -17,
+      "scope": "TEAM",
+      "name": "Payer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -33,
+      "scope": "TEAM",
+      "name": "Viewer (Non-sensitive)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -16,
+      "scope": "TEAM",
+      "name": "Payer (without additional permissions)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -8,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -38,
+      "scope": "TEAM",
+      "name": "Viewer (Non-sensitive) + Approver + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -15,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Approver for Agreement Changes",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -19,
+      "scope": "TEAM",
+      "name": "Payer + Approver + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -22,
+      "scope": "TEAM",
+      "name": "People Admin + Adjuster +  Approver for Agreement Changes",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -36,
+      "scope": "TEAM",
+      "name": "Viewer (Non-sensitive) + Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -12,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Approver + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -28,
+      "scope": "TEAM",
+      "name": "People Admin + Approver + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -29,
+      "scope": "TEAM",
+      "name": "People Admin + Adjuster + Approver (PTO, Payment Items & Agreement Changes)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -31,
+      "scope": "TEAM",
+      "name": "People Admin + Approver for Agreement Changes",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -18,
+      "scope": "TEAM",
+      "name": "Payer + Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -9,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -21,
+      "scope": "TEAM",
+      "name": "People Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -6,
+      "scope": "TEAM",
+      "name": "Group Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -10,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Adjuster + Approver for Agreement Changes",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -11,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -13,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Adjuster + Approver (PTO, Payment Items & Agreement Changes)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -14,
+      "scope": "TEAM",
+      "name": "Onboarding Specialist + Approver (PTO, Payment Items & Agreement Changes)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20,
+      "scope": "TEAM",
+      "name": "People Admin (without additional permissions)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -23,
+      "scope": "TEAM",
+      "name": "People Admin and Payer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -24,
+      "scope": "TEAM",
+      "name": "People Admin and Payer + Adjuster + Approver for Agreement Changes",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -25,
+      "scope": "TEAM",
+      "name": "People Admin and Payer + Approver + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -26,
+      "scope": "TEAM",
+      "name": "People Admin and Payer + Adjuster + Approver (PTO, Payment Items & Agreement Changes)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -27,
+      "scope": "TEAM",
+      "name": "People Admin + Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30,
+      "scope": "TEAM",
+      "name": "People Admin + Approver (PTO, Payment Items & Agreement Changes)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -34,
+      "scope": "TEAM",
+      "name": "Viewer (Sensitive)",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -37,
+      "scope": "TEAM",
+      "name": "Viewer (Non-sensitive) + Adjuster",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -44,
+      "scope": "TEAM",
+      "name": "Reseller's End-Client",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -4000,
+      "scope": "HARDCODED",
+      "name": "Contract Invited",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -5001,
+      "scope": "HR_SUITE_FOLDER",
+      "name": "HR Suite Folder Viewer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -3001,
+      "scope": "ENTITY",
+      "name": "Entity Management Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30300,
+      "scope": "HR_SUITE_REVIEW_CYCLE",
+      "name": "HR Suite Review Cycle Collaborator Viewer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20303,
+      "scope": "GLOBAL",
+      "name": "Default Approval Time Off",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20305,
+      "scope": "GLOBAL",
+      "name": "Default Approval VMS",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -5003,
+      "scope": "HR_SUITE_FOLDER",
+      "name": "HR Suite Folder Editor",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20301,
+      "scope": "GLOBAL",
+      "name": "Default Approval Data Change",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -42,
+      "scope": "ENTITY",
+      "name": "Payer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -7001,
+      "scope": "PAYROLL_GROUP",
+      "name": "Payroll Group Viewer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -5000,
+      "scope": "HR_SUITE_FOLDER",
+      "name": "HR Suite Folder Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -8000,
+      "scope": "ATS_WORKSPACE",
+      "name": "ATS Workspace Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -6001,
+      "scope": "ENTITY_GP",
+      "name": "Entity GP Viewer",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -6000,
+      "scope": "ENTITY_GP",
+      "name": "Entity GP Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -43,
+      "scope": "ENTITY",
+      "name": "Entity Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20302,
+      "scope": "GLOBAL",
+      "name": "Default Approval Payment Items",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -5002,
+      "scope": "HR_SUITE_FOLDER",
+      "name": "HR Suite Folder Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -8001,
+      "scope": "ATS_WORKSPACE",
+      "name": "ATS Workspace Editor",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30102,
+      "scope": "HR_SUITE_DEVELOPMENT_PLAN_ASSIGNMENT",
+      "name": "HR Suite Development Plan Assignment Manager ",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -47,
+      "scope": "ENTITY",
+      "name": "Expense Reviewer/Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -40,
+      "scope": "ENTITY",
+      "name": "Payroll Approver",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30101,
+      "scope": "HR_SUITE_DEVELOPMENT_PLAN_ASSIGNMENT",
+      "name": "HR Suite Development Plan Assignment Viewer ",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30100,
+      "scope": "HR_SUITE_DEVELOPMENT_PLAN_ASSIGNMENT",
+      "name": "HR Suite Development Plan Assignment Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -41,
+      "scope": "ENTITY",
+      "name": "People Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -7000,
+      "scope": "PAYROLL_GROUP",
+      "name": "Payroll Group Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20202,
+      "scope": "GLOBAL",
+      "name": "Default Inactive Self Role",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20101,
+      "scope": "GLOBAL",
+      "name": "Default Organization Role",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30200,
+      "scope": "HR_SUITE_DEVELOPMENT_PLAN_TEMPLATE",
+      "name": "HR Suite Development Plan Template Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -39,
+      "scope": "ENTITY",
+      "name": "People & Payroll Admin",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20201,
+      "scope": "GLOBAL",
+      "name": "Default Self Role",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -30301,
+      "scope": "HR_SUITE_REVIEW_CYCLE",
+      "name": "HR Suite Review Cycle Collaborator Editor",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": -20304,
+      "scope": "GLOBAL",
+      "name": "Default Approval Time Tracking",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": 113070,
+      "scope": "RELATIONSHIP_TYPE",
+      "name": "Manager",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": 358186,
+      "scope": "ORG_STRUCTURE",
+      "name": "People Manager",
+      "hrisOrgStructureId": "44ced4b7-351b-4396-bf27-f28894be06ab"
+    },
+    {
+      "id": 289945,
+      "scope": "TEAM",
+      "name": "Reports view",
+      "hrisOrgStructureId": null
+    },
+    {
+      "id": 45281,
+      "scope": "ORG_STRUCTURE",
+      "name": "Head of Department",
+      "hrisOrgStructureId": "44ced4b7-351b-4396-bf27-f28894be06ab"
+    }
+  ]
+}

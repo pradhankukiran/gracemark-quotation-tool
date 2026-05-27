@@ -1,0 +1,1015 @@
+{
+  "data": [
+    {
+      "id": "8291477f-8db5-4697-8560-8f9f9968f419",
+      "name": "Hotels, Inns, and Motels",
+      "category_name": "Accommodation and Food Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "4d61bd0d-d75e-4cca-90a3-77f748d6a576",
+      "name": "Other - Accommodation and Food Services",
+      "category_name": "Accommodation and Food Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "f13e4898-85cd-4205-9949-9aa0b86749bf",
+      "name": "Recreational and Vacation Camps (except Campgrounds)",
+      "category_name": "Accommodation and Food Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "68c92164-3908-43a0-b715-e6372d501ce3",
+      "name": "Restaurants, Bars, and Other Food Services",
+      "category_name": "Accommodation and Food Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "511e2025-d070-467d-809c-68aa1d076e04",
+      "name": "Administrative Services",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "dfd1658f-cca8-45f8-baf4-39128c0d9068",
+      "name": "HR Services and Staffing",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "01a18f81-e82a-4158-878a-64aab9a4a5d9",
+      "name": "Janitorial Services",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "c8d7a604-129b-4b9d-84d9-bca6319f29cf",
+      "name": "Landscaping Services",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "134d2d5f-9f9a-440c-8bc0-39add7cf541b",
+      "name": "Other - Admin and Support Services",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "f78514bc-f197-468a-9020-799424df95c3",
+      "name": "Travel Agency",
+      "category_name": "Admin and Support Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "a3f2a66e-e477-402c-b8a9-5ec0c88a3efc",
+      "name": "Other - Agriculture, Forestry, Fishing, and Hunting",
+      "category_name": "Agriculture",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "e5ae842f-1420-4d53-8fe0-07a5bdf1b191",
+      "name": "Casinos",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "a42023c4-9924-45b3-8dd6-5697ace3aeb5",
+      "name": "Gambling or Lotteries",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "a5efba6b-6c19-4050-bdd4-9f59f2232cc0",
+      "name": "Golf Courses and Country Clubs",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "7d643290-7af9-40e4-b07a-b47a66127271",
+      "name": "Gyms and Fitness Centers",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "5ace61e1-b7b3-4906-ba90-fb9bd06ac466",
+      "name": "Historical Sites",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "55048ab0-51c9-4beb-aff4-e2a50af2148d",
+      "name": "Museums",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "98d78a8e-78c5-425d-8e7d-5d4f710562d9",
+      "name": "Musical Groups and Artists",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "9386491e-2a98-4cbc-ae75-d444e3bd97c9",
+      "name": "Nature Parks and Other Similar Institutions",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "f6693e1a-142b-46dd-86e3-9d2c8501a259",
+      "name": "Other - Arts, Entertainment, and Recreation",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "18f0f64e-f60e-4075-9e12-13eeff13c553",
+      "name": "Sports Teams and Clubs",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "40a7df20-a779-4397-8866-bdc44980512f",
+      "name": "Talent Agents and Managers",
+      "category_name": "Arts, Entertainment, and Recreation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "c72b57cd-6d68-47a6-a077-a1537e328072",
+      "name": "Other - Construction",
+      "category_name": "Construction",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "549cca78-3bc4-4702-a838-b6fe5242f1aa",
+      "name": "Holding Companies and Corporate HQs",
+      "category_name": "Corporate Management",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "fec648da-8efc-458a-ab45-8b147660d817",
+      "name": "Other - Corporate Management",
+      "category_name": "Corporate Management",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "cfab9aea-f871-42cc-89f0-c3119f7c44bd",
+      "name": "Apprenticeship Programs",
+      "category_name": "Education Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "2e128078-6c7b-4b50-8878-8ee30d10248c",
+      "name": "Colleges and Universities",
+      "category_name": "Education Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "c601daa8-d559-4b5f-b061-b6da73d37ead",
+      "name": "Elementary and Secondary Schools",
+      "category_name": "Education Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "bb9c215e-2347-49e1-b82d-6fd589fc1a62",
+      "name": "Other - Education Services",
+      "category_name": "Education Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "de1bb145-4c3b-4c69-bb82-a69d65bd0e1f",
+      "name": "Cryptocurrency Exchange and Brokerage",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "f2df3484-b47d-4954-b8ff-479aa9dd4ca2",
+      "name": "Financial Data and Research",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "927b90a3-8cca-4d2f-a9b9-cd25d411b1ab",
+      "name": "Insurance Agencies and Brokerage",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "12ec2b37-8bb8-4ada-9c5f-713401fe28ca",
+      "name": "Investment Banking and Brokerage",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:53:06.172Z"
+    },
+    {
+      "id": "ec485034-ef26-4d3d-b194-f83961a89403",
+      "name": "Lending",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "4dd73bb5-040e-4978-ab99-c6a0e957df7d",
+      "name": "Money Service Businesses",
+      "category_name": "Finance and Insurance",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "8fcf956b-6623-40ad-8784-64ae9f47cfb3",
+      "name": "Mortgage",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "e21c7d1c-324b-43d2-b2bf-4d0a089d41b7",
+      "name": "Other - Finance and Insurance",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "60013e43-33e2-42d1-8d80-f030d60e10fa",
+      "name": "Other Insurance Services (claims, underwriting, etc.)",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "5ed33047-a417-4cfa-afd1-3b2018fb88c9",
+      "name": "Payment Processing and Digital Wallets",
+      "category_name": "Finance and Insurance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "1a7af4fe-f1f2-465b-9941-3d4e706f05da",
+      "name": "Child Care",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "769f4a9b-0031-4921-9ca0-7b0c52c67874",
+      "name": "Hospitals",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "827ab2ae-8871-44bd-914d-c79ef86d705f",
+      "name": "Medical Clinics",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "744739ed-1425-4690-8748-c31cc1fceecd",
+      "name": "Mental Health Counselors and Therapists",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "f9601959-2b3b-412a-aa47-eb5d975b6abb",
+      "name": "Mental Health Services",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "495b135f-e35a-4438-86e5-00d19fdd094a",
+      "name": "Nursing Home and Personal Care Facilities",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "98b72b66-6564-4a9c-9120-2e55713324c2",
+      "name": "Other - Health Care and Social Assistance",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "124cdded-fee9-4b3e-ad07-244d470cd486",
+      "name": "Telemedicine Platform",
+      "category_name": "Health Care and Social Assistance",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "2bd22474-00c3-424f-ab4f-c325ff60e1ee",
+      "name": "Cryptocurrency Mining",
+      "category_name": "Information and Media",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "44ac57f1-a602-4d0a-b5f0-a0b278aa2a79",
+      "name": "Media Streaming, Social Networks & Digital Content Providers",
+      "category_name": "Information and Media",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.612Z"
+    },
+    {
+      "id": "df084985-429b-4e29-a850-d1d68bfd2b2b",
+      "name": "Movie Theaters",
+      "category_name": "Information and Media",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "0ad6f2b4-be79-46c0-82b0-24debe07ab53",
+      "name": "Other - Information and Media",
+      "category_name": "Information and Media",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "60fa5b59-0cf4-466a-b01d-41031fb9c873",
+      "name": "Publishing",
+      "category_name": "Information and Media",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "c011f9c7-2bbf-4468-9f15-a81eec2ee906",
+      "name": "Wired Telecommunications Carriers",
+      "category_name": "Information and Media",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "55a17791-ce5d-40ff-a14e-cbed76a8bf39",
+      "name": "Wireless Telecommunications Carriers",
+      "category_name": "Information and Media",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "08a8f922-718d-4e50-9007-7fd064682a67",
+      "name": "Alcohol Production",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "d5e881cb-d494-4d4d-8359-5ab2b81e6a50",
+      "name": "Automobiles",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "c918b01b-3405-48ee-bb97-05a4bd31d828",
+      "name": "Beverages (non-alcoholic)",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "52d3a6ad-e331-46e4-8d10-dcdab23f050d",
+      "name": "Clothing and Accessories",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "59c3c7b7-63da-40db-9725-e69b6d16c000",
+      "name": "Computer and Electronics",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "393752b8-3a95-438e-a9ba-977168dbcb8b",
+      "name": "Furniture",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "539572ca-d54c-4227-9b39-af90c544a296",
+      "name": "Home Appliances",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "44f3a895-56b6-4c62-b16a-404b7ebb9b21",
+      "name": "Industrial Machinery and Equipment",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "1a2390e5-8cb2-4cee-a204-b138af474948",
+      "name": "Lumber and Wood Products (except furniture)",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "ea6888d1-39d2-4f38-98cb-3ea52f3d5c8f",
+      "name": "Medical Devices",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "28fe2d78-31f2-4f4f-9fa1-6a46f360d686",
+      "name": "Other - Manufacturing",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "2eb48d34-347b-44a8-9a51-f57241faad16",
+      "name": "Paper Products",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "ca20a98d-fcaf-4f8c-985e-d9ef8be272e5",
+      "name": "Pharmaceuticals",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "5f266249-9ab2-44db-8ffd-35111c392a21",
+      "name": "Rubber and Plastics Products",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "beed5199-3bb7-4648-9b14-fe0cfbce9e17",
+      "name": "Small Arms Ammunition Manufacturing",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "226d8960-43cf-4ece-8b19-ead4de5b641a",
+      "name": "Small Arms, Ordnance, and Ordnance Accessories Manufacturing",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "8f251eb1-bd99-41dc-a57a-3b1f810d8386",
+      "name": "Supplements and Nutraceuticals (nutrition, vitamins, health)",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "306d19cc-954e-4488-a635-eaea7c9e3ce3",
+      "name": "Tobacco",
+      "category_name": "Manufacturing",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "cc52d7a4-8bed-493b-b7b6-e0e5c66b1603",
+      "name": "Crude Petroleum Extraction",
+      "category_name": "Mining",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "c6057ffc-f06a-4e77-a657-fa29763852fe",
+      "name": "Other - Mining",
+      "category_name": "Mining",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "18e259a4-0153-431e-996a-697af4ad8288",
+      "name": "Automotive Repair and Maintenance",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "7a33e0ba-277f-48e2-a23b-4c68fcd389a7",
+      "name": "Barber Shops",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "0b90c981-bc07-44c8-b456-b2ee4ecbb123",
+      "name": "Beauty Salons",
+      "category_name": "Other Services",
+      "created_at": "2026-05-21T17:53:15.668Z",
+      "updated_at": "2026-05-21T17:53:15.668Z"
+    },
+    {
+      "id": "cc0eb2d0-7f3a-4b89-8d42-05f6dd6c628f",
+      "name": "Dating and Matchmaking Services",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "9e683ce6-26ce-4c97-9244-64645c6ef93a",
+      "name": "Devices and Electronics Repair",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "2c88d016-4698-4aca-8f12-58bfe57da699",
+      "name": "Home and Garden Equipment Repair and Maintenance",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "0b6ae576-c137-4a39-8892-abd1d10a8583",
+      "name": "Laundry and Cleaning Services",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "21dfeb1e-acc6-41de-855f-d3dc71b8b16a",
+      "name": "Nonprofits, Charities, and Social Organizations",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "dccb6eb1-ffce-4e3a-9b2b-a16b56cfb2be",
+      "name": "Other Services - Not Mentioned Elsewhere",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "a73e4e03-a73c-4aae-a7b8-f11ac3f028bd",
+      "name": "Personal and Household Goods Repair",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "0d58f508-fbc1-48a9-a506-66c1ab87c369",
+      "name": "Religious Organizations",
+      "category_name": "Other Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "f051e1f5-7011-4775-8e54-4ffdc8cc15be",
+      "name": "Accounting, Auditing, and Tax",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "dbb2f228-0245-41f2-ad25-f88a55d8f4d5",
+      "name": "Architectural Services",
+      "category_name": "Professional Services",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "99e7cf4d-b91a-4831-89bb-6dea0d94c682",
+      "name": "Art and Design",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "8a259eb0-d77a-46a5-879f-4fe7a762622e",
+      "name": "Blockchain and Digital Wallet Development",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "64c18df7-af84-4373-a4a0-a2c99524c6e9",
+      "name": "Engineering Services",
+      "category_name": "Professional Services",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "4dd7e27e-4e26-457f-a5fd-c60094b9de6a",
+      "name": "IT Consulting",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "e5234e89-cc23-4772-9725-eafd719da534",
+      "name": "Legal Services",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "74566cdf-45f6-4b69-94bf-8ac112b7ffc7",
+      "name": "Management Consulting",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "b72ad4ea-4ef8-44bd-8645-bde7101270d9",
+      "name": "Marketing and Advertising",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "5fce2564-005d-4c65-a269-6dbf1267596c",
+      "name": "Other - Professional Services",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "0fd10599-80ca-4bc7-a7f6-865b2ec65153",
+      "name": "Photography",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "51f0383d-cbe7-45ee-89f6-015fbbd95184",
+      "name": "R&D — Physical, Engineering, and Life Sciences",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "eff32d83-8600-4f21-b3aa-ed8f8c7bbf93",
+      "name": "Research and Development in Biotechnology",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "a1720cf0-cc93-4fcd-8768-a9fa5b53b6cc",
+      "name": "Software and Game Development",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.600Z"
+    },
+    {
+      "id": "dd0f0eba-aad5-442f-a095-ee51f563ac90",
+      "name": "Software Development",
+      "category_name": "Professional Services",
+      "created_at": "2025-12-08T13:52:04.492Z",
+      "updated_at": "2025-12-08T13:52:04.492Z"
+    },
+    {
+      "id": "e15e7407-959c-42bf-83e3-5a122dee1a7c",
+      "name": "Veterinary Services",
+      "category_name": "Professional Services",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "72e52f92-8993-4cba-a675-3a7d63235b96",
+      "name": "Government and Public Services",
+      "category_name": "Public Administration",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "02989fe6-a4ee-4cdf-a225-3b90a2965d97",
+      "name": "Other - Public Administration",
+      "category_name": "Public Administration",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "42ee768b-fb1f-46b9-8e55-40d1e3189c2d",
+      "name": "Car Rental",
+      "category_name": "Real Estate",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "9af8b855-10e3-4ab8-bdef-2b663d767957",
+      "name": "Equipment Rental and Leasing",
+      "category_name": "Real Estate",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "5838df5c-1b09-4205-b9e7-2a797d9d58f1",
+      "name": "Nonresidential Property Management",
+      "category_name": "Real Estate",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "ffd46871-735b-46b0-958d-c9e4f479615e",
+      "name": "Other - Real Estate",
+      "category_name": "Real Estate",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "e4d4d471-15b2-4525-b09d-d5984ef81c67",
+      "name": "Real Estate Agents and Brokers",
+      "category_name": "Real Estate",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "4ad358bb-dbbd-4e2f-a890-445ba264124b",
+      "name": "Residential Property Management",
+      "category_name": "Real Estate",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "544872c0-026e-4160-94a9-8d84693cb247",
+      "name": "RV and Motor Home Rental",
+      "category_name": "Real Estate",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "5c0e7409-7a60-44fc-95a9-af5f5adc1bed",
+      "name": "Art Dealers and Galleries",
+      "category_name": "Retail Trade",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "79291326-5c5c-4a6f-873b-e1ca9756df0b",
+      "name": "Automotive Dealers",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "c630171d-92a9-4dcc-a6fb-a9666b66e692",
+      "name": "Auto Parts and Accessories",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "1de6a272-2f6e-4341-92a8-0c36b916e9e8",
+      "name": "Beauty and Cosmetics",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "0d0a19a7-773e-4e48-b7d2-a231dadafe24",
+      "name": "Clothing and Clothing Accessories Retailers",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "941f0e3b-8040-4a0c-a84d-80e5f2d1c36a",
+      "name": "Convenience Retailers",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "5f2c0258-dfe1-455e-80ff-4ae3077bd0d0",
+      "name": "Electronics and Appliances",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "f3dc2db5-2845-432b-ba1d-8c5c8f1edff9",
+      "name": "Florists",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "1fab8d8f-3d8b-4dcd-b1cb-592ee53fe8ea",
+      "name": "Groceries",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "24d16d5f-ea73-4b90-b323-332325b14051",
+      "name": "Home Furnishings",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "17f2dba8-9cf2-42d3-93e1-4686686592d6",
+      "name": "Jewelry, Watches, Precious Stones and Metals",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "ff094e52-6d04-4f00-a542-57d6b8c4b3c8",
+      "name": "Musical Instruments",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "4d00b3fc-5ce6-424b-b254-2dc80bb63a89",
+      "name": "Nursery, Garden Center, and Farm Supply Stores",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "314bc028-a14c-40a3-8901-f5e74dc333a5",
+      "name": "Office and School Supplies",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "0d4cc5fe-34ab-40b8-a90d-a52b3b076b82",
+      "name": "Online Marketplaces",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "a1301195-3791-40fe-9f7d-70228103f298",
+      "name": "Optical Goods (Eyeglasses, Contacts)",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "c29f6ddf-ded0-49fb-9755-87acb0653b16",
+      "name": "Other - Retail Trade",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "c49b5937-55ba-4f38-b082-6258414926cd",
+      "name": "Pet Supplies",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "447c426c-9eeb-4fe0-90d1-adbc8f4a9455",
+      "name": "Pharmacies and Drugstores",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "627e52d4-e5a5-4d16-864a-f47717ffba4d",
+      "name": "Sports and Outdoor",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "4d5eb517-2de5-46b9-9f41-d0591d65565e",
+      "name": "Toys and Hobbies",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "89caf4a9-6b94-47b7-8d3e-25db813f0750",
+      "name": "Vapes, E-Cigarettes, E-Juice, and Related Products",
+      "category_name": "Retail Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.507Z"
+    },
+    {
+      "id": "12c79ddf-e393-4c2b-b4dd-314791687053",
+      "name": "Boat Hire and Yacht Charter",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "5151036f-66df-4091-a8ec-a42f91b2460c",
+      "name": "Courier and Shipping",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "83908dec-99f5-4a0a-a7d7-71c34d0688a7",
+      "name": "Local Trucking",
+      "category_name": "Transportation",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "7a93e82e-df58-41f5-b638-308829fc231b",
+      "name": "Long-Distance Less-Than-Truckload Trucking",
+      "category_name": "Transportation",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "a12cc0db-b090-4940-971c-dc117a981caf",
+      "name": "Long-Distance Truckload Trucking",
+      "category_name": "Transportation",
+      "created_at": "2026-05-21T17:53:15.645Z",
+      "updated_at": "2026-05-21T17:53:15.645Z"
+    },
+    {
+      "id": "7d7415f1-c984-41f2-9c40-c7b291b0860b",
+      "name": "Other - Transportation",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "ecd2f391-da0c-4411-b777-5669adb44250",
+      "name": "Passenger Airlines",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2026-05-21T17:52:49.557Z"
+    },
+    {
+      "id": "90989146-bcb6-4b00-905b-7d446a111936",
+      "name": "Taxis, Limos, and Ridesharing Services",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "9849bfa6-3528-477b-9bcb-d4fabc6eea58",
+      "name": "Warehousing and Distribution",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "8e0bedf1-a5de-4db0-b323-6f648166e340",
+      "name": "Water Transportation",
+      "category_name": "Transportation",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "90252785-71ee-496e-a5ab-dded5fb26dd7",
+      "name": "Other - Utilities",
+      "category_name": "Utilities",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    },
+    {
+      "id": "cf3ff4e3-6ecc-4e25-be4f-558aeec708ce",
+      "name": "Other - Wholesale Trade",
+      "category_name": "Wholesale Trade",
+      "created_at": "2025-08-07T09:41:23.977Z",
+      "updated_at": "2025-08-07T09:41:23.977Z"
+    }
+  ],
+  "has_more": false,
+  "next_cursor": null,
+  "total_count": 144
+}

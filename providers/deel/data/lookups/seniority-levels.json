@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "id": 34,
+      "name": "Not applicable",
+      "level": 0
+    },
+    {
+      "id": 1,
+      "name": "Junior (Individual Contributor Level 1)",
+      "level": 1
+    },
+    {
+      "id": 2,
+      "name": "Mid (Individual Contributor Level 2)",
+      "level": 2
+    },
+    {
+      "id": 3,
+      "name": "Senior (Individual Contributor Level 3)",
+      "level": 3
+    },
+    {
+      "id": 4,
+      "name": "Lead (Individual Contributor Level 4)",
+      "level": 4
+    },
+    {
+      "id": 35,
+      "name": "Principal / Staff (Individual Contributor Level 5)",
+      "level": 5
+    },
+    {
+      "id": 5,
+      "name": "Director",
+      "level": 6
+    },
+    {
+      "id": 6,
+      "name": "Head of Department",
+      "level": 7
+    },
+    {
+      "id": 7,
+      "name": "Vice President",
+      "level": 8
+    },
+    {
+      "id": 8,
+      "name": "Senior Vice President",
+      "level": 9
+    },
+    {
+      "id": 9,
+      "name": "C-level Executive",
+      "level": 10
+    }
+  ]
+}

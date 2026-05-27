@@ -1,0 +1,2727 @@
+{
+  "data": [
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "AZ",
+          "name": "Abu Dhabi"
+        },
+        {
+          "code": "AJ",
+          "name": "Ajman"
+        },
+        {
+          "code": "DU",
+          "name": "Dubai"
+        },
+        {
+          "code": "FU",
+          "name": "Fujairah"
+        },
+        {
+          "code": "RK",
+          "name": "Ras al-Khaimah"
+        },
+        {
+          "code": "SH",
+          "name": "Sharjah"
+        },
+        {
+          "code": "UQ",
+          "name": "Umm al-Quwain"
+        }
+      ],
+      "default_currency": "AED"
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ALL"
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "AMD"
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ARS"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "state",
+      "states": [
+        {
+          "code": "NSW",
+          "name": "New South Wales"
+        },
+        {
+          "code": "VIC",
+          "name": "Victoria"
+        },
+        {
+          "code": "QLD",
+          "name": "Queensland"
+        },
+        {
+          "code": "TAS",
+          "name": "Tasmania"
+        },
+        {
+          "code": "SA",
+          "name": "South Australia"
+        },
+        {
+          "code": "WA",
+          "name": "Western Australia"
+        },
+        {
+          "code": "NT",
+          "name": "Northern Territory"
+        },
+        {
+          "code": "ACT",
+          "name": "Australian Capital Territory"
+        }
+      ],
+      "default_currency": "AUD"
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaijan",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "AZN"
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "FBH",
+          "name": "Federation of Bosnia & Herzegovina"
+        },
+        {
+          "code": "RS",
+          "name": "Republika Srpska"
+        },
+        {
+          "code": "BD",
+          "name": "Brcko District"
+        }
+      ],
+      "default_currency": "BAM"
+    },
+    {
+      "code": "BD",
+      "name": "Bangladesh",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "BDT"
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "BHD"
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "BOB"
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "state",
+      "states": [
+        {
+          "code": "AC",
+          "name": "Acre"
+        },
+        {
+          "code": "AL",
+          "name": "Alagoas"
+        },
+        {
+          "code": "AM",
+          "name": "Amazonas"
+        },
+        {
+          "code": "AP",
+          "name": "Amapá"
+        },
+        {
+          "code": "BA",
+          "name": "Bahia"
+        },
+        {
+          "code": "CE",
+          "name": "Ceará"
+        },
+        {
+          "code": "DF",
+          "name": "Distrito Federal"
+        },
+        {
+          "code": "ES",
+          "name": "Espírito Santo"
+        },
+        {
+          "code": "GO",
+          "name": "Goiás"
+        },
+        {
+          "code": "MA",
+          "name": "Maranhão"
+        },
+        {
+          "code": "MG",
+          "name": "Minas Gerais"
+        },
+        {
+          "code": "MS",
+          "name": "Mato Grosso do Sul"
+        },
+        {
+          "code": "MT",
+          "name": "Mato Grosso"
+        },
+        {
+          "code": "PA",
+          "name": "Pará"
+        },
+        {
+          "code": "PB",
+          "name": "Paraíba"
+        },
+        {
+          "code": "PE",
+          "name": "Pernambuco"
+        },
+        {
+          "code": "PI",
+          "name": "Piauí"
+        },
+        {
+          "code": "PR",
+          "name": "Paraná"
+        },
+        {
+          "code": "RJ",
+          "name": "Rio de Janeiro"
+        },
+        {
+          "code": "RN",
+          "name": "Rio Grande do Norte"
+        },
+        {
+          "code": "RO",
+          "name": "Rondônia"
+        },
+        {
+          "code": "RR",
+          "name": "Roraima"
+        },
+        {
+          "code": "RS",
+          "name": "Rio Grande do Sul"
+        },
+        {
+          "code": "SC",
+          "name": "Santa Catarina"
+        },
+        {
+          "code": "SE",
+          "name": "Sergipe"
+        },
+        {
+          "code": "SP",
+          "name": "São Paulo"
+        },
+        {
+          "code": "TO",
+          "name": "Tocantins"
+        }
+      ],
+      "default_currency": "BRL"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "AB",
+          "name": "Alberta"
+        },
+        {
+          "code": "BC",
+          "name": "British Columbia"
+        },
+        {
+          "code": "MB",
+          "name": "Manitoba"
+        },
+        {
+          "code": "NB",
+          "name": "New Brunswick"
+        },
+        {
+          "code": "NL",
+          "name": "Newfoundland and Labrador"
+        },
+        {
+          "code": "NT",
+          "name": "Northwest Territories"
+        },
+        {
+          "code": "NS",
+          "name": "Nova Scotia"
+        },
+        {
+          "code": "NU",
+          "name": "Nunavut"
+        },
+        {
+          "code": "ON",
+          "name": "Ontario"
+        },
+        {
+          "code": "PE",
+          "name": "Prince Edward Island"
+        },
+        {
+          "code": "QC",
+          "name": "Quebec"
+        },
+        {
+          "code": "SK",
+          "name": "Saskatchewan"
+        },
+        {
+          "code": "YT",
+          "name": "Yukon Territory"
+        }
+      ],
+      "default_currency": "CAD"
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "CHF"
+    },
+    {
+      "code": "CI",
+      "name": "Cote D'Ivoire",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "XOF"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "CLP"
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "XAF"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "SH",
+          "name": "Shanghai"
+        },
+        {
+          "code": "BJ",
+          "name": "Beijing"
+        },
+        {
+          "code": "ZJ",
+          "name": "Zhejiang"
+        },
+        {
+          "code": "GD",
+          "name": "Guangdong"
+        },
+        {
+          "code": "CN-OTHER",
+          "name": "Other province"
+        },
+        {
+          "code": "AH",
+          "name": "Anhui"
+        },
+        {
+          "code": "CQ",
+          "name": "Chongqing"
+        },
+        {
+          "code": "FJ",
+          "name": "Fujian"
+        },
+        {
+          "code": "GS",
+          "name": "Gansu"
+        },
+        {
+          "code": "GX",
+          "name": "Guangxi Zhuang"
+        },
+        {
+          "code": "GZ",
+          "name": "Guizhou"
+        },
+        {
+          "code": "HI",
+          "name": "Hainan"
+        },
+        {
+          "code": "HE",
+          "name": "Hebei"
+        },
+        {
+          "code": "HL",
+          "name": "Heilongjiang"
+        },
+        {
+          "code": "HA",
+          "name": "Henan"
+        },
+        {
+          "code": "HB",
+          "name": "Hubei"
+        },
+        {
+          "code": "HN",
+          "name": "Hunan"
+        },
+        {
+          "code": "JS",
+          "name": "Jiangsu"
+        },
+        {
+          "code": "JX",
+          "name": "Jiangxi"
+        },
+        {
+          "code": "JL",
+          "name": "Jilin"
+        },
+        {
+          "code": "LN",
+          "name": "Liaoning"
+        },
+        {
+          "code": "MO",
+          "name": "Macau"
+        },
+        {
+          "code": "NM",
+          "name": "Nei Mongol"
+        },
+        {
+          "code": "NX",
+          "name": "Ningxia Hui"
+        },
+        {
+          "code": "QH",
+          "name": "Qinghai"
+        },
+        {
+          "code": "SN",
+          "name": "Shaanxi"
+        },
+        {
+          "code": "SD",
+          "name": "Shandong"
+        },
+        {
+          "code": "SX",
+          "name": "Shanxi"
+        },
+        {
+          "code": "SC",
+          "name": "Sichuan"
+        },
+        {
+          "code": "TJ",
+          "name": "Tianjin"
+        },
+        {
+          "code": "XJ",
+          "name": "Xinjiang Uygur"
+        },
+        {
+          "code": "XZ",
+          "name": "Xizang"
+        },
+        {
+          "code": "YN",
+          "name": "Yunnan"
+        }
+      ],
+      "default_currency": "CNY"
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "COP"
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "CRC"
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "CZ",
+      "name": "Czech Republic",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "CZK"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "DKK"
+    },
+    {
+      "code": "DO",
+      "name": "Dominican Republic",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "DOP"
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "USD"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EGP"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ETB"
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "BDF",
+          "name": "Bedfordshire"
+        },
+        {
+          "code": "BRK",
+          "name": "Berkshire"
+        },
+        {
+          "code": "BST",
+          "name": "Bristol"
+        },
+        {
+          "code": "BKM",
+          "name": "Buckinghamshire"
+        },
+        {
+          "code": "CAM",
+          "name": "Cambridgeshire"
+        },
+        {
+          "code": "CHS",
+          "name": "Cheshire"
+        },
+        {
+          "code": "COL",
+          "name": "City of London"
+        },
+        {
+          "code": "CON",
+          "name": "Cornwall"
+        },
+        {
+          "code": "CMA",
+          "name": "Cumbria"
+        },
+        {
+          "code": "DBY",
+          "name": "Derbyshire"
+        },
+        {
+          "code": "DEV",
+          "name": "Devon"
+        },
+        {
+          "code": "DOR",
+          "name": "Dorset"
+        },
+        {
+          "code": "DUR",
+          "name": "County Durham"
+        },
+        {
+          "code": "ERY",
+          "name": "East Riding of Yorkshire"
+        },
+        {
+          "code": "ESX",
+          "name": "East Sussex"
+        },
+        {
+          "code": "ESS",
+          "name": "Essex"
+        },
+        {
+          "code": "GLS",
+          "name": "Gloucestershire"
+        },
+        {
+          "code": "LND",
+          "name": "Greater London"
+        },
+        {
+          "code": "GTM",
+          "name": "Greater Manchester"
+        },
+        {
+          "code": "HAM",
+          "name": "Hampshire"
+        },
+        {
+          "code": "HEF",
+          "name": "Herefordshire"
+        },
+        {
+          "code": "HRT",
+          "name": "Hertfordshire"
+        },
+        {
+          "code": "IOW",
+          "name": "Isle of Wight"
+        },
+        {
+          "code": "KEN",
+          "name": "Kent"
+        },
+        {
+          "code": "LAN",
+          "name": "Lancashire"
+        },
+        {
+          "code": "LEI",
+          "name": "Leicestershire"
+        },
+        {
+          "code": "LIN",
+          "name": "Lincolnshire"
+        },
+        {
+          "code": "MSY",
+          "name": "Merseyside"
+        },
+        {
+          "code": "NFK",
+          "name": "Norfolk"
+        },
+        {
+          "code": "NYK",
+          "name": "North Yorkshire"
+        },
+        {
+          "code": "NTH",
+          "name": "Northamptonshire"
+        },
+        {
+          "code": "NBL",
+          "name": "Northumberland"
+        },
+        {
+          "code": "NTT",
+          "name": "Nottinghamshire"
+        },
+        {
+          "code": "OXF",
+          "name": "Oxfordshire"
+        },
+        {
+          "code": "RUT",
+          "name": "Rutland"
+        },
+        {
+          "code": "SHR",
+          "name": "Shropshire"
+        },
+        {
+          "code": "SOM",
+          "name": "Somerset"
+        },
+        {
+          "code": "SYK",
+          "name": "South Yorkshire"
+        },
+        {
+          "code": "STS",
+          "name": "Staffordshire"
+        },
+        {
+          "code": "SFK",
+          "name": "Suffolk"
+        },
+        {
+          "code": "SRY",
+          "name": "Surrey"
+        },
+        {
+          "code": "TWR",
+          "name": "Tyne and Wear"
+        },
+        {
+          "code": "WAR",
+          "name": "Warwickshire"
+        },
+        {
+          "code": "WMD",
+          "name": "West Midlands"
+        },
+        {
+          "code": "WSX",
+          "name": "West Sussex"
+        },
+        {
+          "code": "WYK",
+          "name": "West Yorkshire"
+        },
+        {
+          "code": "WIL",
+          "name": "Wiltshire"
+        },
+        {
+          "code": "WOR",
+          "name": "Worcestershire"
+        },
+        {
+          "code": "ABD",
+          "name": "Aberdeenshire"
+        },
+        {
+          "code": "ANS",
+          "name": "Angus"
+        },
+        {
+          "code": "ARL",
+          "name": "Argyll"
+        },
+        {
+          "code": "AYR",
+          "name": "Ayrshire"
+        },
+        {
+          "code": "BAN",
+          "name": "Banffshire"
+        },
+        {
+          "code": "BEW",
+          "name": "Berwickshire"
+        },
+        {
+          "code": "BUT",
+          "name": "Bute"
+        },
+        {
+          "code": "CAI",
+          "name": "Caithness"
+        },
+        {
+          "code": "CLK",
+          "name": "Clackmannanshire"
+        },
+        {
+          "code": "DFS",
+          "name": "Dumfriesshire"
+        },
+        {
+          "code": "DNB",
+          "name": "Dunbartonshire"
+        },
+        {
+          "code": "ELN",
+          "name": "East Lothian"
+        },
+        {
+          "code": "FIF",
+          "name": "Fife"
+        },
+        {
+          "code": "INV",
+          "name": "Inverness-shire"
+        },
+        {
+          "code": "KCD",
+          "name": "Kincardineshire"
+        },
+        {
+          "code": "KRS",
+          "name": "Kinross-shire"
+        },
+        {
+          "code": "KKD",
+          "name": "Kirkcudbrightshire"
+        },
+        {
+          "code": "LKS",
+          "name": "Lanarkshire"
+        },
+        {
+          "code": "MLN",
+          "name": "Midlothian"
+        },
+        {
+          "code": "MOR",
+          "name": "Moray"
+        },
+        {
+          "code": "NAI",
+          "name": "Nairnshire"
+        },
+        {
+          "code": "OKI",
+          "name": "Orkney"
+        },
+        {
+          "code": "PEE",
+          "name": "Peeblesshire"
+        },
+        {
+          "code": "PER",
+          "name": "Perthshire"
+        },
+        {
+          "code": "RFW",
+          "name": "Renfrewshire"
+        },
+        {
+          "code": "ROC",
+          "name": "Ross-shire"
+        },
+        {
+          "code": "ROX",
+          "name": "Roxburghshire"
+        },
+        {
+          "code": "SEL",
+          "name": "Selkirkshire"
+        },
+        {
+          "code": "ZET",
+          "name": "Shetland"
+        },
+        {
+          "code": "STI",
+          "name": "Stirlingshire"
+        },
+        {
+          "code": "SUT",
+          "name": "Sutherland"
+        },
+        {
+          "code": "WLN",
+          "name": "West Lothian"
+        },
+        {
+          "code": "WIG",
+          "name": "Wigtownshire"
+        },
+        {
+          "code": "BGW",
+          "name": "Blaenau Gwent"
+        },
+        {
+          "code": "BGE",
+          "name": "Bridgend"
+        },
+        {
+          "code": "CAY",
+          "name": "Caerphilly"
+        },
+        {
+          "code": "CRF",
+          "name": "Cardiff"
+        },
+        {
+          "code": "CMN",
+          "name": "Carmarthenshire"
+        },
+        {
+          "code": "CGN",
+          "name": "Ceredigion"
+        },
+        {
+          "code": "CWY",
+          "name": "Conwy"
+        },
+        {
+          "code": "DEN",
+          "name": "Denbighshire"
+        },
+        {
+          "code": "FLN",
+          "name": "Flintshire"
+        },
+        {
+          "code": "GWN",
+          "name": "Gwynedd"
+        },
+        {
+          "code": "AGY",
+          "name": "Isle of Anglesey"
+        },
+        {
+          "code": "MTY",
+          "name": "Merthyr Tydfil"
+        },
+        {
+          "code": "MON",
+          "name": "Monmouthshire"
+        },
+        {
+          "code": "NTL",
+          "name": "Neath Port Talbot"
+        },
+        {
+          "code": "NWP",
+          "name": "Newport"
+        },
+        {
+          "code": "PEM",
+          "name": "Pembrokeshire"
+        },
+        {
+          "code": "POW",
+          "name": "Powys"
+        },
+        {
+          "code": "RCT",
+          "name": "Rhondda Cynon Taf"
+        },
+        {
+          "code": "SWA",
+          "name": "Swansea"
+        },
+        {
+          "code": "TOF",
+          "name": "Torfaen"
+        },
+        {
+          "code": "VGL",
+          "name": "Vale of Glamorgan"
+        },
+        {
+          "code": "WRX",
+          "name": "Wrexham"
+        },
+        {
+          "code": "ANT",
+          "name": "Antrim"
+        },
+        {
+          "code": "ARM",
+          "name": "Armagh"
+        },
+        {
+          "code": "DOW",
+          "name": "Down"
+        },
+        {
+          "code": "FER",
+          "name": "Fermanagh"
+        },
+        {
+          "code": "LDY",
+          "name": "Londonderry"
+        },
+        {
+          "code": "TYR",
+          "name": "Tyrone"
+        }
+      ],
+      "default_currency": "GBP"
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "GEL"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "GHS"
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "GTQ"
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "HKD"
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "HNL"
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "HUF"
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "AC",
+          "name": "Aceh"
+        },
+        {
+          "code": "BA",
+          "name": "Bali"
+        },
+        {
+          "code": "BB",
+          "name": "Bangka Belitung Islands"
+        },
+        {
+          "code": "BT",
+          "name": "Banten"
+        },
+        {
+          "code": "BE",
+          "name": "Bengkulu"
+        },
+        {
+          "code": "JT",
+          "name": "Central Java"
+        },
+        {
+          "code": "KT",
+          "name": "Central Kalimantan"
+        },
+        {
+          "code": "PT",
+          "name": "Central Papua"
+        },
+        {
+          "code": "ST",
+          "name": "Central Sulawesi"
+        },
+        {
+          "code": "JI",
+          "name": "East Java"
+        },
+        {
+          "code": "KI",
+          "name": "East Kalimantan"
+        },
+        {
+          "code": "NT",
+          "name": "East Nusa Tenggara"
+        },
+        {
+          "code": "GO",
+          "name": "Gorontalo"
+        },
+        {
+          "code": "PP",
+          "name": "Highland Papua"
+        },
+        {
+          "code": "JK",
+          "name": "Special Capital Region of Jakarta"
+        },
+        {
+          "code": "JA",
+          "name": "Jambi"
+        },
+        {
+          "code": "LA",
+          "name": "Lampung"
+        },
+        {
+          "code": "MA",
+          "name": "Maluku"
+        },
+        {
+          "code": "KU",
+          "name": "North Kalimantan"
+        },
+        {
+          "code": "MU",
+          "name": "North Maluku"
+        },
+        {
+          "code": "SA",
+          "name": "North Sulawesi"
+        },
+        {
+          "code": "SU",
+          "name": "North Sumatra"
+        },
+        {
+          "code": "PA",
+          "name": "Papua"
+        },
+        {
+          "code": "RI",
+          "name": "Riau"
+        },
+        {
+          "code": "KR",
+          "name": "Riau Islands"
+        },
+        {
+          "code": "SN",
+          "name": "South Sulawesi"
+        },
+        {
+          "code": "SG",
+          "name": "Southeast Sulawesi"
+        },
+        {
+          "code": "KS",
+          "name": "South Kalimantan"
+        },
+        {
+          "code": "PS",
+          "name": "South Papua"
+        },
+        {
+          "code": "SS",
+          "name": "South Sumatra"
+        },
+        {
+          "code": "PB",
+          "name": "Southwest Papua"
+        },
+        {
+          "code": "JB",
+          "name": "West Java"
+        },
+        {
+          "code": "KB",
+          "name": "West Kalimantan"
+        },
+        {
+          "code": "NB",
+          "name": "West Nusa Tenggara"
+        },
+        {
+          "code": "ID-PB",
+          "name": "West Papua"
+        },
+        {
+          "code": "SR",
+          "name": "West Sulawesi"
+        },
+        {
+          "code": "SB",
+          "name": "West Sumatra"
+        },
+        {
+          "code": "YO",
+          "name": "Special Region of Yogyakarta"
+        }
+      ],
+      "default_currency": "IDR"
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ILS"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "MH",
+          "name": "Maharashtra"
+        },
+        {
+          "code": "AP",
+          "name": "Andhra Pradesh"
+        },
+        {
+          "code": "BR",
+          "name": "Bihar"
+        },
+        {
+          "code": "GA",
+          "name": "Goa"
+        },
+        {
+          "code": "HR",
+          "name": "Haryana"
+        },
+        {
+          "code": "GJ",
+          "name": "Gujarat"
+        },
+        {
+          "code": "MP",
+          "name": "Madhya Pradesh"
+        },
+        {
+          "code": "AS",
+          "name": "Assam"
+        },
+        {
+          "code": "AR",
+          "name": "Arunachal Pradesh"
+        },
+        {
+          "code": "KA",
+          "name": "Karnataka"
+        },
+        {
+          "code": "MN",
+          "name": "Manipur"
+        },
+        {
+          "code": "KL",
+          "name": "Kerala"
+        },
+        {
+          "code": "PB",
+          "name": "Punjab"
+        },
+        {
+          "code": "UT",
+          "name": "Uttarakhand"
+        },
+        {
+          "code": "TN",
+          "name": "Tamil Nadu"
+        },
+        {
+          "code": "CT",
+          "name": "Chhattisgarh"
+        },
+        {
+          "code": "UP",
+          "name": "Uttar Pradesh"
+        },
+        {
+          "code": "MZ",
+          "name": "Mizoram"
+        },
+        {
+          "code": "RJ",
+          "name": "Rajasthan"
+        },
+        {
+          "code": "OR",
+          "name": "Odisha"
+        },
+        {
+          "code": "ML",
+          "name": "Meghalaya"
+        },
+        {
+          "code": "NL",
+          "name": "Nagaland"
+        },
+        {
+          "code": "TR",
+          "name": "Tripura"
+        },
+        {
+          "code": "HP",
+          "name": "Himachal Pradesh"
+        },
+        {
+          "code": "WB",
+          "name": "West Bengal"
+        },
+        {
+          "code": "SK",
+          "name": "Sikkim"
+        },
+        {
+          "code": "JH",
+          "name": "Jharkhand"
+        },
+        {
+          "code": "DL",
+          "name": "Delhi"
+        },
+        {
+          "code": "JK",
+          "name": "Jammu &Kashmir"
+        },
+        {
+          "code": "TG",
+          "name": "Telangana"
+        },
+        {
+          "code": "PY",
+          "name": "Pondicherry"
+        },
+        {
+          "code": "CH",
+          "name": "Chandigarh"
+        },
+        {
+          "code": "DH",
+          "name": "Dadra and Nagar Haveli"
+        },
+        {
+          "code": "LD",
+          "name": "Lakshadweep"
+        },
+        {
+          "code": "DD",
+          "name": "Daman and Diu"
+        },
+        {
+          "code": "CG",
+          "name": "Chhattisgarh"
+        },
+        {
+          "code": "IN-AN",
+          "name": "Andaman and Nicobar Islands"
+        }
+      ],
+      "default_currency": "INR"
+    },
+    {
+      "code": "IS",
+      "name": "Iceland",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ISK"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "JMD"
+    },
+    {
+      "code": "JO",
+      "name": "Jordan",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "JOD"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "prefecture",
+      "states": [
+        {
+          "code": "JP-23",
+          "name": "Aichi"
+        },
+        {
+          "code": "JP-05",
+          "name": "Akita"
+        },
+        {
+          "code": "JP-02",
+          "name": "Aomori"
+        },
+        {
+          "code": "JP-38",
+          "name": "Ehime"
+        },
+        {
+          "code": "JP-21",
+          "name": "Gifu"
+        },
+        {
+          "code": "JP-10",
+          "name": "Gunma"
+        },
+        {
+          "code": "JP-34",
+          "name": "Hiroshima"
+        },
+        {
+          "code": "JP-01",
+          "name": "Hokkaidô"
+        },
+        {
+          "code": "JP-18",
+          "name": "Fukui"
+        },
+        {
+          "code": "JP-40",
+          "name": "Fukuoka"
+        },
+        {
+          "code": "JP-07",
+          "name": "Fukushima"
+        },
+        {
+          "code": "JP-28",
+          "name": "Hyôgo"
+        },
+        {
+          "code": "JP-08",
+          "name": "Ibaraki"
+        },
+        {
+          "code": "JP-17",
+          "name": "Ishikawa"
+        },
+        {
+          "code": "JP-03",
+          "name": "Iwate"
+        },
+        {
+          "code": "JP-37",
+          "name": "Kagawa"
+        },
+        {
+          "code": "JP-46",
+          "name": "Kagoshima"
+        },
+        {
+          "code": "JP-14",
+          "name": "Kanagawa"
+        },
+        {
+          "code": "JP-43",
+          "name": "Kumamoto"
+        },
+        {
+          "code": "JP-26",
+          "name": "Kyôto"
+        },
+        {
+          "code": "JP-39",
+          "name": "Kôchi"
+        },
+        {
+          "code": "JP-24",
+          "name": "Mie"
+        },
+        {
+          "code": "JP-04",
+          "name": "Miyagi"
+        },
+        {
+          "code": "JP-45",
+          "name": "Miyazaki"
+        },
+        {
+          "code": "JP-20",
+          "name": "Nagano"
+        },
+        {
+          "code": "JP-42",
+          "name": "Nagasaki"
+        },
+        {
+          "code": "JP-29",
+          "name": "Nara"
+        },
+        {
+          "code": "JP-15",
+          "name": "Niigata"
+        },
+        {
+          "code": "JP-33",
+          "name": "Okayama"
+        },
+        {
+          "code": "JP-47",
+          "name": "Okinawa"
+        },
+        {
+          "code": "JP-41",
+          "name": "Saga"
+        },
+        {
+          "code": "JP-11",
+          "name": "Saitama"
+        },
+        {
+          "code": "JP-25",
+          "name": "Shiga"
+        },
+        {
+          "code": "JP-32",
+          "name": "Shimane"
+        },
+        {
+          "code": "JP-22",
+          "name": "Shizuoka"
+        },
+        {
+          "code": "JP-12",
+          "name": "Chiba"
+        },
+        {
+          "code": "JP-36",
+          "name": "Tokushima"
+        },
+        {
+          "code": "JP-09",
+          "name": "Tochigi"
+        },
+        {
+          "code": "JP-31",
+          "name": "Tottori"
+        },
+        {
+          "code": "JP-16",
+          "name": "Toyama"
+        },
+        {
+          "code": "JP-13",
+          "name": "Tôkyô"
+        },
+        {
+          "code": "JP-30",
+          "name": "Wakayama"
+        },
+        {
+          "code": "JP-06",
+          "name": "Yamagata"
+        },
+        {
+          "code": "JP-35",
+          "name": "Yamaguchi"
+        },
+        {
+          "code": "JP-19",
+          "name": "Yamanashi"
+        },
+        {
+          "code": "JP-44",
+          "name": "Ôita"
+        },
+        {
+          "code": "JP-27",
+          "name": "Ôsaka"
+        }
+      ],
+      "default_currency": "JPY"
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "KES"
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "KHR"
+    },
+    {
+      "code": "KR",
+      "name": "South Korea",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "KRW"
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "KZT"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "LKR"
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MAD"
+    },
+    {
+      "code": "MD",
+      "name": "Moldova, Republic of",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MDL"
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MGA"
+    },
+    {
+      "code": "MK",
+      "name": "North Macedonia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MKD"
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MNT"
+    },
+    {
+      "code": "MO",
+      "name": "Macao",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MOP"
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MUR"
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MXN"
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "JHR",
+          "name": "Johor"
+        },
+        {
+          "code": "KDH",
+          "name": "Kedah"
+        },
+        {
+          "code": "KTN",
+          "name": "Kelantan"
+        },
+        {
+          "code": "MLK",
+          "name": "Malacca"
+        },
+        {
+          "code": "NSN",
+          "name": "Negeri Sembilan"
+        },
+        {
+          "code": "PHG",
+          "name": "Pahang"
+        },
+        {
+          "code": "PNG",
+          "name": "Penang"
+        },
+        {
+          "code": "PRK",
+          "name": "Perak"
+        },
+        {
+          "code": "PLS",
+          "name": "Perlis"
+        },
+        {
+          "code": "SBH",
+          "name": "Sabah"
+        },
+        {
+          "code": "SWK",
+          "name": "Sarawak"
+        },
+        {
+          "code": "TRG",
+          "name": "Terengganu"
+        },
+        {
+          "code": "KUL",
+          "name": "Kuala Lumpur"
+        },
+        {
+          "code": "SGR",
+          "name": "Selangor"
+        },
+        {
+          "code": "LBN",
+          "name": "Labuan"
+        },
+        {
+          "code": "PJY",
+          "name": "Putrajaya"
+        }
+      ],
+      "default_currency": "MYR"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "MZN"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "NAD"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "NGN"
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "NIO"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "NOK"
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "NPR"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "region",
+      "states": [
+        {
+          "code": "NZ-NTL",
+          "name": "Northland"
+        },
+        {
+          "code": "NZ-AUK",
+          "name": "Auckland"
+        },
+        {
+          "code": "NZ-WKO",
+          "name": "Waikato"
+        },
+        {
+          "code": "NZ-BOP",
+          "name": "Bay of Plenty"
+        },
+        {
+          "code": "NZ-GIS",
+          "name": "Gisborne"
+        },
+        {
+          "code": "NZ-HKB",
+          "name": "Hawke's Bay"
+        },
+        {
+          "code": "NZ-TKI",
+          "name": "Taranaki"
+        },
+        {
+          "code": "NZ-MWT",
+          "name": "Manawatu-Wanganui"
+        },
+        {
+          "code": "NZ-WGN",
+          "name": "Wellington"
+        },
+        {
+          "code": "NZ-TAS",
+          "name": "Tasman"
+        },
+        {
+          "code": "NZ-NSN",
+          "name": "Nelson"
+        },
+        {
+          "code": "NZ-MBH",
+          "name": "Marlborough"
+        },
+        {
+          "code": "NZ-WTC",
+          "name": "West Coast"
+        },
+        {
+          "code": "NZ-CAN",
+          "name": "Canterbury"
+        },
+        {
+          "code": "NZ-OTA",
+          "name": "Otago"
+        },
+        {
+          "code": "NZ-STL",
+          "name": "Southland"
+        }
+      ],
+      "default_currency": "NZD"
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "OMR"
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "USD"
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "PEN"
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "PHP"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "PK-GB",
+          "name": "Gilgit-Baltistan"
+        },
+        {
+          "code": "PK-KP",
+          "name": "Khyber Pakhtunkhwa"
+        },
+        {
+          "code": "PK-PB",
+          "name": "Punjab"
+        },
+        {
+          "code": "PK-BA",
+          "name": "Balochistan"
+        },
+        {
+          "code": "PK-SD",
+          "name": "Sindh"
+        },
+        {
+          "code": "PK-IS",
+          "name": "Islamabad Capital Territory"
+        },
+        {
+          "code": "PK-JK",
+          "name": "Azad Jammu and Kashmir"
+        }
+      ],
+      "default_currency": "PKR"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "PLN"
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "USD"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "PYG"
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "QAR"
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "RON"
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "RSD"
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "RWF"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "SAR"
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "SEK"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "SGD"
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "XOF"
+    },
+    {
+      "code": "SR",
+      "name": "Suriname",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "SRD"
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "USD"
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "THB"
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "TND"
+    },
+    {
+      "code": "TR",
+      "name": "Turkey",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "TRY"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "TWD"
+    },
+    {
+      "code": "UA",
+      "name": "Ukraine",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "UAH"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "UGX"
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "state",
+      "states": [
+        {
+          "code": "AL",
+          "name": "Alabama"
+        },
+        {
+          "code": "AK",
+          "name": "Alaska"
+        },
+        {
+          "code": "AZ",
+          "name": "Arizona"
+        },
+        {
+          "code": "AR",
+          "name": "Arkansas"
+        },
+        {
+          "code": "CA",
+          "name": "California"
+        },
+        {
+          "code": "CO",
+          "name": "Colorado"
+        },
+        {
+          "code": "CT",
+          "name": "Connecticut"
+        },
+        {
+          "code": "DE",
+          "name": "Delaware"
+        },
+        {
+          "code": "FL",
+          "name": "Florida"
+        },
+        {
+          "code": "GA",
+          "name": "Georgia"
+        },
+        {
+          "code": "HI",
+          "name": "Hawaii"
+        },
+        {
+          "code": "ID",
+          "name": "Idaho"
+        },
+        {
+          "code": "IL",
+          "name": "Illinois"
+        },
+        {
+          "code": "IN",
+          "name": "Indiana"
+        },
+        {
+          "code": "IA",
+          "name": "Iowa"
+        },
+        {
+          "code": "KS",
+          "name": "Kansas"
+        },
+        {
+          "code": "KY",
+          "name": "Kentucky"
+        },
+        {
+          "code": "LA",
+          "name": "Louisiana"
+        },
+        {
+          "code": "ME",
+          "name": "Maine"
+        },
+        {
+          "code": "MD",
+          "name": "Maryland"
+        },
+        {
+          "code": "MA",
+          "name": "Massachusetts"
+        },
+        {
+          "code": "MI",
+          "name": "Michigan"
+        },
+        {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        {
+          "code": "MS",
+          "name": "Mississippi"
+        },
+        {
+          "code": "MO",
+          "name": "Missouri"
+        },
+        {
+          "code": "MT",
+          "name": "Montana"
+        },
+        {
+          "code": "NE",
+          "name": "Nebraska"
+        },
+        {
+          "code": "NV",
+          "name": "Nevada"
+        },
+        {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        {
+          "code": "NJ",
+          "name": "New Jersey"
+        },
+        {
+          "code": "NM",
+          "name": "New Mexico"
+        },
+        {
+          "code": "NY",
+          "name": "New York"
+        },
+        {
+          "code": "NC",
+          "name": "North Carolina"
+        },
+        {
+          "code": "ND",
+          "name": "North Dakota"
+        },
+        {
+          "code": "OH",
+          "name": "Ohio"
+        },
+        {
+          "code": "OK",
+          "name": "Oklahoma"
+        },
+        {
+          "code": "OR",
+          "name": "Oregon"
+        },
+        {
+          "code": "PA",
+          "name": "Pennsylvania"
+        },
+        {
+          "code": "RI",
+          "name": "Rhode Island"
+        },
+        {
+          "code": "SC",
+          "name": "South Carolina"
+        },
+        {
+          "code": "SD",
+          "name": "South Dakota"
+        },
+        {
+          "code": "TN",
+          "name": "Tennessee"
+        },
+        {
+          "code": "TX",
+          "name": "Texas"
+        },
+        {
+          "code": "UT",
+          "name": "Utah"
+        },
+        {
+          "code": "VT",
+          "name": "Vermont"
+        },
+        {
+          "code": "VA",
+          "name": "Virginia"
+        },
+        {
+          "code": "WA",
+          "name": "Washington"
+        },
+        {
+          "code": "WV",
+          "name": "West Virginia"
+        },
+        {
+          "code": "WI",
+          "name": "Wisconsin"
+        },
+        {
+          "code": "WY",
+          "name": "Wyoming"
+        },
+        {
+          "code": "DC",
+          "name": "District of Columbia"
+        },
+        {
+          "code": "GU",
+          "name": "Guam"
+        },
+        {
+          "code": "MP",
+          "name": "Northern Mariana Islands"
+        },
+        {
+          "code": "PR",
+          "name": "Puerto Rico"
+        },
+        {
+          "code": "VI",
+          "name": "Virgin Islands"
+        }
+      ],
+      "default_currency": "USD"
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "UYU"
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "UZS"
+    },
+    {
+      "code": "VN",
+      "name": "Vietnam",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "VND"
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "EUR"
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "visa_support": true,
+      "eor_support": true,
+      "state_type": "province",
+      "states": [
+        {
+          "code": "EC",
+          "name": "Eastern Cape"
+        },
+        {
+          "code": "FS",
+          "name": "Free State"
+        },
+        {
+          "code": "GP",
+          "name": "Gauteng"
+        },
+        {
+          "code": "KZN",
+          "name": "KwaZulu-Natal"
+        },
+        {
+          "code": "LP",
+          "name": "Limpopo"
+        },
+        {
+          "code": "MP",
+          "name": "Mpumalanga"
+        },
+        {
+          "code": "NC",
+          "name": "Northern Cape"
+        },
+        {
+          "code": "NW",
+          "name": "North West"
+        },
+        {
+          "code": "WC",
+          "name": "Western Cape"
+        }
+      ],
+      "default_currency": "ZAR"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "visa_support": false,
+      "eor_support": true,
+      "state_type": null,
+      "states": [],
+      "default_currency": "ZMW"
+    }
+  ]
+}
