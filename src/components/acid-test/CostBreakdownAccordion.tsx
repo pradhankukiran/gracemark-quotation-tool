@@ -67,10 +67,8 @@ function formatUsd(amount: number): string {
  * table of items with Monthly, Annual, and USD columns (USD column hidden
  * when `fxRate === undefined`).
  *
- * The GraceMark Overhead panel is display-only — those lines are
- * intentionally excluded from the Acid Test kernel's `recurringMonthly`
- * (they're GraceMark's markup, not provider cost). The panel exists so the
- * operator can still see local-office overhead + VAT amounts.
+ * The GraceMark Costs panel contains local-office overhead, VAT, and the
+ * provider fee. These are included in the Acid Test's complete-cost logic.
  *
  * Caller is responsible for grouping merged cost lines into these panels —
  * see the Acid Test page for the grouping logic.

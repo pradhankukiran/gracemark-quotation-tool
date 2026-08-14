@@ -30,11 +30,13 @@ import {
   isQuoteId,
   readAcidTest,
   setAcidTest,
+  DEFAULT_GRACEMARK_MARKUP,
   type AcidTestState,
 } from "@/lib/quote-state";
 import { useQuoteQuery } from "@/lib/use-quote-query";
 import { usePapayaCosts } from "@/lib/use-papaya-costs";
 import { mergeQuoteCostLines } from "@/lib/cost-merge";
+import { calculateGraceMarkMarkup } from "@/lib/gracemark-markup";
 import {
   composeAcidTest,
   GRACEMARK_FEE_PERCENTAGE,
@@ -146,7 +148,7 @@ function AcidTestInner({ id }: { id: string }) {
   }, [needsFx, fxQuery?.data]);
   const fxError = !!fxQuery?.isError;
   const fxLoading =
-    needsFx && !fxError && fxSnapshot == null && !!fxQuery?.isLoading;
+    needsFx && !fxError && fxSnapshot == null;
 
   // USD column visibility: hidden entirely when FX permanently unavailable
   // OR when the quote is already in USD. We expose it as `undefined` in the
@@ -204,6 +206,37 @@ function AcidTestInner({ id }: { id: string }) {
     [mergedLines],
   );
 
+  // Match the main quote's complete employer-cost basis. Local-office
+  // overhead and VAT are real costs. Termination is included only for the
+  // All-Inclusive view. One-time onboarding remains outside this monthly base.
+  const employerCostMonthly =
+    bucketTotals.base_salary +
+    bucketTotals.statutory_mandatory +
+    bucketTotals.allowances_benefits +
+    bucketTotals.gracemark_overhead +
+    (view === "all_inclusive" ? bucketTotals.termination_costs : 0);
+
+  const markupConfig =
+    primaryLocalOffice?.markup ?? DEFAULT_GRACEMARK_MARKUP;
+  const quoteToUsdRate =
+    upperQuoteCurrency === "USD" ? 1 : fxSnapshot?.rate ?? null;
+  const configuredMarkup = useMemo(
+    () =>
+      calculateGraceMarkMarkup({
+        employerCostMonthly,
+        config: markupConfig,
+        quoteCurrency: upperQuoteCurrency ?? "USD",
+        quoteToUsdRate,
+      }),
+    [employerCostMonthly, markupConfig, quoteToUsdRate, upperQuoteCurrency],
+  );
+  const configuredFeePct =
+    employerCostMonthly > 0
+      ? configuredMarkup.monthlyAmount / employerCostMonthly
+      : 0;
+  const configuredBillRate =
+    employerCostMonthly + configuredMarkup.monthlyAmount;
+
   // ----- Onboarding total (from the saved local-office form values) -----
   //
   // Must come from the SAME source `cost-merge.ts` uses to emit the three
@@ -233,43 +266,49 @@ function AcidTestInner({ id }: { id: string }) {
   const [feePct, setFeePct] = useState<number>(GRACEMARK_FEE_PERCENTAGE);
   const [hydratedInputs, setHydratedInputs] = useState(false);
 
-  // Seed inputs from persisted Acid Test state on mount; on the first render
-  // where we have the merged data we also derive a sensible default bill rate
-  // (recurringMonthly × (1 + targetFee)) so the page lands on a real number.
-  // We only seed ONCE — after that the user owns the inputs.
-  //
-  // The seed ALWAYS includes termination (all-inclusive case) regardless of
-  // the URL `view`. If the operator started on `recurring_only` we'd seed a
-  // value that under-covers termination, and then flipping to `all_inclusive`
-  // later would silently lock in the under-seeded bill rate (because the
-  // persisted state freezes whatever was first stored). The kernel still
-  // respects `view` via `isAllInclusive` — only the initial seed changes.
-  const recurringMonthlyForSeed =
-    bucketTotals.base_salary +
-    bucketTotals.statutory_mandatory +
-    bucketTotals.allowances_benefits +
-    bucketTotals.termination_costs;
-
   useEffect(() => {
     if (!mounted) return;
     if (hydratedInputs) return;
+    if (papayaResult.isLoading) return;
     const persisted = readAcidTest(id);
-    if (persisted) {
+    if (persisted?.pricingVersion === 2 && persisted.costBasis === view) {
       setBillRate(persisted.billRate);
       setDuration(persisted.duration);
       setFeePct(persisted.gracemarkFeePct);
       setHydratedInputs(true);
       return;
     }
-    // No persisted state — wait until the merged data lands so we can pick
-    // a non-zero default bill rate from `recurringMonthly`.
-    if (recurringMonthlyForSeed > 0) {
-      setBillRate(
-        recurringMonthlyForSeed * (1 + GRACEMARK_FEE_PERCENTAGE),
-      );
+    // Legacy Acid Test inputs used an incomplete employer-cost basis. Keep
+    // only their duration and reseed pricing from the current quote markup.
+    if (persisted) {
+      setDuration(persisted.duration);
+    }
+    if (employerCostMonthly > 0 && !configuredMarkup.fxUnavailable) {
+      setBillRate(configuredBillRate);
+      setFeePct(configuredFeePct);
+      setHydratedInputs(true);
+      return;
+    }
+    // A fixed USD markup cannot be converted after an FX failure. Keep the
+    // complete employer cost visible and let the warning explain the missing
+    // markup instead of silently applying an invented rate.
+    if (employerCostMonthly > 0 && configuredMarkup.fxUnavailable && fxError) {
+      setBillRate(employerCostMonthly);
+      setFeePct(0);
       setHydratedInputs(true);
     }
-  }, [mounted, hydratedInputs, id, recurringMonthlyForSeed]);
+  }, [
+    mounted,
+    hydratedInputs,
+    papayaResult.isLoading,
+    id,
+    view,
+    employerCostMonthly,
+    configuredMarkup.fxUnavailable,
+    configuredBillRate,
+    configuredFeePct,
+    fxError,
+  ]);
 
   // ----- Debounced persistence -----
 
@@ -284,6 +323,8 @@ function AcidTestInner({ id }: { id: string }) {
         billRate,
         duration,
         gracemarkFeePct: feePct,
+        pricingVersion: 2,
+        costBasis: view,
         computedAt: new Date().toISOString(),
       };
       setAcidTest(id, state);
@@ -291,7 +332,7 @@ function AcidTestInner({ id }: { id: string }) {
     return () => {
       if (persistTimer.current) clearTimeout(persistTimer.current);
     };
-  }, [mounted, hydratedInputs, id, billRate, duration, feePct]);
+  }, [mounted, hydratedInputs, id, billRate, duration, feePct, view]);
 
   // ----- Run the kernel -----
 
@@ -302,6 +343,7 @@ function AcidTestInner({ id }: { id: string }) {
         statutoryMonthly: bucketTotals.statutory_mandatory,
         allowancesMonthly: bucketTotals.allowances_benefits,
         terminationMonthly: bucketTotals.termination_costs,
+        overheadMonthly: bucketTotals.gracemark_overhead,
         onboardingTotal,
         oneTimeTotal,
         billRate,
@@ -320,12 +362,52 @@ function AcidTestInner({ id }: { id: string }) {
     ],
   );
 
+  const panelsWithProviderFee = useMemo(() => {
+    const panels = breakdownPanels(primaryLocalOffice);
+    const providerFee = result.billRateComposition.providerFeeMonthly;
+    return panels.map((panel) => {
+      if (panel.bucket !== "gracemark_overhead") return panel;
+      return {
+        ...panel,
+        label: "GraceMark Costs",
+        rows:
+          providerFee > 0
+            ? [
+                ...panel.rows,
+                {
+                  key: "provider-fee",
+                  name: "Provider fee",
+                  monthly: providerFee,
+                  annual: providerFee * 12,
+                },
+              ]
+            : panel.rows,
+        monthlyTotal: panel.monthlyTotal + providerFee,
+      };
+    });
+  }, [
+    breakdownPanels,
+    primaryLocalOffice,
+    result.billRateComposition.providerFeeMonthly,
+  ]);
+
+  const handleFeePctChange = (nextFeePct: number) => {
+    setFeePct(nextFeePct);
+    setBillRate(employerCostMonthly * (1 + nextFeePct));
+  };
+
+  const markupDescription =
+    markupConfig.mode === "fixed_usd"
+      ? `Quote markup starts from the fixed ${markupConfig.fixed_usd} USD monthly amount. The equivalent percentage is shown above.`
+      : `Quote markup starts from ${markupConfig.percentage}%. Changing this value updates the bill rate.`;
+
   // ----- USD-side derivations -----
 
   const fxRateForCompute = fxSnapshot?.rate ?? null;
+  const effectiveUsdRate = needsFx ? fxRateForCompute : 1;
   const profitUsd =
-    fxRateForCompute != null
-      ? result.summary.profitLocal * fxRateForCompute
+    effectiveUsdRate != null
+      ? result.summary.profitLocal * effectiveUsdRate
       : null;
   const meetsMinimum = profitUsd != null && profitUsd >= MIN_PROFIT_THRESHOLD_USD;
   const minimumShortfallUsd =
@@ -336,7 +418,7 @@ function AcidTestInner({ id }: { id: string }) {
   // ----- Hero verdict tier + copy -----
 
   const heroTier: AcidTestTier = (() => {
-    if (fxRateForChildren === undefined) {
+    if (needsFx && effectiveUsdRate == null) {
       // FX permanently unavailable — fall back to local-only positivity check.
       return result.summary.meetsPositive ? "warning" : "fail";
     }
@@ -346,7 +428,7 @@ function AcidTestInner({ id }: { id: string }) {
   })();
 
   const heroHeadline = (() => {
-    if (fxRateForChildren === undefined) {
+    if (needsFx && effectiveUsdRate == null) {
       return result.summary.meetsPositive
         ? "USD threshold check skipped (FX unavailable)"
         : "Fail — Project is not profitable";
@@ -361,7 +443,7 @@ function AcidTestInner({ id }: { id: string }) {
   })();
 
   const heroSubline = (() => {
-    if (fxRateForChildren === undefined) {
+    if (needsFx && effectiveUsdRate == null) {
       return "USD threshold check skipped — showing local-currency profitability only.";
     }
     if (heroTier === "warning" && minimumShortfallUsd > 0) {
@@ -437,7 +519,15 @@ function AcidTestInner({ id }: { id: string }) {
   // Loading state — providers are still fanning out (or FX is still in
   // flight). We render the context strip from the saved form (which is
   // already available) plus skeletons so the layout doesn't jump.
-  const isPageLoading = query.isLoading || providerResult == null;
+  const hasUsableProviderQuote =
+    providerResult?.outcome === "ok" && providerResult.quote != null;
+  const isPageLoading =
+    query.isLoading ||
+    providerResult == null ||
+    (hasUsableProviderQuote &&
+      (!hydratedInputs ||
+        papayaResult.isLoading ||
+        (markupConfig.mode === "fixed_usd" && needsFx && fxLoading)));
 
   const countryName =
     getCountryByCode(saved.form.primary.country_code ?? "")?.name ??
@@ -498,18 +588,15 @@ function AcidTestInner({ id }: { id: string }) {
   const currency = saved.form.primary.currency ?? "USD";
 
   // Tile inputs derived from the kernel result.
-  const totalAssignmentCosts =
-    result.breakdown.recurringTotal + result.breakdown.oneTimeTotal;
-  const billRateAllIn =
-    result.summary.billRateMonthly * result.summary.durationMonths
-    + result.breakdown.onboardingTotal;
+  const totalAssignmentCosts = result.summary.totalCost;
+  const billRateAllIn = result.summary.revenueTotal;
 
   // PDF export — only wired on the happy path, where the kernel has produced
   // a usable `result` and we have a `currency`. The categories array mirrors
   // the on-screen accordion (Base Salary, Statutory & Mandatory, Allowances &
   // Benefits, Onboarding Fees, Termination Costs) so the PDF and the page
   // stay in lock-step.
-  const panelsForPdf = breakdownPanels(primaryLocalOffice);
+  const panelsForPdf = panelsWithProviderFee;
   const showUsdForPdf = fxRateForChildren !== undefined && fxRateForCompute != null;
   const fxRateForPdf = fxRateForCompute;
 
@@ -557,6 +644,39 @@ function AcidTestInner({ id }: { id: string }) {
           duration: `${duration} months`,
           description: `${providerName} · ${countryName}`,
         },
+        summaryItems: [
+          {
+            label: "Complete employer cost (monthly)",
+            amount: result.breakdown.recurringMonthly,
+          },
+          {
+            label: "Provider fee (monthly)",
+            amount: result.billRateComposition.providerFeeMonthly,
+          },
+          {
+            label: "Total monthly cost",
+            amount: result.breakdown.totalMonthlyCost,
+          },
+          {
+            label: "GraceMark markup (monthly)",
+            amount: result.billRateComposition.gracemarkFeeMonthly,
+          },
+          {
+            label: "Total assignment cost",
+            amount: result.summary.totalCost,
+          },
+          {
+            label: "Total profit",
+            amount: result.summary.profitLocal,
+          },
+        ].map(({ label, amount }) => ({
+          label,
+          local: fmtLocal(amount),
+          usd:
+            showUsdForPdf && fxRateForPdf != null
+              ? fmtUsd(amount * fxRateForPdf)
+              : undefined,
+        })),
       };
 
       const pdfProps: AcidTestPdfProps = {
@@ -622,6 +742,13 @@ function AcidTestInner({ id }: { id: string }) {
             message="USD conversion unavailable — showing local currency only"
           />
         ) : null}
+        {configuredMarkup.fxUnavailable && fxError ? (
+          <Alert
+            type="warning"
+            showIcon
+            message="Fixed USD markup could not be applied because FX is unavailable"
+          />
+        ) : null}
         {exportError ? (
           <Alert
             type="error"
@@ -637,7 +764,7 @@ function AcidTestInner({ id }: { id: string }) {
           fxRate={fxRateForChildren}
           fxLoading={fxLoading}
           totalAssignmentCosts={totalAssignmentCosts}
-          totalMonthlyCost={result.breakdown.recurringMonthly}
+          totalMonthlyCost={result.breakdown.totalMonthlyCost}
           billRateAllIn={billRateAllIn}
           monthlyBillRate={result.summary.billRateMonthly}
           totalProfit={result.summary.profitLocal}
@@ -651,6 +778,7 @@ function AcidTestInner({ id }: { id: string }) {
           }
           expectedBillRate={result.billRateComposition.expectedBillRate}
           actualGracemarkFee={result.billRateComposition.gracemarkFeeMonthly}
+          providerFee={result.billRateComposition.providerFeeMonthly}
           currency={currency}
           fxRate={fxRateForChildren}
           fxLoading={fxLoading}
@@ -662,11 +790,12 @@ function AcidTestInner({ id }: { id: string }) {
           duration={duration}
           onDurationChange={setDuration}
           feePct={feePct}
-          onFeePctChange={setFeePct}
+          onFeePctChange={handleFeePctChange}
           currency={currency}
+          markupDescription={markupDescription}
         />
         <CostBreakdownAccordion
-          panels={breakdownPanels(primaryLocalOffice)}
+          panels={panelsWithProviderFee}
           currency={currency}
           fxRate={fxRateForChildren}
           fxLoading={fxLoading}
@@ -840,16 +969,15 @@ function deriveBuckets(mergedLines: CostLine[]): BucketDerivation {
         rows: toRows(monthlyByBucket.termination_costs),
         monthlyTotal: totals.termination_costs,
       },
-      // 6th panel — display-only. `gracemark_overhead` lines (Local office
-      // overhead + VAT) are intentionally NOT included in the kernel's
-      // `recurringMonthly` math (they're our markup, not provider cost), so
-      // they must be surfaced here for operator visibility.
+      // Local-office overhead and VAT are recurring employer costs. The
+      // provider-fee row is appended from the kernel result before display so
+      // the page and PDF show the complete Acid Test cost basis.
       {
         bucket: "gracemark_overhead" as const,
-        label: "GraceMark Overhead",
+        label: "GraceMark Costs",
         rows: toRows(monthlyByBucket.gracemark_overhead),
         monthlyTotal: totals.gracemark_overhead,
-        emptyMessage: "No GraceMark overhead",
+        emptyMessage: "No GraceMark costs",
       },
     ];
   };

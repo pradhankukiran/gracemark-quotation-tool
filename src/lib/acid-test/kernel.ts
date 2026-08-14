@@ -24,6 +24,7 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
     statutoryMonthly,
     allowancesMonthly,
     terminationMonthly,
+    overheadMonthly,
     onboardingTotal,
     oneTimeTotal,
     billRate,
@@ -36,6 +37,7 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
   const salaryTotal = baseSalaryMonthly * duration
   const statutoryTotal = statutoryMonthly * duration
   const allowancesTotal = allowancesMonthly * duration
+  const overheadTotal = overheadMonthly * duration
   // Only include termination cost when the quote is all-inclusive.
   const terminationTotal = isAllInclusive ? terminationMonthly * duration : 0
   const nonPassThroughOneTimeLocal = Math.max(0, oneTimeTotal - onboardingTotal)
@@ -46,6 +48,7 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
     statutoryMonthly,
     allowancesMonthly,
     terminationMonthly,
+    overheadMonthly,
     isAllInclusive,
   })
 
@@ -63,15 +66,16 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
 
   // Provider fee share — never negative.
   const providerFeeMonthly = computeProviderFeeMonthly(actualGracemarkFeeMonthly)
+  const providerFeeTotal = providerFeeMonthly * duration
 
   // Cash-flow totals.
   const recurringTotal = recurringMonthly * duration
-  const totalCostsGracemark = recurringTotal + oneTimeTotal
+  const totalCostsGracemark = recurringTotal + providerFeeTotal + oneTimeTotal
   const actualRevenueTotal = billRate * duration + onboardingTotal
   const rateDiscrepancy = billRate - expectedBillRateMonthly
   const profitLocal = actualRevenueTotal - totalCostsGracemark
 
-  const marginMonthly = actualGracemarkFeeMonthly
+  const marginMonthly = actualGracemarkFeeMonthly - providerFeeMonthly
   const marginTotal = marginMonthly * duration - nonPassThroughOneTimeLocal
 
   const meetsPositive = profitLocal > 0
@@ -82,16 +86,20 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
       statutoryTotal,
       allowancesTotal,
       terminationTotal,
+      overheadTotal,
       oneTimeTotal,
       onboardingTotal,
       recurringMonthly,
       recurringTotal,
+      providerFeeTotal,
+      totalMonthlyCost: recurringMonthly + providerFeeMonthly,
     }),
     billRateComposition: Object.freeze({
       salaryMonthly: baseSalaryMonthly,
       statutoryMonthly,
       terminationMonthly: isAllInclusive ? terminationMonthly : 0,
       allowancesMonthly,
+      overheadMonthly,
       gracemarkFeeMonthly: actualGracemarkFeeMonthly,
       providerFeeMonthly,
       expectedBillRate: expectedBillRateMonthly,
@@ -117,14 +125,15 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
 }
 
 /**
- * Recurring monthly cost = base salary + statutory + allowances, plus
- * termination accrual when the quote is all-inclusive.
+ * Complete recurring employer cost = base salary + statutory + allowances +
+ * local-office overhead/VAT, plus termination when all-inclusive.
  */
 export function computeRecurringMonthly(input: RecurringMonthlyInput): number {
   return (
     input.baseSalaryMonthly +
     input.statutoryMonthly +
     input.allowancesMonthly +
+    input.overheadMonthly +
     (input.isAllInclusive ? input.terminationMonthly : 0)
   )
 }

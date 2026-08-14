@@ -12,17 +12,19 @@ export interface AcidTestInputsProps {
   /** Duration in months. */
   duration: number;
   onDurationChange: (next: number) => void;
-  /** Gracemark fee stored as a fraction 0..1; displayed as 0..100. */
+  /** Gracemark fee stored as a fraction; displayed as a percentage. */
   feePct: number;
   onFeePctChange: (next: number) => void;
+  /** Explains which main-quote markup seeded this Acid Test override. */
+  markupDescription: string;
   /** Currency code (e.g. "BRL") — rendered as the InputNumber prefix. */
   currency: string;
 }
 
 /**
  * Three-input form for Acid Test inputs: Monthly Bill Rate, Duration, and
- * Gracemark Fee. Fee is stored as a fraction internally (0..1) and displayed
- * as a percentage (0..100) via the formatter/parser pair on the InputNumber.
+ * Gracemark Fee. Fee is stored as a fraction internally and displayed as a
+ * percentage via the formatter/parser pair on the InputNumber.
  *
  * Each input is "large" size to match the rest of the page chrome.
  */
@@ -33,6 +35,7 @@ export function AcidTestInputs({
   onDurationChange,
   feePct,
   onFeePctChange,
+  markupDescription,
   currency,
 }: AcidTestInputsProps) {
   return (
@@ -115,8 +118,8 @@ export function AcidTestInputs({
             size="large"
             style={{ width: "100%", ...TABULAR }}
             min={0}
-            max={100}
-            // The kernel uses a 0..1 fraction; the input shows 0..100.
+            max={1000}
+            // The kernel uses a fraction; the input displays percentage points.
             value={Number((feePct * 100).toFixed(4))}
             formatter={(value) => `${value ?? 0}`}
             parser={(value) => {
@@ -137,12 +140,18 @@ export function AcidTestInputs({
             }
             onChange={(value) => {
               if (typeof value === "number" && Number.isFinite(value)) {
-                const clamped = Math.max(0, Math.min(100, value));
+                const clamped = Math.max(0, Math.min(1000, value));
                 onFeePctChange(clamped / 100);
               }
             }}
             step={1}
           />
+          <Typography.Text
+            type="secondary"
+            style={{ display: "block", marginTop: 6, fontSize: 12 }}
+          >
+            {markupDescription}
+          </Typography.Text>
         </Col>
       </Row>
     </Card>

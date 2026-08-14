@@ -35,12 +35,19 @@ export interface AcidTestPdfMonthlyCard {
   description?: string;
 }
 
+export interface AcidTestPdfSummaryItem {
+  label: string;
+  local: string;
+  usd?: string;
+}
+
 export interface AcidTestPdfData {
   currency: string;
   showUSD: boolean;
   categories: AcidTestPdfCategory[];
   logoSrc: string;
   monthlyCard: AcidTestPdfMonthlyCard;
+  summaryItems: AcidTestPdfSummaryItem[];
 }
 
 // Caller may also pass the optional provider/country slug hints used by the
@@ -165,6 +172,26 @@ const styles = StyleSheet.create({
     color: BRAND.textSecondary,
     marginTop: 8,
   },
+  summaryList: {
+    width: "100%",
+    marginTop: 20,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: BRAND.border,
+  },
+  summaryRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 7,
+  },
+  summaryLabel: {
+    color: BRAND.textSecondary,
+  },
+  summaryValue: {
+    color: BRAND.text,
+    fontWeight: "bold",
+    textAlign: "right",
+  },
 });
 
 export function AcidTestCostBreakdownDocument(
@@ -256,6 +283,17 @@ export function AcidTestCostBreakdownDocument(
               {data.monthlyCard.description}
             </Text>
           ) : null}
+          <View style={styles.summaryList}>
+            {data.summaryItems.map((item) => (
+              <View style={styles.summaryRow} key={item.label}>
+                <Text style={styles.summaryLabel}>{item.label}</Text>
+                <Text style={styles.summaryValue}>
+                  {item.local}
+                  {item.usd ? ` · ${item.usd}` : ""}
+                </Text>
+              </View>
+            ))}
+          </View>
         </View>
       </Page>
     </Document>

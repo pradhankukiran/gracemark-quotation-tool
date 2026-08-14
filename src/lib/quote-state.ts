@@ -115,6 +115,10 @@ export interface AcidTestState {
   duration: number;
   /** Gracemark fee as a fraction (e.g. 0.45 for 45%). */
   gracemarkFeePct: number;
+  /** Pricing model version. Missing means the saved inputs predate complete-cost logic. */
+  pricingVersion?: 2;
+  /** Cost basis used when these inputs were last calculated. */
+  costBasis?: EorQuoteType;
   /** ISO timestamp of when this state was written. */
   computedAt: string;
 }

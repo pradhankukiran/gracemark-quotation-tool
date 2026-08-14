@@ -32,6 +32,8 @@ export interface BillRateCompositionCardProps {
   expectedBillRate: number;
   /** Actual Gracemark fee in local currency (kernel's `gracemarkFeeMonthly`). */
   actualGracemarkFee: number;
+  /** Provider fee deducted from the actual GraceMark fee for profit. */
+  providerFee: number;
   currency: string;
   /** FX rate; null when loading; undefined when permanently unavailable. */
   fxRate: number | null | undefined;
@@ -75,7 +77,7 @@ interface StatRowProps {
 function StatRow({ label, amount, currency, fxRate, fxLoading }: StatRowProps) {
   const showUsd = fxRate !== undefined;
   return (
-    <Col xs={24} sm={12} lg={6}>
+    <Col xs={24} sm={12} lg={8}>
       <div>
         <div
           style={{
@@ -134,6 +136,7 @@ export function BillRateCompositionCard({
   targetGracemarkFee,
   expectedBillRate,
   actualGracemarkFee,
+  providerFee,
   currency,
   fxRate,
   fxLoading,
@@ -143,7 +146,7 @@ export function BillRateCompositionCard({
     <Card title="Bill Rate Composition">
       <Row gutter={[24, 24]}>
         <StatRow
-          label="Recurring Monthly"
+          label="Employer Cost"
           amount={recurringMonthly}
           currency={currency}
           fxRate={fxRate}
@@ -152,6 +155,13 @@ export function BillRateCompositionCard({
         <StatRow
           label="Target Gracemark Fee"
           amount={targetGracemarkFee}
+          currency={currency}
+          fxRate={fxRate}
+          fxLoading={fxLoading}
+        />
+        <StatRow
+          label="Provider Fee"
+          amount={providerFee}
           currency={currency}
           fxRate={fxRate}
           fxLoading={fxLoading}

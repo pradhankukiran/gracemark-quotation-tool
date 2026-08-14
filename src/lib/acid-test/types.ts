@@ -11,6 +11,8 @@ export interface AcidTestComposeInput {
   allowancesMonthly: number
   /** Already-resolved monthly termination accrual in the local currency. */
   terminationMonthly: number
+  /** Monthly local-office overhead and VAT in the local currency. */
+  overheadMonthly: number
   /** Total onboarding cost in the local currency (one-time, pass-through). */
   onboardingTotal: number
   /** Total of all one-time costs in the local currency (includes onboarding). */
@@ -31,10 +33,15 @@ export interface AcidTestComposeBreakdown {
   allowancesTotal: number
   /** Zero when `isAllInclusive` is false. */
   terminationTotal: number
+  overheadTotal: number
   oneTimeTotal: number
   onboardingTotal: number
+  /** Complete recurring employer cost before GraceMark markup and provider fee. */
   recurringMonthly: number
   recurringTotal: number
+  providerFeeTotal: number
+  /** Complete monthly cost including the provider fee. */
+  totalMonthlyCost: number
 }
 
 export interface AcidTestComposeBillRateComposition {
@@ -43,6 +50,7 @@ export interface AcidTestComposeBillRateComposition {
   /** Zero when `isAllInclusive` is false. */
   terminationMonthly: number
   allowancesMonthly: number
+  overheadMonthly: number
   /** Actual GraceMark fee derived from `billRate - recurringMonthly`. */
   gracemarkFeeMonthly: number
   providerFeeMonthly: number
@@ -64,11 +72,11 @@ export interface AcidTestComposeSummary {
   durationMonths: number
   /** `billRate * duration + onboardingTotal`. */
   revenueTotal: number
-  /** `recurringTotal + oneTimeTotal`. */
+  /** `recurringTotal + providerFeeTotal + oneTimeTotal`. */
   totalCost: number
   /** `revenueTotal - totalCost`, in local currency. */
   profitLocal: number
-  /** Monthly margin (== `gracemarkFeeMonthly`). */
+  /** Monthly net margin after the provider fee. */
   marginMonthly: number
   /** `marginMonthly * duration - nonPassThroughOneTimeLocal`. */
   marginTotal: number
@@ -92,6 +100,7 @@ export interface RecurringMonthlyInput {
   statutoryMonthly: number
   allowancesMonthly: number
   terminationMonthly: number
+  overheadMonthly: number
   isAllInclusive: boolean
 }
 

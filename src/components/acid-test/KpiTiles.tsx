@@ -39,9 +39,9 @@ export interface KpiTilesProps {
   fxRate: number | null | undefined;
   fxLoading: boolean;
 
-  /** Tile 1: Total Assignment Costs (recurringTotal + oneTimeTotal). */
+  /** Tile 1: Total Assignment Costs, including provider and one-time costs. */
   totalAssignmentCosts: number;
-  /** Tile 2: Total Monthly Cost (recurringMonthly). */
+  /** Tile 2: Complete monthly employer cost plus provider fee. */
   totalMonthlyCost: number;
   /** Tile 3: Bill Rate All-In (billRate × duration + onboardingTotal). */
   billRateAllIn: number;
