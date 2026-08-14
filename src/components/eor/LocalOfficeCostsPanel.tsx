@@ -17,7 +17,11 @@ import {
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { useEffect, useRef } from "react";
 import { blockNonNumericKeys } from "@/lib/form-utils";
-import type { LocalOfficeFormState } from "@/lib/quote-state";
+import {
+  DEFAULT_GRACEMARK_MARKUP,
+  type GraceMarkMarkupMode,
+  type LocalOfficeFormState,
+} from "@/lib/quote-state";
 import { useLocalOfficeDefaults } from "@/lib/use-local-office-defaults";
 
 interface LocalOfficeCostsPanelProps {
@@ -105,6 +109,11 @@ export function LocalOfficeCostsPanel({
     | string
     | undefined;
   const quoteCurrency = quoteCurrencyRaw?.toUpperCase();
+  const markupModeRaw = Form.useWatch(
+    [formPath, "local_office", "markup", "mode"],
+    form,
+  ) as GraceMarkMarkupMode | undefined;
+  const markupMode = markupModeRaw ?? DEFAULT_GRACEMARK_MARKUP.mode;
 
   const defaults = useLocalOfficeDefaults(countryCode, quoteCurrency);
 
@@ -123,6 +132,12 @@ export function LocalOfficeCostsPanel({
     // First mount with hydrated state: don't overwrite. Otherwise always seed
     // on a (country, currency) combo change.
     if (existing !== undefined && lastSeededKey.current === null) {
+      if (!existing.markup) {
+        form.setFieldValue(
+          [formPath, "local_office", "markup"],
+          { ...DEFAULT_GRACEMARK_MARKUP },
+        );
+      }
       lastSeededKey.current = combineKey;
       return;
     }
@@ -130,6 +145,7 @@ export function LocalOfficeCostsPanel({
       [formPath]: {
         local_office: {
           values: defaults.values,
+          markup: { ...DEFAULT_GRACEMARK_MARKUP },
           custom_lines: [],
         },
       },
@@ -250,6 +266,106 @@ export function LocalOfficeCostsPanel({
               />
             </Space.Compact>
           </Form.Item>
+        </Col>
+      </Row>
+
+      <Typography.Title level={5} style={SUB_HEADING_STYLE}>
+        GraceMark markup
+      </Typography.Title>
+      <Row gutter={[16, 0]}>
+        <Col xs={24} sm={12} md={8}>
+          <Form.Item
+            name={[formPath, "local_office", "markup", "mode"]}
+            label="Calculation"
+            rules={[{ required: true, message: "Select a markup type" }]}
+          >
+            <Segmented
+              block
+              options={[
+                { value: "percentage", label: "Percentage" },
+                { value: "fixed_usd", label: "Fixed USD" },
+              ]}
+            />
+          </Form.Item>
+        </Col>
+        <Col xs={24} sm={12} md={8}>
+          {markupMode === "fixed_usd" ? (
+            <Form.Item label="Monthly fixed markup" required>
+              <Space.Compact style={{ width: "100%", display: "flex" }}>
+                <Form.Item
+                  name={[formPath, "local_office", "markup", "fixed_usd"]}
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      type: "number",
+                      min: 0,
+                      message: "Enter a fixed USD markup",
+                    },
+                  ]}
+                >
+                  <InputNumber<number>
+                    style={{ width: "100%", flex: 1 }}
+                    controls={false}
+                    min={0}
+                    precision={2}
+                    onKeyDown={blockNonNumericKeys}
+                  />
+                </Form.Item>
+                <Input
+                  value="USD"
+                  disabled
+                  style={{
+                    width: 64,
+                    flex: "0 0 64px",
+                    textAlign: "center",
+                    color: "rgba(0,0,0,0.85)",
+                    backgroundColor: "#fafafa",
+                    cursor: "default",
+                  }}
+                />
+              </Space.Compact>
+            </Form.Item>
+          ) : (
+            <Form.Item label="Markup over total employer cost" required>
+              <Space.Compact style={{ width: "100%", display: "flex" }}>
+                <Form.Item
+                  name={[formPath, "local_office", "markup", "percentage"]}
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      type: "number",
+                      min: 0,
+                      max: 100,
+                      message: "Enter a percentage from 0 to 100",
+                    },
+                  ]}
+                >
+                  <InputNumber<number>
+                    style={{ width: "100%", flex: 1 }}
+                    controls={false}
+                    min={0}
+                    max={100}
+                    precision={2}
+                    onKeyDown={blockNonNumericKeys}
+                  />
+                </Form.Item>
+                <Input
+                  value="%"
+                  disabled
+                  style={{
+                    width: 64,
+                    flex: "0 0 64px",
+                    textAlign: "center",
+                    color: "rgba(0,0,0,0.85)",
+                    backgroundColor: "#fafafa",
+                    cursor: "default",
+                  }}
+                />
+              </Space.Compact>
+            </Form.Item>
+          )}
         </Col>
       </Row>
 

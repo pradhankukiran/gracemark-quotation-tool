@@ -21,14 +21,13 @@ import type {
   NormalizedQuote,
   ProviderQuoteResult,
 } from "@/providers/_core/types";
-import { inferBucket } from "@/providers/_core/buckets";
 import { getCountryByCode } from "@/data/deel/lookups";
 import { CountryFlag } from "@/lib/twemoji";
 import { BRAND, FLAG_SIZES } from "@/lib/theme";
 import { ProviderLogo } from "@/components/ProviderLogo";
 import { UsdSkeleton } from "@/components/UsdSkeleton";
 import type { EorQuoteType, LocalOfficeFormState } from "@/lib/quote-state";
-import { mergeQuoteCostLines } from "@/lib/cost-merge";
+import { computeMergedMonthlyTotal } from "@/lib/merged-total";
 import { usePapayaCosts } from "@/lib/use-papaya-costs";
 
 type CostView = "monthly" | "annual";
@@ -272,6 +271,7 @@ function CountrySuccess({
   fxSnapshot,
   fxLoading,
   fxError,
+  markupFxUnavailable,
 }: {
   quote: NormalizedQuote;
   mergedLines: CostLine[];
@@ -279,6 +279,7 @@ function CountrySuccess({
   fxSnapshot: FxSnapshot | null;
   fxLoading: boolean;
   fxError: boolean;
+  markupFxUnavailable: boolean;
 }) {
   const currency = quote.currency;
   const isNonUsd = currency !== "USD";
@@ -353,6 +354,17 @@ function CountrySuccess({
           type="warning"
           showIcon
           message="USD unavailable — showing local currency only"
+        />
+      ) : null}
+      {markupFxUnavailable ? (
+        <Alert
+          type="warning"
+          showIcon
+          message={
+            fxLoading
+              ? "Waiting for FX to apply the fixed USD markup"
+              : "Fixed USD markup unavailable because FX could not be loaded"
+          }
         />
       ) : null}
       <Table
@@ -456,42 +468,19 @@ function CountryColumnBody({
         </>
       );
     }
-    const mergedLines = mergeQuoteCostLines({
-      providerLines: quote.cost_lines,
-      localOffice: localOffice ?? undefined,
-      papayaCosts: papayaResult.lines,
-      providerMonthlySeveranceAccrual: quote.monthly.severance_accrual,
+    const merged = computeMergedMonthlyTotal({
+      quote,
+      localOffice,
+      papayaLines: papayaResult.lines,
+      quoteType,
+      quoteToUsdRate:
+        quote.currency === "USD" ? 1 : fxSnapshot?.rate ?? null,
     });
-    // Bucket-aware predicate: drop one-time always; drop termination costs
-    // unless we're in `all_inclusive` mode (Stage 6 of the bucket-model
-    // rollout). Falls back to `inferBucket(category)` for any line that
-    // doesn't yet carry an explicit `bucket` tag.
-    const isIncludedInTotal = (row: CostLine) => {
-      const bucket = row.bucket ?? inferBucket(row.category);
-      if (bucket === "one_time_costs") return false;
-      if (bucket === "termination_costs" && quoteType !== "all_inclusive") return false;
-      return true;
-    };
-    // Row-visibility predicate for the table. One-time rows STAY VISIBLE in
-    // both modes (informational at-hire costs; never in monthly total but
-    // always shown). Termination_costs rows are visible only in
-    // `all_inclusive` mode.
-    const visibleLines = mergedLines.filter((line) => {
-      const bucket = line.bucket ?? inferBucket(line.category);
-      if (bucket === "termination_costs" && quoteType !== "all_inclusive") return false;
-      return true;
-    });
-    // Per-view total in quote currency, excluding non-included buckets. Annual
-    // rows shown monthly are amortized via normalizeLine; monthly rows in
-    // annual view get x12 — same math the table uses for its amount column.
-    const total = mergedLines
-      .filter(isIncludedInTotal)
-      .reduce((sum, line) => sum + normalizeLine(line, view).amount, 0);
+    const total = view === "monthly" ? merged.monthlyTotal : merged.annualTotal;
     const isNonUsd = quote.currency !== "USD";
     const showUsd = isNonUsd && (fxSnapshot != null || fxLoading);
     const rate = fxSnapshot?.rate ?? null;
     const totalUsd = showUsd && rate != null ? total * rate : null;
-    const hasExcludedRows = mergedLines.some((l) => !isIncludedInTotal(l));
     return (
       <>
         <CountryColumnHeader
@@ -501,16 +490,17 @@ function CountryColumnBody({
           total={total}
           totalUsd={totalUsd}
           showUsd={showUsd}
-          hasExcludedRows={hasExcludedRows}
+          hasExcludedRows={merged.hasExcludedLines}
           quoteType={quoteType}
         />
         <CountrySuccess
           quote={quote}
-          mergedLines={visibleLines}
+          mergedLines={merged.visibleLines}
           view={view}
           fxSnapshot={fxSnapshot}
           fxLoading={fxLoading}
           fxError={fxError}
+          markupFxUnavailable={merged.markupFxUnavailable}
         />
       </>
     );

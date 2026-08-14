@@ -19,6 +19,22 @@ export interface LocalOfficeCustomLine {
   cadence: LocalOfficeCadence;
 }
 
+export type GraceMarkMarkupMode = "percentage" | "fixed_usd";
+
+export interface GraceMarkMarkupConfig {
+  mode: GraceMarkMarkupMode;
+  /** Percentage value as entered by the user (e.g. 45 means 45%). */
+  percentage: number;
+  /** Fixed monthly markup in USD. */
+  fixed_usd: number;
+}
+
+export const DEFAULT_GRACEMARK_MARKUP: GraceMarkMarkupConfig = {
+  mode: "percentage",
+  percentage: 45,
+  fixed_usd: 0,
+};
+
 export interface LocalOfficeFormState {
   values: {
     meal_voucher?: number;
@@ -32,6 +48,8 @@ export interface LocalOfficeFormState {
     drug_test?: number;
     background_check?: number;
   };
+  /** GraceMark fee applied after the complete recurring employer cost is known. */
+  markup?: GraceMarkMarkupConfig;
   custom_lines: LocalOfficeCustomLine[];
 }
 
@@ -318,10 +336,30 @@ export function isLocalOfficeFormStateShape(
   if (typeof value !== "object" || value === null) return false;
   const v = value as {
     values?: unknown;
+    markup?: unknown;
     custom_lines?: unknown;
   };
   if (typeof v.values !== "object" || v.values === null) return false;
   if (!Array.isArray(v.custom_lines)) return false;
+  if (v.markup !== undefined) {
+    if (typeof v.markup !== "object" || v.markup === null) return false;
+    const markup = v.markup as {
+      mode?: unknown;
+      percentage?: unknown;
+      fixed_usd?: unknown;
+    };
+    if (markup.mode !== "percentage" && markup.mode !== "fixed_usd") {
+      return false;
+    }
+    if (
+      typeof markup.percentage !== "number" ||
+      !Number.isFinite(markup.percentage) ||
+      typeof markup.fixed_usd !== "number" ||
+      !Number.isFinite(markup.fixed_usd)
+    ) {
+      return false;
+    }
+  }
   // Any extra fields on the loaded shape (e.g. legacy `dedup_overrides` from
   // earlier saved-quote versions) are accepted and ignored — we only validate
   // the fields we care about.

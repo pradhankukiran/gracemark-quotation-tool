@@ -25,6 +25,7 @@ import type { CostLine, NormalizedQuote } from "@/providers/_core/types";
 import { inferBucket } from "@/providers/_core/buckets";
 import type { LocalOfficeFormState } from "@/lib/quote-state";
 import { mergeQuoteCostLines } from "@/lib/cost-merge";
+import { calculateGraceMarkMarkup } from "@/lib/gracemark-markup";
 import type { CalculatedPapayaLine } from "@/lib/papaya-calc";
 
 /**
@@ -60,6 +61,8 @@ export interface ComputeMergedTotalArgs {
   papayaLines: CalculatedPapayaLine[];
   /** Bucket-model display mode (drives termination-cost inclusion). */
   quoteType: QuoteCostBasis;
+  /** FX rate where 1 unit of quote currency equals this many USD. */
+  quoteToUsdRate?: number | null;
 }
 
 export interface ComputeMergedTotalResult {
@@ -68,14 +71,22 @@ export interface ComputeMergedTotalResult {
    * number rendered by the card's `CountryColumnHeader` when `view="monthly"`.
    */
   monthlyTotal: number;
+  /** The same recurring total expressed for a 12-month annual view. */
+  annualTotal: number;
   /**
    * Lines visible in the table for this `quoteType`. Mirrors the card's
    * `visibleLines` filter: keeps one-time rows (informational at-hire costs);
    * drops `termination_costs` rows unless `quoteType === "all_inclusive"`.
    */
   visibleLines: CostLine[];
+  /** Lines which contribute to the recurring total. */
+  includedLines: CostLine[];
   /** All merged lines BEFORE the bucket filter (for debugging / drill-down). */
   allLines: CostLine[];
+  /** True when a positive fixed-USD markup is waiting on FX conversion. */
+  markupFxUnavailable: boolean;
+  /** True when at least one displayed line is excluded from the total. */
+  hasExcludedLines: boolean;
 }
 
 /**
@@ -119,20 +130,48 @@ function monthlyAmount(line: CostLine): number {
 export function computeMergedMonthlyTotal(
   args: ComputeMergedTotalArgs
 ): ComputeMergedTotalResult {
-  const { quote, localOffice, papayaLines, quoteType } = args;
+  const { quote, localOffice, papayaLines, quoteType, quoteToUsdRate } = args;
 
-  const allLines = mergeQuoteCostLines({
+  const employerCostLines = mergeQuoteCostLines({
     providerLines: quote.cost_lines,
     localOffice: localOffice ?? undefined,
     papayaCosts: papayaLines,
     providerMonthlySeveranceAccrual: quote.monthly.severance_accrual,
   });
 
-  const visibleLines = allLines.filter((line) => isVisibleInTable(line, quoteType));
-
-  const monthlyTotal = allLines
+  const employerCostMonthly = employerCostLines
     .filter((line) => isIncludedInTotal(line, quoteType))
     .reduce((sum, line) => sum + monthlyAmount(line), 0);
 
-  return { monthlyTotal, visibleLines, allLines };
+  const markup = calculateGraceMarkMarkup({
+    employerCostMonthly,
+    config: localOffice?.markup,
+    quoteCurrency: quote.currency,
+    quoteToUsdRate,
+  });
+
+  const allLines = markup.line
+    ? [...employerCostLines, markup.line]
+    : employerCostLines;
+  const includedLines = allLines.filter((line) =>
+    isIncludedInTotal(line, quoteType),
+  );
+  const visibleLines = allLines.filter((line) =>
+    isVisibleInTable(line, quoteType),
+  );
+
+  const monthlyTotal = includedLines
+    .reduce((sum, line) => sum + monthlyAmount(line), 0);
+
+  return {
+    monthlyTotal,
+    annualTotal: monthlyTotal * 12,
+    visibleLines,
+    includedLines,
+    allLines,
+    markupFxUnavailable: markup.fxUnavailable,
+    hasExcludedLines: allLines.some(
+      (line) => !isIncludedInTotal(line, quoteType),
+    ),
+  };
 }

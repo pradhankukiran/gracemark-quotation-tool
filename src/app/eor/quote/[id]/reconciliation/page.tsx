@@ -2,6 +2,7 @@
 
 import { Suspense, use, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
 import { Alert, Button, Skeleton, Space } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { PageShell } from "@/components/PageShell";
@@ -15,6 +16,7 @@ import {
 } from "@/lib/quote-state";
 import { useQuoteQuery } from "@/lib/use-quote-query";
 import { usePapayaCosts } from "@/lib/use-papaya-costs";
+import { fetchFxRate } from "@/lib/api";
 import { computeMergedMonthlyTotal } from "@/lib/merged-total";
 import {
   selectVarianceWinner,
@@ -99,6 +101,20 @@ function ReconciliationInner({ id }: { id: string }) {
   const primaryLocalOffice = saved?.form.primary.local_office ?? null;
   const workHoursPerWeek = saved?.form.work_hours_per_week ?? undefined;
 
+  const upperPrimaryCurrency = primaryCurrency?.toUpperCase();
+  const needsMarkupFx =
+    !!upperPrimaryCurrency && upperPrimaryCurrency !== "USD";
+  const markupFxQuery = useQuery({
+    queryKey: ["fx", upperPrimaryCurrency, "USD"] as const,
+    queryFn: () => fetchFxRate(upperPrimaryCurrency!, "USD"),
+    enabled: needsMarkupFx,
+    staleTime: 5 * 60 * 1000,
+  });
+  const quoteToUsdRate =
+    upperPrimaryCurrency === "USD"
+      ? 1
+      : markupFxQuery.data?.rate ?? null;
+
   const papayaResult = usePapayaCosts({
     countryCode: primaryCountryCode,
     stateCode: primaryStateCode,
@@ -136,6 +152,7 @@ function ReconciliationInner({ id }: { id: string }) {
           localOffice: primaryLocalOffice,
           papayaLines: papayaResult.lines,
           quoteType: view,
+          quoteToUsdRate,
         });
         return { provider: r.provider_id, price: merged.monthlyTotal };
       });
@@ -159,7 +176,13 @@ function ReconciliationInner({ id }: { id: string }) {
         winner: variance.winner,
         okProviderCount: okResults.length,
       };
-    }, [primaryBlock, primaryLocalOffice, papayaResult.lines, view]);
+    }, [
+      primaryBlock,
+      primaryLocalOffice,
+      papayaResult.lines,
+      view,
+      quoteToUsdRate,
+    ]);
 
   // Number of providers still loading in the primary block — drives the
   // "still waiting" alert below the table.
