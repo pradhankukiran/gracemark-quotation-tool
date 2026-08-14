@@ -21,6 +21,44 @@ function withBucket(line: CostLine): CostLine {
   return { ...line, bucket: inferBucket(line.category) };
 }
 
+/**
+ * Surface a provider's standalone monthly severance aggregate as a normal
+ * termination-cost row. Deel and Payoneer return this value outside their
+ * itemized cost arrays, while every downstream total is built from cost rows.
+ *
+ * The defensive duplicate check only treats an existing severance-accrual row
+ * with the same monthly amount as equivalent. Other termination rows, such as
+ * notice pay or a termination penalty, remain separate costs.
+ */
+function appendProviderSeveranceAccrual(
+  merged: CostLine[],
+  monthlyAccrual: number
+): void {
+  if (!Number.isFinite(monthlyAccrual) || monthlyAccrual <= 0) return;
+
+  const alreadyItemized = merged.some((line) => {
+    if (line.category !== "severance" || line.frequency === "one_time") {
+      return false;
+    }
+    if (!/severance.*accrual|accrual.*severance/i.test(line.name)) {
+      return false;
+    }
+    const existingMonthlyAmount =
+      line.frequency === "annual" ? line.amount / 12 : line.amount;
+    return Math.abs(existingMonthlyAmount - monthlyAccrual) < 0.01;
+  });
+
+  if (alreadyItemized) return;
+
+  merged.push({
+    name: "Severance accrual",
+    amount: monthlyAccrual,
+    frequency: "monthly",
+    category: "severance",
+    bucket: "termination_costs",
+  });
+}
+
 const BENEFIT_LABELS: Record<LocalOfficeBenefitKey, string> = {
   meal_voucher: "Meal Voucher",
   transportation: "Transportation",
@@ -88,7 +126,8 @@ function papayaAllowanceMatchesLocalBenefit(
  *
  * Merge order:
  *   1. Provider lines (with matched ones replaced IN PLACE by the local-office
- *      Y value — same name, same category, new amount).
+ *      Y value — same name, same category, new amount), plus any standalone
+ *      provider severance aggregate synthesized as a termination-cost row.
  *   2. Local-office benefits with NO provider match (appended as `allowances`).
  *   3. Gracemark local-office overhead (one row, `markup`).
  *   4. VAT (one row, `markup`).
@@ -109,18 +148,17 @@ function papayaAllowanceMatchesLocalBenefit(
  *
  * Skips Papaya lines where `monthly_amount === 0`.
  *
- * When `localOffice` is undefined and there are no Papaya lines, returns
- * `providerLines` unchanged for backwards compatibility.
+ * When `localOffice` is undefined, provider lines still receive bucket tags
+ * and any standalone provider severance aggregate is still synthesized.
  */
 export function mergeQuoteCostLines(args: {
   providerLines: CostLine[];
   localOffice: LocalOfficeFormState | undefined;
   papayaCosts: CalculatedPapayaLine[];
   /**
-   * Provider's `monthly.severance_accrual`. When > 0, Papaya
-   * `termination_liability` items are skipped wholesale (the provider is
-   * already covering severance via this aggregate number rather than
-   * itemized lines). Defaults to 0 when omitted.
+   * Provider's `monthly.severance_accrual`. When > 0, it is synthesized as a
+   * severance row and Papaya `termination_liability` items are skipped
+   * wholesale. Defaults to 0 when omitted.
    */
   providerMonthlySeveranceAccrual?: number;
 }): CostLine[] {
@@ -133,8 +171,8 @@ export function mergeQuoteCostLines(args: {
     // provider lines so the Papaya integration works for legacy/no-localOffice
     // quotes too. Reuse the same Papaya pipeline on top of providerLines and
     // an empty benefits map (no local-office allowance values to match).
-    if (papayaCosts.length === 0) return providerLines.map(withBucket);
     const merged = providerLines.map(withBucket);
+    appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
     appendPapayaLines(merged, papayaCosts, {}, providerMonthlySeveranceAccrual);
     return merged;
   }
@@ -193,6 +231,8 @@ export function mergeQuoteCostLines(args: {
       merged.push(withBucket(line));
     }
   }
+
+  appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
 
   // 2. Local-office benefits with no provider match — append as new allowances.
   for (const key of BENEFIT_KEYS) {
