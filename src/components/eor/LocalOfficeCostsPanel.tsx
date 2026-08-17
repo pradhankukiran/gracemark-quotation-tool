@@ -125,6 +125,10 @@ export function LocalOfficeCostsPanel({
     if (!countryCode || !quoteCurrency) return;
     if (defaults.isLoading) return;
     const combineKey = `${countryCode}::${quoteCurrency}`;
+    // Form edits rerender this panel and can produce a fresh `defaults.values`
+    // object. Do not reseed the form for the same country/currency pair, or a
+    // user-selected markup mode (such as Fixed USD) gets reset to Percentage.
+    if (lastSeededKey.current === combineKey) return;
     const existing = form.getFieldValue([
       formPath,
       "local_office",
