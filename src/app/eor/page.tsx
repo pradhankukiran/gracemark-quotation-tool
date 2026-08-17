@@ -6,7 +6,7 @@ import { PageShell } from "@/components/PageShell";
 export default function HomePage() {
   return (
     <PageShell
-      title="Gracemark EOR Quotation"
+      title="EOR Quotation"
       subtitle="Compare Employer-of-Record costs across providers."
     >
       <QuoteForm />
