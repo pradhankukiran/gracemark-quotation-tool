@@ -23,49 +23,42 @@ export function PageShell({
 }: PageShellProps) {
   return (
     <main className={`page-shell${wide ? " is-wide" : ""}`}>
-      <Link href="/" aria-label="Gracemark home" className="page-logo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/gmk-logo.png" alt="Gracemark" />
-      </Link>
-      <TypeTabs />
-      <div className="page-shell-content">
-        {/* Header container mirrors the body's max-width (1100 single / 1700
-            wide) so the title aligns with the leftmost content and the
-            actions align with the rightmost content. Width rules live in
-            globals.css under .page-shell-header-container. */}
-        <div className="page-shell-header-container">
-          <div
-            className="page-shell-header"
-            style={{ marginBottom: subtitle ? 8 : 48 }}
-          >
-            <Typography.Title level={1} style={{ margin: 0 }}>
-              {title}
-            </Typography.Title>
-            {actions ? (
-              <div
+      {/* Logo, page heading, and EOR/Contractor switch share one responsive
+          header. On mobile the logo and switch stay in the first row while
+          the heading wraps below them. */}
+      <div className="page-shell-header-container">
+        <div className="page-shell-topbar">
+          <Link href="/" aria-label="Gracemark home" className="page-logo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/gmk-logo.png" alt="Gracemark" />
+          </Link>
+          <div className="page-shell-heading-block">
+            <div className="page-shell-header">
+              <Typography.Title level={1} style={{ margin: 0 }}>
+                {title}
+              </Typography.Title>
+              {actions ? (
+                <div className="page-shell-actions">
+                  {actions}
+                </div>
+              ) : null}
+            </div>
+            {subtitle ? (
+              <Typography.Paragraph
                 style={{
-                  flex: 1,
-                  minWidth: 0,
-                  display: "flex",
-                  justifyContent: "flex-end",
+                  fontSize: 18,
+                  color: BRAND.textSecondary,
+                  margin: "8px 0 0",
                 }}
               >
-                {actions}
-              </div>
+                {subtitle}
+              </Typography.Paragraph>
             ) : null}
           </div>
-          {subtitle ? (
-            <Typography.Paragraph
-              style={{
-                fontSize: 18,
-                color: BRAND.textSecondary,
-                marginBottom: 48,
-              }}
-            >
-              {subtitle}
-            </Typography.Paragraph>
-          ) : null}
+          <TypeTabs />
         </div>
+      </div>
+      <div className="page-shell-content">
         {children}
       </div>
     </main>

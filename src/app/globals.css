@@ -21,14 +21,8 @@ body {
 }
 
 /* ============================================================ */
-/* PageShell layout — single container variant + wide (comparison) variant.   */
-/* Logo lives inside PageShell so all positioning rules are scoped to it.     */
+/* PageShell layout — single container variant + wide (comparison) variant. */
 /* ========================================================================= */
-:root {
-  --site-logo-left: 32px;
-  --site-logo-top: 60px;
-}
-
 .page-shell {
   max-width: 1100px;
   margin: 0 auto;
@@ -38,12 +32,23 @@ body {
   max-width: 1700px;
 }
 
-/* Header container — always 1100px so the title/actions row stays in the same
-   horizontal position across single and comparison views (matches the logo and
-   provider tabs above, which also don't shift between modes). */
+/* The header stays at the normal content width even when a comparison page
+   expands the body. */
 .page-shell-header-container {
   max-width: 1100px;
   margin-inline: auto;
+}
+
+.page-shell-topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.page-shell-heading-block {
+  min-width: 0;
 }
 
 .page-shell-header {
@@ -55,12 +60,9 @@ body {
 }
 
 .page-logo {
-  position: fixed;
-  top: var(--site-logo-top);
-  left: var(--site-logo-left);
-  z-index: 10;
   display: inline-block;
   line-height: 0;
+  flex-shrink: 0;
 }
 .page-logo img {
   display: block;
@@ -68,42 +70,50 @@ body {
   width: auto;
 }
 
-/* Single mode at narrow viewports — logo would overlap the centered content
-   (1100 max + 32px padding × 2 = 1164 minimum, need clearance for logo).
-   Hide it; branding still lives via the page title. */
-@media (max-width: 1300px) {
-  .page-shell:not(.is-wide) .page-logo {
-    display: none;
-  }
-}
-
-/* Wide mode: logo scrolls away with the page (position: absolute relative
-   to the initial containing block keeps it at left:32px horizontally). */
-.page-shell.is-wide .page-logo {
-  position: absolute;
-}
-
-/* Type switcher (single/comparison Segmented) — mirrors the logo's
-   positioning on the right side so the two corner anchors are symmetric. */
 .page-type-switcher {
-  position: fixed;
-  top: var(--site-logo-top);
-  right: var(--site-logo-left);
-  z-index: 10;
+  justify-self: end;
 }
 
-/* Narrow mode (single-country): hide the switcher below 1300px viewport,
-   same as the logo, so it doesn't overlap content on smaller screens. */
-@media (max-width: 1300px) {
-  .page-shell:not(.is-wide) .page-type-switcher {
-    display: none;
+.page-shell-actions {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Keep the logo and type switch visible in the first row on tablets and
+   phones. The heading and subtitle wrap below them instead of disappearing. */
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 32px 16px 48px;
   }
-}
 
-/* Wide mode (comparison): switcher scrolls with the page (absolute),
-   matching the logo's behavior. */
-.page-shell.is-wide .page-type-switcher {
-  position: absolute;
+  .page-shell-topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px 12px;
+    margin-bottom: 32px;
+  }
+
+  .page-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .page-type-switcher {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .page-shell-heading-block {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .page-shell-actions {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
 }
 
 /* ============================================================ */
