@@ -40,6 +40,7 @@ import { calculateGraceMarkSeveranceLine } from "@/lib/gracemark-severance";
 import { calculateGraceMarkMarkup } from "@/lib/gracemark-markup";
 import {
   composeAcidTest,
+  DEEL_PROVIDER_FEE_USD,
   GRACEMARK_FEE_PERCENTAGE,
   MIN_PROFIT_THRESHOLD_USD,
 } from "@/lib/acid-test";
@@ -242,6 +243,12 @@ function AcidTestInner({ id }: { id: string }) {
       : 0;
   const configuredBillRate =
     employerCostMonthly + configuredMarkup.monthlyAmount;
+  const isDeelProvider = providerResult?.provider_id === "deel";
+  const providerFeeMonthlyOverride = isDeelProvider
+    ? quoteToUsdRate != null && quoteToUsdRate > 0
+      ? DEEL_PROVIDER_FEE_USD / quoteToUsdRate
+      : 0
+    : undefined;
 
   // ----- Onboarding total (from the saved local-office form values) -----
   //
@@ -356,6 +363,7 @@ function AcidTestInner({ id }: { id: string }) {
         duration,
         isAllInclusive: view === "all_inclusive",
         feePercentage: feePct,
+        providerFeeMonthly: providerFeeMonthlyOverride,
       }),
     [
       bucketTotals,
@@ -365,6 +373,7 @@ function AcidTestInner({ id }: { id: string }) {
       duration,
       view,
       feePct,
+      providerFeeMonthlyOverride,
     ],
   );
 
@@ -411,14 +420,16 @@ function AcidTestInner({ id }: { id: string }) {
 
   const fxRateForCompute = fxSnapshot?.rate ?? null;
   const effectiveUsdRate = needsFx ? fxRateForCompute : 1;
-  const profitUsd =
+  const monthlyProfitUsd =
     effectiveUsdRate != null
-      ? result.summary.profitLocal * effectiveUsdRate
+      ? result.summary.marginMonthly * effectiveUsdRate
       : null;
-  const meetsMinimum = profitUsd != null && profitUsd >= MIN_PROFIT_THRESHOLD_USD;
+  const meetsMinimum =
+    monthlyProfitUsd != null &&
+    monthlyProfitUsd >= MIN_PROFIT_THRESHOLD_USD;
   const minimumShortfallUsd =
-    profitUsd != null
-      ? Math.max(0, MIN_PROFIT_THRESHOLD_USD - profitUsd)
+    monthlyProfitUsd != null
+      ? Math.max(0, MIN_PROFIT_THRESHOLD_USD - monthlyProfitUsd)
       : 0;
 
   // ----- Hero verdict tier + copy -----
@@ -443,9 +454,9 @@ function AcidTestInner({ id }: { id: string }) {
       return "Fail — Project is not profitable";
     }
     if (meetsMinimum) {
-      return "Pass — Profit clears the USD 1,000 minimum";
+      return "Pass — Monthly profit clears the USD 1,000 minimum";
     }
-    return "Warning — Profit below the USD 1,000 minimum";
+    return "Warning — Monthly profit below the USD 1,000 minimum";
   })();
 
   const heroSubline = (() => {
@@ -453,7 +464,7 @@ function AcidTestInner({ id }: { id: string }) {
       return "USD threshold check skipped — showing local-currency profitability only.";
     }
     if (heroTier === "warning" && minimumShortfallUsd > 0) {
-      return `Needs ${formatUsdSubline(minimumShortfallUsd)} more profit to reach the USD 1,000 minimum.`;
+      return `Needs ${formatUsdSubline(minimumShortfallUsd)} more monthly profit to reach the USD 1,000 minimum.`;
     }
     return null;
   })();
@@ -533,7 +544,9 @@ function AcidTestInner({ id }: { id: string }) {
     (hasUsableProviderQuote &&
       (!hydratedInputs ||
         papayaResult.isLoading ||
-        (markupConfig.mode === "fixed_usd" && needsFx && fxLoading)));
+        ((markupConfig.mode === "fixed_usd" || isDeelProvider) &&
+          needsFx &&
+          fxLoading)));
 
   const countryName =
     getCountryByCode(saved.form.primary.country_code ?? "")?.name ??
@@ -668,6 +681,10 @@ function AcidTestInner({ id }: { id: string }) {
             amount: result.billRateComposition.gracemarkFeeMonthly,
           },
           {
+            label: "Profit after provider fee (monthly)",
+            amount: result.summary.marginMonthly,
+          },
+          {
             label: "Total assignment cost",
             amount: result.summary.totalCost,
           },
@@ -755,6 +772,13 @@ function AcidTestInner({ id }: { id: string }) {
             message="Fixed USD markup could not be applied because FX is unavailable"
           />
         ) : null}
+        {isDeelProvider && needsFx && fxError ? (
+          <Alert
+            type="warning"
+            showIcon
+            message="Deel's $450 monthly provider fee could not be converted because FX is unavailable"
+          />
+        ) : null}
         {exportError ? (
           <Alert
             type="error"
@@ -775,7 +799,7 @@ function AcidTestInner({ id }: { id: string }) {
           monthlyBillRate={result.summary.billRateMonthly}
           totalProfit={result.summary.profitLocal}
           monthlyMarkupFee={result.billRateComposition.gracemarkFeeMonthly}
-          profitUsd={profitUsd}
+          monthlyProfitUsd={monthlyProfitUsd}
         />
         <BillRateCompositionCard
           recurringMonthly={result.breakdown.recurringMonthly}

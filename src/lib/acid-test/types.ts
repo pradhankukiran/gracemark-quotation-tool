@@ -25,6 +25,8 @@ export interface AcidTestComposeInput {
   isAllInclusive: boolean
   /** GraceMark target fee as a fraction (e.g. 0.45). Falls back to GRACEMARK_FEE_PERCENTAGE if non-finite. */
   feePercentage?: number
+  /** Fixed monthly provider fee in local currency. Falls back to the percentage rule when omitted. */
+  providerFeeMonthly?: number
 }
 
 export interface AcidTestComposeBreakdown {

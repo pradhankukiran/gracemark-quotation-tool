@@ -31,6 +31,7 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
     duration,
     isAllInclusive,
     feePercentage,
+    providerFeeMonthly: providerFeeMonthlyOverride,
   } = input
 
   // Component totals for full assignment (breakdown display).
@@ -64,8 +65,12 @@ export function composeAcidTest(input: AcidTestComposeInput): AcidTestComposeOut
   const actualGracemarkFeePercentage =
     recurringMonthly !== 0 ? actualGracemarkFeeMonthly / recurringMonthly : 0
 
-  // Provider fee share — never negative.
-  const providerFeeMonthly = computeProviderFeeMonthly(actualGracemarkFeeMonthly)
+  // Use a provider-specific fixed fee when supplied. Other providers retain
+  // the existing percentage-based fallback.
+  const providerFeeMonthly =
+    Number.isFinite(providerFeeMonthlyOverride)
+      ? Math.max(providerFeeMonthlyOverride as number, 0)
+      : computeProviderFeeMonthly(actualGracemarkFeeMonthly)
   const providerFeeTotal = providerFeeMonthly * duration
 
   // Cash-flow totals.

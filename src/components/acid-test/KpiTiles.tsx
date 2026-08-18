@@ -19,13 +19,13 @@ const PROFIT_TIER_COLORS = {
 
 /**
  * Pick a markup-fee tile color tier from the USD profit value. When FX is
- * unavailable (`profitUsd == null`) we fall back to the neutral text color
- * so the tile is still readable.
+ * unavailable (`monthlyProfitUsd == null`) we fall back to the neutral text
+ * color so the tile is still readable.
  */
-function tierColorFor(profitUsd: number | null | undefined): string {
-  if (profitUsd == null) return BRAND.text;
-  if (profitUsd >= 1000) return PROFIT_TIER_COLORS.pass;
-  if (profitUsd >= 800) return PROFIT_TIER_COLORS.near800;
+function tierColorFor(monthlyProfitUsd: number | null | undefined): string {
+  if (monthlyProfitUsd == null) return BRAND.text;
+  if (monthlyProfitUsd >= 1000) return PROFIT_TIER_COLORS.pass;
+  if (monthlyProfitUsd >= 800) return PROFIT_TIER_COLORS.near800;
   return PROFIT_TIER_COLORS.fail;
 }
 
@@ -48,8 +48,8 @@ export interface KpiTilesProps {
   /** Tile 6: Monthly Markup Fee (actualGracemarkFeeMonthly). */
   monthlyMarkupFee: number;
 
-  /** USD-converted profit driving the markup-fee tier color. */
-  profitUsd: number | null;
+  /** USD-converted monthly profit driving the markup-fee tier color. */
+  monthlyProfitUsd: number | null;
 }
 
 function formatCurrency(amount: number, currency: string): string {
@@ -145,7 +145,7 @@ function Tile({
 /**
  * 2×3 grid of KPI tiles (single column on xs, 2-column on sm, 3-column on lg).
  * The Monthly Markup Fee tile carries a profit-tier color derived from
- * `profitUsd`.
+ * `monthlyProfitUsd`.
  */
 export function KpiTiles({
   currency,
@@ -157,9 +157,9 @@ export function KpiTiles({
   monthlyBillRate,
   totalProfit,
   monthlyMarkupFee,
-  profitUsd,
+  monthlyProfitUsd,
 }: KpiTilesProps) {
-  const markupTierColor = tierColorFor(profitUsd);
+  const markupTierColor = tierColorFor(monthlyProfitUsd);
 
   return (
     <Row gutter={[16, 16]}>

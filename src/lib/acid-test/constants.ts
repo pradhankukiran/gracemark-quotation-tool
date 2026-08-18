@@ -5,9 +5,13 @@
 export const GRACEMARK_FEE_PERCENTAGE = 0.45
 
 // Provider service fee derived as a fraction of the GraceMark fee (30%).
+// This remains the fallback for providers without a fixed fee configured.
 export const PROVIDER_FEE_RATIO = 0.30
 
-// Minimum absolute monthly profit in USD before a quote falls below the floor.
+// Deel charges a fixed monthly provider fee in USD.
+export const DEEL_PROVIDER_FEE_USD = 450
+
+// Minimum monthly profit in USD before a quote falls below the floor.
 export const MIN_PROFIT_THRESHOLD_USD = 1000
 
 // 1% buffer over MIN_PROFIT_THRESHOLD_USD when targeting profit (avoids
