@@ -192,12 +192,13 @@ function AcidTestInner({ id }: { id: string }) {
       return [];
     }
     return mergeQuoteCostLines({
+      countryCode: providerResult.quote.request.country_code,
       providerLines: providerResult.quote.cost_lines,
       localOffice: primaryLocalOffice ?? undefined,
       papayaCosts: papayaResult.lines,
       providerMonthlySeveranceAccrual:
         providerResult.quote.monthly.severance_accrual,
-      graceMarkSeveranceFallback: calculateGraceMarkSeveranceLine({
+      graceMarkSeverance: calculateGraceMarkSeveranceLine({
         countryCode: providerResult.quote.request.country_code,
         annualSalary: providerResult.quote.request.annual_salary,
       }),

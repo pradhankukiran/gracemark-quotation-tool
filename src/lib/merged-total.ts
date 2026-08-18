@@ -8,7 +8,8 @@
  * mounting a React component or calling any hooks.
  *
  * The merge pipeline (`mergeQuoteCostLines`) already encodes the provider,
- * local-office, Papaya, and GraceMark fallback logic; this helper layers on:
+ * local-office, Papaya, and GraceMark country-template logic; this helper
+ * layers on:
  *   - the bucket-aware `isIncludedInTotal` predicate (drops `one_time_costs`
  *     always; drops `termination_costs` unless `quoteType === "all_inclusive"`)
  *   - the monthly-view normalization that amortizes annual rows to /12 and
@@ -134,11 +135,12 @@ export function computeMergedMonthlyTotal(
   const { quote, localOffice, papayaLines, quoteType, quoteToUsdRate } = args;
 
   const employerCostLines = mergeQuoteCostLines({
+    countryCode: quote.request.country_code,
     providerLines: quote.cost_lines,
     localOffice: localOffice ?? undefined,
     papayaCosts: papayaLines,
     providerMonthlySeveranceAccrual: quote.monthly.severance_accrual,
-    graceMarkSeveranceFallback: calculateGraceMarkSeveranceLine({
+    graceMarkSeverance: calculateGraceMarkSeveranceLine({
       countryCode: quote.request.country_code,
       annualSalary: quote.request.annual_salary,
     }),

@@ -4,6 +4,10 @@ import type { LocalOfficeFormState } from "@/lib/quote-state";
 import type { CalculatedPapayaLine } from "@/lib/papaya-calc";
 import type { PapayaCostType } from "@/data/papaya/types";
 import {
+  classifyGraceMarkRecurringSeveranceCost,
+  isGraceMarkRecurringSeveranceCost,
+} from "@/lib/gracemark-severance";
+import {
   dedupeBenefits,
   matchesBenefit,
   normalizeLineName,
@@ -19,6 +23,41 @@ import {
 function withBucket(line: CostLine): CostLine {
   if (line.bucket) return line;
   return { ...line, bucket: inferBucket(line.category) };
+}
+
+/**
+ * GraceMark's country template owns the single termination row. Provider
+ * termination rows are therefore removed when a template exists. Named
+ * deferred-salary funds from the document remain recurring accruals.
+ */
+function prepareProviderLines(
+  providerLines: CostLine[],
+  countryCode: string,
+  hasGraceMarkSeverance: boolean,
+): CostLine[] {
+  const prepared: CostLine[] = [];
+
+  for (const rawLine of providerLines) {
+    const line = withBucket(rawLine);
+    const bucket = line.bucket ?? inferBucket(line.category);
+
+    if (
+      bucket === "termination_costs" &&
+      isGraceMarkRecurringSeveranceCost(countryCode, line.name)
+    ) {
+      prepared.push({
+        ...line,
+        category: "accruals",
+        bucket: "statutory_mandatory",
+      });
+      continue;
+    }
+
+    if (hasGraceMarkSeverance && bucket === "termination_costs") continue;
+    prepared.push(line);
+  }
+
+  return prepared;
 }
 
 /**
@@ -60,27 +99,20 @@ function appendProviderSeveranceAccrual(
 }
 
 /**
- * Add GraceMark's country-level severance estimate only when neither the
- * provider nor Papaya supplied a positive termination cost.
+ * Add GraceMark's single consolidated country-level termination estimate.
  */
-function appendGraceMarkSeveranceFallback(
+function appendGraceMarkSeverance(
   merged: CostLine[],
-  fallback: CostLine | null | undefined,
+  severance: CostLine | null | undefined,
 ): void {
-  if (!fallback || !Number.isFinite(fallback.amount) || fallback.amount <= 0) {
+  if (
+    !severance ||
+    !Number.isFinite(severance.amount) ||
+    severance.amount <= 0
+  ) {
     return;
   }
-
-  const hasTerminationCost = merged.some((line) => {
-    const bucket = line.bucket ?? inferBucket(line.category);
-    return (
-      bucket === "termination_costs" &&
-      Number.isFinite(line.amount) &&
-      line.amount > 0
-    );
-  });
-
-  if (!hasTerminationCost) merged.push(withBucket(fallback));
+  merged.push(withBucket(severance));
 }
 
 const BENEFIT_LABELS: Record<LocalOfficeBenefitKey, string> = {
@@ -143,6 +175,27 @@ function papayaAllowanceMatchesLocalBenefit(
   return false;
 }
 
+function recurringSeveranceMatchesProvider(
+  countryCode: string,
+  papayaLineName: string,
+  providerLines: CostLine[],
+): boolean {
+  const kind = classifyGraceMarkRecurringSeveranceCost(
+    countryCode,
+    papayaLineName,
+  );
+  if (kind == null) return false;
+
+  return providerLines.some((line) => {
+    if (line.category !== "accruals" && line.category !== "statutory") {
+      return false;
+    }
+    return (
+      classifyGraceMarkRecurringSeveranceCost(countryCode, line.name) === kind
+    );
+  });
+}
+
 /**
  * Merge provider-quoted cost lines with the local-office form state AND
  * Papaya-calculated employer cost lines into a single unified list of
@@ -150,14 +203,14 @@ function papayaAllowanceMatchesLocalBenefit(
  *
  * Merge order:
  *   1. Provider lines (with matched ones replaced IN PLACE by the local-office
- *      Y value — same name, same category, new amount), plus any standalone
- *      provider severance aggregate synthesized as a termination-cost row.
+ *      Y value — same name, same category, new amount). Provider termination
+ *      rows are replaced by GraceMark's country template when available.
  *   2. Local-office benefits with NO provider match (appended as `allowances`).
  *   3. Gracemark local-office overhead (one row, `markup`).
  *   4. VAT (one row, `markup`).
  *   5. Custom monthly lines from `localOffice.custom_lines` (`allowances`).
  *   6. Papaya lines (gap-fill only — see below).
- *   7. GraceMark severance estimate, only when steps 1 and 6 supplied none.
+ *   7. GraceMark's single consolidated severance/termination accrual.
  *   8. One-time costs (provider doesn't emit these; sourced from local-office).
  *
  * Papaya gap-fill semantics (step 6):
@@ -167,29 +220,35 @@ function papayaAllowanceMatchesLocalBenefit(
  *   - `statutory`: dedup against provider `statutory` lines (with lumped
  *     synonyms like "social security charges" matching multiple Papaya items).
  *   - `accrual`: dedup against provider `accruals` AND `statutory` lines.
- *   - `termination_liability`: when the provider supplies a non-zero
- *     `monthly.severance_accrual` OR a `severance`-categorized line that
- *     matches the Papaya item's name, skip; otherwise gap-fill.
+ *   - `termination_liability`: deferred-salary funds explicitly separated by
+ *     GraceMark remain recurring accruals. Other Papaya termination rows are
+ *     replaced by GraceMark's consolidated country row when it exists.
  *
  * Skips Papaya lines where `monthly_amount === 0`.
  *
- * When `localOffice` is undefined, provider lines still receive bucket tags
- * and any standalone provider severance aggregate is still synthesized.
+ * When `localOffice` is undefined, the same provider/Papaya/GraceMark
+ * severance rules still apply.
  */
 export function mergeQuoteCostLines(args: {
+  countryCode: string;
   providerLines: CostLine[];
   localOffice: LocalOfficeFormState | undefined;
   papayaCosts: CalculatedPapayaLine[];
   /**
-   * Provider's `monthly.severance_accrual`. When > 0, it is synthesized as a
-   * severance row and Papaya `termination_liability` items are skipped
-   * wholesale. Defaults to 0 when omitted.
+   * Provider's `monthly.severance_accrual`. Used only when no GraceMark
+   * country template exists. Defaults to 0 when omitted.
    */
   providerMonthlySeveranceAccrual?: number;
-  /** GraceMark country estimate, used only after provider and Papaya data. */
-  graceMarkSeveranceFallback?: CostLine | null;
+  /** GraceMark's authoritative All-Inclusive country estimate. */
+  graceMarkSeverance?: CostLine | null;
 }): CostLine[] {
-  const { providerLines, localOffice, papayaCosts } = args;
+  const { countryCode, localOffice, papayaCosts } = args;
+  const hasGraceMarkSeverance = !!args.graceMarkSeverance;
+  const providerLines = prepareProviderLines(
+    args.providerLines,
+    countryCode,
+    hasGraceMarkSeverance,
+  );
   const providerMonthlySeveranceAccrual =
     args.providerMonthlySeveranceAccrual ?? 0;
 
@@ -198,13 +257,19 @@ export function mergeQuoteCostLines(args: {
     // provider lines so the Papaya integration works for legacy/no-localOffice
     // quotes too. Reuse the same Papaya pipeline on top of providerLines and
     // an empty benefits map (no local-office allowance values to match).
-    const merged = providerLines.map(withBucket);
-    appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
-    appendPapayaLines(merged, papayaCosts, {}, providerMonthlySeveranceAccrual);
-    appendGraceMarkSeveranceFallback(
+    const merged = [...providerLines];
+    if (!hasGraceMarkSeverance) {
+      appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
+    }
+    appendPapayaLines(
       merged,
-      args.graceMarkSeveranceFallback,
+      papayaCosts,
+      {},
+      providerMonthlySeveranceAccrual,
+      countryCode,
+      hasGraceMarkSeverance,
     );
+    appendGraceMarkSeverance(merged, args.graceMarkSeverance);
     return merged;
   }
 
@@ -263,7 +328,9 @@ export function mergeQuoteCostLines(args: {
     }
   }
 
-  appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
+  if (!hasGraceMarkSeverance) {
+    appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
+  }
 
   // 2. Local-office benefits with no provider match — append as new allowances.
   for (const key of BENEFIT_KEYS) {
@@ -330,13 +397,12 @@ export function mergeQuoteCostLines(args: {
       wfh: values.wfh,
       health_insurance: values.health_insurance,
     },
-    providerMonthlySeveranceAccrual
+    providerMonthlySeveranceAccrual,
+    countryCode,
+    hasGraceMarkSeverance,
   );
 
-  appendGraceMarkSeveranceFallback(
-    merged,
-    args.graceMarkSeveranceFallback,
-  );
+  appendGraceMarkSeverance(merged, args.graceMarkSeverance);
 
   // 8. One-time lines (tagged `one_time`; totals logic excludes by category).
   const preMed = values.pre_employment_med ?? 0;
@@ -398,11 +464,9 @@ export function mergeQuoteCostLines(args: {
  * Dedup is evaluated per Papaya line — when one Papaya item matches, only
  * THAT item is skipped; other items of the same type are still considered.
  *
- * `providerMonthlySeveranceAccrual` is the provider's aggregate severance
- * number. When > 0 we assume the provider's quote already covers severance
- * (even without itemized lines) and skip ALL Papaya `termination_liability`
- * items. When 0/absent, individual Papaya termination lines are still
- * dedup-checked against provider `severance` lines by name.
+ * When GraceMark has a country template, it replaces contingent termination
+ * rows from both the provider and Papaya. Deferred-salary funds explicitly
+ * separated in the GraceMark document remain recurring accruals.
  */
 function appendPapayaLines(
   merged: CostLine[],
@@ -413,12 +477,16 @@ function appendPapayaLines(
     wfh?: number;
     health_insurance?: number;
   },
-  providerMonthlySeveranceAccrual: number
+  providerMonthlySeveranceAccrual: number,
+  countryCode: string,
+  hasGraceMarkSeverance: boolean,
 ): void {
   for (const line of papayaCosts) {
     if (line.monthly_amount === 0) continue;
 
     let skip = false;
+    let category = papayaTypeToCategory(line.type);
+    let bucket = line.bucket;
     switch (line.type) {
       case "mandatory_allowance": {
         // Dedup against local-office BENEFIT defaults AND provider allowances.
@@ -438,7 +506,11 @@ function appendPapayaLines(
         break;
       }
       case "accrual": {
-        if (
+        if (isGraceMarkRecurringSeveranceCost(countryCode, line.name)) {
+          if (recurringSeveranceMatchesProvider(countryCode, line.name, merged)) {
+            skip = true;
+          }
+        } else if (
           papayaLineMatchesProvider(line.name, merged, ["accruals", "statutory"])
         ) {
           skip = true;
@@ -446,7 +518,15 @@ function appendPapayaLines(
         break;
       }
       case "termination_liability": {
-        if (providerMonthlySeveranceAccrual > 0) {
+        if (isGraceMarkRecurringSeveranceCost(countryCode, line.name)) {
+          category = "accruals";
+          bucket = "statutory_mandatory";
+          if (recurringSeveranceMatchesProvider(countryCode, line.name, merged)) {
+            skip = true;
+          }
+        } else if (hasGraceMarkSeverance) {
+          skip = true;
+        } else if (providerMonthlySeveranceAccrual > 0) {
           skip = true;
         } else if (papayaLineMatchesProvider(line.name, merged, ["severance"])) {
           skip = true;
@@ -460,8 +540,8 @@ function appendPapayaLines(
       name: line.name,
       amount: line.monthly_amount,
       frequency: "monthly",
-      category: papayaTypeToCategory(line.type),
-      bucket: line.bucket,
+      category,
+      bucket,
     });
   }
 }
