@@ -341,16 +341,6 @@ function ReconciliationInner({ id }: { id: string }) {
     <PageShell title="Recommended Provider" actions={backButton}>
       <Space direction="vertical" size="large" style={{ width: "100%" }}>
         {contextStrip}
-        {analyzed.length > 0 ? (
-          <VarianceScale
-            analyzed={analyzed}
-            deelPrice={deelPrice}
-            lowerBound={lowerBound}
-            upperBound={upperBound}
-            currency={currency}
-            winnerProviderId={winner?.provider ?? null}
-          />
-        ) : null}
         {heroProvider ? (
           <RecommendedProviderCard
             providerId={heroProvider.providerId}
@@ -378,6 +368,16 @@ function ReconciliationInner({ id }: { id: string }) {
             empty={{ reason: "no_in_band" }}
           />
         )}
+        {analyzed.length > 0 ? (
+          <VarianceScale
+            analyzed={analyzed}
+            deelPrice={deelPrice}
+            lowerBound={lowerBound}
+            upperBound={upperBound}
+            currency={currency}
+            winnerProviderId={winner?.provider ?? null}
+          />
+        ) : null}
         <ProviderComparisonTable
           analyzed={analyzed}
           deelPrice={deelPrice}

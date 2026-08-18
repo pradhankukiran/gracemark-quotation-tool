@@ -63,15 +63,6 @@ export function ReconciliationStartButton({
       icon={<ExperimentOutlined />}
       onClick={handleOpen}
       disabled={disabled}
-      style={
-        disabled
-          ? undefined
-          : {
-              background: BRAND.primaryActive,
-              borderColor: BRAND.primaryActive,
-              color: "#fff",
-            }
-      }
     >
       Start Reconciliation
     </Button>

@@ -23,6 +23,7 @@ import {
   type LocalOfficeFormState,
 } from "@/lib/quote-state";
 import { useLocalOfficeDefaults } from "@/lib/use-local-office-defaults";
+import { BRAND } from "@/lib/theme";
 
 interface LocalOfficeCostsPanelProps {
   formPath: "primary" | "comparison";
@@ -65,7 +66,7 @@ function MonetaryRow({
   loading: boolean;
 }) {
   return (
-    <Form.Item label={label} required style={{ marginBottom: 12 }}>
+    <Form.Item label={label} required style={{ marginBottom: 20 }}>
       <Space.Compact style={{ width: "100%", display: "flex" }}>
         <Form.Item
           name={[formPath, "local_office", "values", field]}
@@ -88,8 +89,9 @@ function MonetaryRow({
             width: 64,
             flex: "0 0 64px",
             textAlign: "center",
-            color: "rgba(0,0,0,0.85)",
-            backgroundColor: "#fafafa",
+            color: BRAND.textSecondary,
+            backgroundColor: BRAND.bgSubtle,
+            borderColor: BRAND.border,
             cursor: "default",
           }}
         />
@@ -184,7 +186,7 @@ export function LocalOfficeCostsPanel({
       {rowLoading ? (
         <Skeleton active paragraph={{ rows: 3 }} />
       ) : (
-        <Row gutter={[16, 0]}>
+        <Row gutter={[24, 0]}>
           <Col xs={24} sm={12} md={8}>
             <MonetaryRow
               formPath={formPath}
@@ -236,9 +238,9 @@ export function LocalOfficeCostsPanel({
       <Typography.Title level={5} style={SUB_HEADING_STYLE}>
         VAT
       </Typography.Title>
-      <Row gutter={[16, 0]}>
+      <Row gutter={[24, 0]}>
         <Col xs={24} sm={12} md={8}>
-          <Form.Item label="Rate" required style={{ marginBottom: 12 }}>
+          <Form.Item label="Rate" required style={{ marginBottom: 20 }}>
             <Space.Compact style={{ width: "100%", display: "flex" }}>
               <Form.Item
                 name={[formPath, "local_office", "values", "vat"]}
@@ -263,8 +265,9 @@ export function LocalOfficeCostsPanel({
                   width: 64,
                   flex: "0 0 64px",
                   textAlign: "center",
-                  color: "rgba(0,0,0,0.85)",
-                  backgroundColor: "#fafafa",
+                  color: BRAND.textSecondary,
+                  backgroundColor: BRAND.bgSubtle,
+                  borderColor: BRAND.border,
                   cursor: "default",
                 }}
               />
@@ -276,12 +279,13 @@ export function LocalOfficeCostsPanel({
       <Typography.Title level={5} style={SUB_HEADING_STYLE}>
         GraceMark markup
       </Typography.Title>
-      <Row gutter={[16, 0]}>
+      <Row gutter={[24, 0]}>
         <Col xs={24} sm={12} md={8}>
           <Form.Item
             name={[formPath, "local_office", "markup", "mode"]}
             label="Calculation"
             rules={[{ required: true, message: "Select a markup type" }]}
+            style={{ marginBottom: 20 }}
           >
             <Segmented
               block
@@ -294,7 +298,7 @@ export function LocalOfficeCostsPanel({
         </Col>
         <Col xs={24} sm={12} md={8}>
           {markupMode === "fixed_usd" ? (
-            <Form.Item label="Monthly fixed markup" required>
+            <Form.Item label="Monthly fixed markup" required style={{ marginBottom: 20 }}>
               <Space.Compact style={{ width: "100%", display: "flex" }}>
                 <Form.Item
                   name={[formPath, "local_office", "markup", "fixed_usd"]}
@@ -323,15 +327,16 @@ export function LocalOfficeCostsPanel({
                     width: 64,
                     flex: "0 0 64px",
                     textAlign: "center",
-                    color: "rgba(0,0,0,0.85)",
-                    backgroundColor: "#fafafa",
+                    color: BRAND.textSecondary,
+                    backgroundColor: BRAND.bgSubtle,
+                    borderColor: BRAND.border,
                     cursor: "default",
                   }}
                 />
               </Space.Compact>
             </Form.Item>
           ) : (
-            <Form.Item label="Markup over total employer cost" required>
+            <Form.Item label="Markup over total employer cost" required style={{ marginBottom: 20 }}>
               <Space.Compact style={{ width: "100%", display: "flex" }}>
                 <Form.Item
                   name={[formPath, "local_office", "markup", "percentage"]}
@@ -362,8 +367,9 @@ export function LocalOfficeCostsPanel({
                     width: 64,
                     flex: "0 0 64px",
                     textAlign: "center",
-                    color: "rgba(0,0,0,0.85)",
-                    backgroundColor: "#fafafa",
+                    color: BRAND.textSecondary,
+                    backgroundColor: BRAND.bgSubtle,
+                    borderColor: BRAND.border,
                     cursor: "default",
                   }}
                 />
@@ -379,7 +385,7 @@ export function LocalOfficeCostsPanel({
       {rowLoading ? (
         <Skeleton active paragraph={{ rows: 2 }} />
       ) : (
-        <Row gutter={[16, 0]}>
+        <Row gutter={[24, 0]}>
           <Col xs={24} sm={12} md={8}>
             <MonetaryRow
               formPath={formPath}
@@ -417,11 +423,12 @@ export function LocalOfficeCostsPanel({
         {(fields, { add, remove }) => (
           <>
             {fields.map((field) => (
-              <Row key={field.key} gutter={[12, 0]} align="top">
+              <Row key={field.key} gutter={[24, 0]} align="top">
                 <Col xs={24} md={10}>
                   <Form.Item
                     name={[field.name, "name"]}
                     rules={[{ required: true, message: "Required" }]}
+                    style={{ marginBottom: 20 }}
                   >
                     <Input placeholder="Cost name" />
                   </Form.Item>
@@ -430,6 +437,7 @@ export function LocalOfficeCostsPanel({
                   <Form.Item
                     name={[field.name, "amount"]}
                     rules={[{ required: true, message: "Required" }]}
+                    style={{ marginBottom: 20 }}
                   >
                     <Space.Compact style={{ width: "100%", display: "flex" }}>
                       <InputNumber<number>
@@ -447,8 +455,9 @@ export function LocalOfficeCostsPanel({
                           width: 64,
                           flex: "0 0 64px",
                           textAlign: "center",
-                          color: "rgba(0,0,0,0.85)",
-                          backgroundColor: "#fafafa",
+                          color: BRAND.textSecondary,
+                          backgroundColor: BRAND.bgSubtle,
+                          borderColor: BRAND.border,
                           cursor: "default",
                         }}
                       />

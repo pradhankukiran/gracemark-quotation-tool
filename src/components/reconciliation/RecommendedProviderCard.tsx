@@ -224,29 +224,35 @@ export function RecommendedProviderCard({
   return (
     <Card styles={{ body: { padding: 32 } }}>
       <AccentBar />
-      {isOverride ? (
-        <Tag
-          style={{
-            background: BRAND.primarySoft,
-            color: BRAND.primary,
-            border: "none",
-            marginBottom: 16,
-          }}
-        >
-          Your pick (override)
-        </Tag>
-      ) : (
-        <Tag
-          style={{
-            background: BRAND.primarySoft,
-            color: BRAND.primary,
-            border: "none",
-            marginBottom: 16,
-          }}
-        >
-          Recommended
-        </Tag>
-      )}
+      <div style={{ marginBottom: 16 }}>
+        {isOverride ? (
+          <Tag
+            style={{
+              background: BRAND.primarySoft,
+              color: BRAND.primary,
+              border: "none",
+              fontSize: 13,
+              padding: "3px 12px",
+              fontWeight: 600,
+            }}
+          >
+            Your pick (Override)
+          </Tag>
+        ) : (
+          <Tag
+            style={{
+              background: BRAND.primarySoft,
+              color: BRAND.primary,
+              border: "none",
+              fontSize: 13,
+              padding: "3px 12px",
+              fontWeight: 600,
+            }}
+          >
+            Recommended Provider
+          </Tag>
+        )}
+      </div>
       <div
         style={{
           display: "flex",
@@ -257,10 +263,10 @@ export function RecommendedProviderCard({
       >
         <div
           style={{
-            padding: 16,
-            background: "#fff",
+            padding: 12,
+            background: "#ffffff",
             border: `1px solid ${BRAND.border}`,
-            borderRadius: 12,
+            borderRadius: 10,
             flex: "0 0 auto",
             display: "flex",
             alignItems: "center",
@@ -270,50 +276,50 @@ export function RecommendedProviderCard({
           <ProviderLogo
             providerId={providerId}
             fallback={providerDisplayName}
-            height={64}
+            height={56}
           />
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div
             style={{
               display: "inline-flex",
-              alignItems: "flex-end",
+              alignItems: "baseline",
               gap: 8,
             }}
           >
             <span
               style={{
-                fontSize: 36,
-                fontWeight: 600,
+                fontSize: 32,
+                fontWeight: 700,
                 color: BRAND.text,
-                letterSpacing: "-0.02em",
-                lineHeight: 1,
+                letterSpacing: "-0.01em",
+                lineHeight: 1.1,
+                fontVariantNumeric: "tabular-nums",
               }}
             >
               {formatMoneyWhole(monthlyTotal, currency)}
             </span>
             <span
               style={{
-                fontSize: 14,
+                fontSize: 15,
                 color: BRAND.textSecondary,
-                marginBottom: 4,
               }}
             >
               /month
             </span>
           </div>
-          <div style={{ marginTop: 12 }}>
+          <div style={{ marginTop: 8 }}>
             <Typography.Text type="secondary" style={{ fontSize: 13 }}>
               {reasonLine}
             </Typography.Text>
           </div>
           {acidTestComputedAt ? (
-            <div style={{ marginTop: 12 }}>
+            <div style={{ marginTop: 10 }}>
               <Tag
                 style={{
                   background: BRAND.primarySoft,
                   color: BRAND.primary,
-                  borderColor: BRAND.primary,
+                  border: "none",
                   fontSize: 12,
                   borderRadius: 999,
                   paddingInline: 10,
@@ -328,25 +334,24 @@ export function RecommendedProviderCard({
           style={{
             marginLeft: "auto",
             display: "flex",
-            flexDirection: "column",
-            gap: 8,
-            minWidth: 260,
-            maxWidth: 260,
+            alignItems: "center",
+            gap: 12,
+            flexWrap: "wrap",
           }}
         >
           <Button
             type="default"
+            size="large"
             icon={<EditOutlined />}
             onClick={onOverride}
-            block
           >
-            {isOverride ? "Change Override" : "Override Recommendation"}
+            {isOverride ? "Change Override" : "Override"}
           </Button>
           <Button
             type="primary"
+            size="large"
             icon={<ArrowRightOutlined />}
             onClick={onAcidTest}
-            block
           >
             Continue to Acid Test
           </Button>

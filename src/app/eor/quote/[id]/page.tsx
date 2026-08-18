@@ -181,7 +181,7 @@ function QuoteByIdInner({ id }: { id: string }) {
         New quote
       </Button>
       <Link href={editHref}>
-        <Button type="primary" size="large" icon={<EditOutlined />}>
+        <Button size="large" icon={<EditOutlined />}>
           Edit inputs
         </Button>
       </Link>

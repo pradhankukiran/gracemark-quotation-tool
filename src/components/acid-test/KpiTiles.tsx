@@ -13,9 +13,7 @@ const TABULAR: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
  */
 const PROFIT_TIER_COLORS = {
   pass: BRAND.primary,
-  near900: "#65a30d",   // lime-600
-  near800: "#d97706",   // amber-600
-  near600: "#ea580c",   // orange-600
+  near800: "#d97706", // amber-600
   fail: BRAND.danger,
 } as const;
 
@@ -27,9 +25,7 @@ const PROFIT_TIER_COLORS = {
 function tierColorFor(profitUsd: number | null | undefined): string {
   if (profitUsd == null) return BRAND.text;
   if (profitUsd >= 1000) return PROFIT_TIER_COLORS.pass;
-  if (profitUsd >= 900) return PROFIT_TIER_COLORS.near900;
   if (profitUsd >= 800) return PROFIT_TIER_COLORS.near800;
-  if (profitUsd >= 600) return PROFIT_TIER_COLORS.near600;
   return PROFIT_TIER_COLORS.fail;
 }
 
@@ -100,15 +96,15 @@ function Tile({
 }: TileProps) {
   const showUsd = fxRate !== undefined;
   return (
-    <Card size="small" styles={{ body: { padding: 20 } }}>
+    <Card size="small" styles={{ body: { padding: "20px 24px" } }}>
       <div
         style={{
           fontSize: 12,
           fontWeight: 600,
           letterSpacing: "0.04em",
           textTransform: "uppercase",
-          color: BRAND.textMuted,
-          marginBottom: 10,
+          color: BRAND.textSecondary,
+          marginBottom: 8,
         }}
       >
         {label}
@@ -116,8 +112,8 @@ function Tile({
       <div
         style={{
           ...TABULAR,
-          fontSize: 30,
-          fontWeight: 600,
+          fontSize: 28,
+          fontWeight: 700,
           color: numberColor ?? BRAND.text,
           lineHeight: 1.1,
         }}
@@ -130,7 +126,7 @@ function Tile({
             ...TABULAR,
             fontSize: 14,
             color: BRAND.textSecondary,
-            marginTop: 6,
+            marginTop: 4,
           }}
         >
           {fxLoading ? (

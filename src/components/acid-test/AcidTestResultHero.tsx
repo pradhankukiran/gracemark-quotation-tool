@@ -69,8 +69,8 @@ export function AcidTestResultHero({
           background: colors.tagBg,
           color: colors.tag,
           borderColor: colors.tagBg,
-          fontSize: 16,
-          padding: "4px 14px",
+          fontSize: 13,
+          padding: "3px 12px",
           fontWeight: 600,
           marginBottom: 16,
         }}
@@ -78,11 +78,11 @@ export function AcidTestResultHero({
         {TIER_LABELS[tier]}
       </Tag>
       <Typography.Title
-        level={2}
+        level={3}
         style={{
           margin: 0,
-          fontSize: 32,
-          fontWeight: 600,
+          fontSize: 26,
+          fontWeight: 700,
           color: BRAND.text,
           letterSpacing: "-0.01em",
         }}
@@ -93,8 +93,8 @@ export function AcidTestResultHero({
         <Typography.Paragraph
           style={{
             margin: 0,
-            marginTop: 8,
-            fontSize: 15,
+            marginTop: 6,
+            fontSize: 14,
             color: BRAND.textSecondary,
           }}
         >

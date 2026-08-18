@@ -258,7 +258,7 @@ function ContractorQuoteByIdInner({ id }: { id: string }) {
         New quote
       </Button>
       <Link href={editHref}>
-        <Button type="primary" size="large" icon={<EditOutlined />}>
+        <Button size="large" icon={<EditOutlined />}>
           Edit inputs
         </Button>
       </Link>
@@ -564,21 +564,8 @@ function ContractorQuoteBody({
         </Space>
       </Card>
 
-      {/* Monthly Bill Rate Total — distinct accent card */}
-      <Card
-        styles={{
-          body: {
-            padding: 28,
-            background: BRAND.primarySoft,
-            borderRadius: 12,
-          },
-        }}
-        style={{
-          borderColor: BRAND.primary,
-          borderWidth: 1,
-          borderStyle: "solid",
-        }}
-      >
+      {/* Monthly Bill Rate Total */}
+      <Card styles={{ body: { padding: 32 } }}>
         <div
           style={{
             display: "flex",
@@ -605,8 +592,8 @@ function ContractorQuoteBody({
               style={{
                 ...TABULAR,
                 fontSize: 32,
-                fontWeight: 600,
-                color: BRAND.primary,
+                fontWeight: 700,
+                color: BRAND.text,
                 lineHeight: 1.1,
               }}
             >
@@ -623,13 +610,13 @@ function ContractorQuoteBody({
       </Card>
 
       {/* Monthly Markup summary */}
-      <Card>
-        <Row gutter={[16, 16]}>
+      <Card styles={{ body: { padding: 32 } }}>
+        <Row gutter={[24, 0]}>
           <Col xs={24} sm={showUsdColumn ? 12 : 24}>
             <MarkupStat
               label="Monthly Markup"
               value={formatMoney(quote.monthly_markup, currency)}
-              color={BRAND.primary}
+              color={BRAND.text}
             />
           </Col>
           {showUsdColumn ? (
@@ -654,24 +641,23 @@ function ContractorQuoteBody({
           style={{
             display: "block",
             marginTop: SPACING.md,
-            fontSize: 12,
-            color: BRAND.textMuted,
+            fontSize: 13,
+            color: BRAND.textSecondary,
           }}
         >
           Target {">="} $1,000 USD / month
         </Typography.Text>
       </Card>
 
-      {/* Total Client Cost footer */}
+      {/* Total Client Cost footer — warm EOR highlight card */}
       <Card
         styles={{
           body: {
-            padding: 28,
-            background: BRAND.text,
-            borderRadius: 12,
+            padding: 32,
+            background: BRAND.bgSubtle,
+            borderRadius: 10,
           },
         }}
-        style={{ border: "none" }}
       >
         <div
           style={{
@@ -688,8 +674,7 @@ function ContractorQuoteBody({
               fontWeight: 600,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
-              color: "#ffffff",
-              opacity: 0.85,
+              color: BRAND.textSecondary,
             }}
           >
             Total Client Cost / Month
@@ -700,7 +685,7 @@ function ContractorQuoteBody({
                 ...TABULAR,
                 fontSize: 32,
                 fontWeight: 700,
-                color: "#ffffff",
+                color: BRAND.text,
                 lineHeight: 1.1,
               }}
             >
@@ -710,14 +695,13 @@ function ContractorQuoteBody({
               <div
                 style={{
                   ...TABULAR,
-                  fontSize: 16,
+                  fontSize: 15,
                   fontWeight: 500,
-                  color: "#ffffff",
-                  opacity: 0.75,
+                  color: BRAND.textSecondary,
                   marginTop: 4,
                 }}
               >
-                {formatUsd(toUsd(totalClientCost))} USD
+                ≈ {formatUsd(toUsd(totalClientCost))} USD
               </div>
             ) : null}
           </div>

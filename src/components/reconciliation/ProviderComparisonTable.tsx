@@ -107,43 +107,53 @@ export function ProviderComparisonTable({
       dataIndex: "displayName",
       key: "provider",
       render: (_: unknown, row) => (
-        <Space size="small" align="center">
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <ProviderLogo
             providerId={row.providerId}
             fallback={row.displayName}
-            height={24}
+            height={20}
           />
-        </Space>
+          <span style={{ fontWeight: 600, fontSize: 14, color: BRAND.text }}>
+            {row.displayName}
+          </span>
+        </div>
       ),
     },
     {
-      title: "Monthly",
+      title: "Monthly Total",
       dataIndex: "monthlyTotal",
       key: "monthly",
       align: "right",
-      width: 160,
-      render: (value: number) => formatMoney(value, currency),
+      width: 170,
+      render: (value: number) => (
+        <span style={{ fontWeight: 700, fontSize: 14, color: BRAND.text, fontVariantNumeric: "tabular-nums" }}>
+          {formatMoney(value, currency)}
+        </span>
+      ),
       sorter: (a, b) => a.monthlyTotal - b.monthlyTotal,
     },
     {
       title: "Δ vs Deel",
       key: "variance",
       align: "right",
-      width: 140,
+      width: 150,
       render: (_: unknown, row) => {
-        if (row.providerId === "deel")
-          return <Typography.Text type="secondary">—</Typography.Text>;
+        if (row.providerId === "deel") {
+          return <span style={{ color: BRAND.textMuted, fontSize: 13 }}>0.0% (Anchor)</span>;
+        }
         const pct = ((row.monthlyTotal - deelPrice) / deelPrice) * 100;
         const inRange = row.inRange;
         return (
-          <Typography.Text
+          <span
             style={{
-              color: inRange ? BRAND.text : "#dc2626",
+              color: inRange ? BRAND.primary : "#dc2626",
+              fontWeight: 600,
+              fontSize: 13,
               fontVariantNumeric: "tabular-nums",
             }}
           >
             {formatSignedPct(pct)}
-          </Typography.Text>
+          </span>
         );
       },
       sorter: (a, b) => a.monthlyTotal - b.monthlyTotal,
@@ -158,7 +168,7 @@ export function ProviderComparisonTable({
   ];
 
   return (
-    <Card title="All Providers" styles={{ body: { padding: 0 } }}>
+    <Card title="All Providers Comparison" styles={{ body: { padding: 0 } }}>
       {/*
        * One-off global style for the selected-row highlight. Scoped by the
        * `provider-comparison-selected-row` class we apply via `rowClassName`
@@ -187,15 +197,25 @@ export function ProviderComparisonTable({
 function StatusTag({ kind }: { kind: TableRow["statusKind"] }) {
   switch (kind) {
     case "anchor":
-      return <Tag>Anchor</Tag>;
+      return (
+        <Tag
+          style={{
+            backgroundColor: BRAND.bgSubtle,
+            color: BRAND.textSecondary,
+            border: "none",
+            fontWeight: 500,
+          }}
+        >
+          Anchor
+        </Tag>
+      );
     case "recommended":
       return (
         <Tag
-          color="green"
           style={{
             backgroundColor: BRAND.primarySoft,
             color: BRAND.primary,
-            borderColor: BRAND.primary,
+            border: "none",
             fontWeight: 600,
           }}
         >
@@ -205,11 +225,10 @@ function StatusTag({ kind }: { kind: TableRow["statusKind"] }) {
     case "your_pick":
       return (
         <Tag
-          color="green"
           style={{
             backgroundColor: BRAND.primary,
             color: "#ffffff",
-            borderColor: BRAND.primary,
+            border: "none",
             fontWeight: 600,
           }}
         >
@@ -217,8 +236,30 @@ function StatusTag({ kind }: { kind: TableRow["statusKind"] }) {
         </Tag>
       );
     case "in_band":
-      return <Tag color="success">In band</Tag>;
+      return (
+        <Tag
+          style={{
+            backgroundColor: BRAND.primarySoft,
+            color: BRAND.primary,
+            border: "none",
+            fontWeight: 500,
+          }}
+        >
+          In band
+        </Tag>
+      );
     case "out_of_band":
-      return <Tag color="error">Out of band</Tag>;
+      return (
+        <Tag
+          style={{
+            backgroundColor: "#fef2f2",
+            color: "#dc2626",
+            border: "none",
+            fontWeight: 500,
+          }}
+        >
+          Out of band
+        </Tag>
+      );
   }
 }

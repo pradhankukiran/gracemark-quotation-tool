@@ -85,7 +85,7 @@ function StatRow({ label, amount, currency, fxRate, fxLoading }: StatRowProps) {
             fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
-            color: BRAND.textMuted,
+            color: BRAND.textSecondary,
             marginBottom: 6,
           }}
         >
@@ -95,7 +95,7 @@ function StatRow({ label, amount, currency, fxRate, fxLoading }: StatRowProps) {
           style={{
             ...TABULAR,
             fontSize: 22,
-            fontWeight: 600,
+            fontWeight: 700,
             color: BRAND.text,
             lineHeight: 1.2,
           }}

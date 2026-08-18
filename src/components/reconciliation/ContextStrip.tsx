@@ -94,12 +94,11 @@ export function ContextStrip({
           {providerCount} provider{providerCount === 1 ? "" : "s"}
         </Typography.Text>
         <Tag
-          color="green"
           style={{
             margin: 0,
             background: BRAND.primarySoft,
             color: BRAND.primary,
-            borderColor: BRAND.primary,
+            border: "none",
             fontWeight: 600,
           }}
         >
@@ -121,7 +120,7 @@ export function ContextStrip({
                   margin: 0,
                   background: BRAND.primarySoft,
                   color: BRAND.primary,
-                  borderColor: BRAND.primary,
+                  border: "none",
                   fontWeight: 600,
                 }}
               >
