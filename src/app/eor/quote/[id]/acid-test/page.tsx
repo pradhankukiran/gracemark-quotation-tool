@@ -36,6 +36,7 @@ import {
 import { useQuoteQuery } from "@/lib/use-quote-query";
 import { usePapayaCosts } from "@/lib/use-papaya-costs";
 import { mergeQuoteCostLines } from "@/lib/cost-merge";
+import { calculateGraceMarkSeveranceLine } from "@/lib/gracemark-severance";
 import { calculateGraceMarkMarkup } from "@/lib/gracemark-markup";
 import {
   composeAcidTest,
@@ -196,6 +197,10 @@ function AcidTestInner({ id }: { id: string }) {
       papayaCosts: papayaResult.lines,
       providerMonthlySeveranceAccrual:
         providerResult.quote.monthly.severance_accrual,
+      graceMarkSeveranceFallback: calculateGraceMarkSeveranceLine({
+        countryCode: providerResult.quote.request.country_code,
+        annualSalary: providerResult.quote.request.annual_salary,
+      }),
     });
   }, [providerResult, primaryLocalOffice, papayaResult.lines]);
 
@@ -894,7 +899,7 @@ function deriveBuckets(mergedLines: CostLine[]): BucketDerivation {
   ) => {
     // Onboarding rows come from the SAME source `cost-merge.ts` uses to push
     // the three one-time onboarding lines into the merged stream (see
-    // `mergeQuoteCostLines` step 7). That guarantees the panel display and
+    // `mergeQuoteCostLines` step 8). That guarantees the panel display and
     // the kernel's `oneTimeTotal` cannot drift.
     const values = localOfficeFormState?.values ?? {};
     const onboardingRows: Array<{ key: string; name: string; monthly: number; annual: number }> = [];

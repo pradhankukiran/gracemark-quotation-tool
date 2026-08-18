@@ -59,6 +59,30 @@ function appendProviderSeveranceAccrual(
   });
 }
 
+/**
+ * Add GraceMark's country-level severance estimate only when neither the
+ * provider nor Papaya supplied a positive termination cost.
+ */
+function appendGraceMarkSeveranceFallback(
+  merged: CostLine[],
+  fallback: CostLine | null | undefined,
+): void {
+  if (!fallback || !Number.isFinite(fallback.amount) || fallback.amount <= 0) {
+    return;
+  }
+
+  const hasTerminationCost = merged.some((line) => {
+    const bucket = line.bucket ?? inferBucket(line.category);
+    return (
+      bucket === "termination_costs" &&
+      Number.isFinite(line.amount) &&
+      line.amount > 0
+    );
+  });
+
+  if (!hasTerminationCost) merged.push(withBucket(fallback));
+}
+
 const BENEFIT_LABELS: Record<LocalOfficeBenefitKey, string> = {
   meal_voucher: "Meal Voucher",
   transportation: "Transportation",
@@ -133,7 +157,8 @@ function papayaAllowanceMatchesLocalBenefit(
  *   4. VAT (one row, `markup`).
  *   5. Custom monthly lines from `localOffice.custom_lines` (`allowances`).
  *   6. Papaya lines (gap-fill only — see below).
- *   7. One-time costs (provider doesn't emit these; sourced from local-office).
+ *   7. GraceMark severance estimate, only when steps 1 and 6 supplied none.
+ *   8. One-time costs (provider doesn't emit these; sourced from local-office).
  *
  * Papaya gap-fill semantics (step 6):
  *   - `mandatory_allowance`: dedup against BENEFIT synonyms (local-office
@@ -161,6 +186,8 @@ export function mergeQuoteCostLines(args: {
    * wholesale. Defaults to 0 when omitted.
    */
   providerMonthlySeveranceAccrual?: number;
+  /** GraceMark country estimate, used only after provider and Papaya data. */
+  graceMarkSeveranceFallback?: CostLine | null;
 }): CostLine[] {
   const { providerLines, localOffice, papayaCosts } = args;
   const providerMonthlySeveranceAccrual =
@@ -174,6 +201,10 @@ export function mergeQuoteCostLines(args: {
     const merged = providerLines.map(withBucket);
     appendProviderSeveranceAccrual(merged, providerMonthlySeveranceAccrual);
     appendPapayaLines(merged, papayaCosts, {}, providerMonthlySeveranceAccrual);
+    appendGraceMarkSeveranceFallback(
+      merged,
+      args.graceMarkSeveranceFallback,
+    );
     return merged;
   }
 
@@ -302,7 +333,12 @@ export function mergeQuoteCostLines(args: {
     providerMonthlySeveranceAccrual
   );
 
-  // 7. One-time lines (tagged `one_time`; totals logic excludes by category).
+  appendGraceMarkSeveranceFallback(
+    merged,
+    args.graceMarkSeveranceFallback,
+  );
+
+  // 8. One-time lines (tagged `one_time`; totals logic excludes by category).
   const preMed = values.pre_employment_med ?? 0;
   if (preMed > 0) {
     merged.push({

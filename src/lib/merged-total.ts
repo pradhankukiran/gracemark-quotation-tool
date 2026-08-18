@@ -7,8 +7,8 @@
  * compute the same headline number for every provider in a loop, without
  * mounting a React component or calling any hooks.
  *
- * The merge pipeline (`mergeQuoteCostLines`) already encodes the
- * provider+local-office+Papaya gap-fill logic; this helper layers on:
+ * The merge pipeline (`mergeQuoteCostLines`) already encodes the provider,
+ * local-office, Papaya, and GraceMark fallback logic; this helper layers on:
  *   - the bucket-aware `isIncludedInTotal` predicate (drops `one_time_costs`
  *     always; drops `termination_costs` unless `quoteType === "all_inclusive"`)
  *   - the monthly-view normalization that amortizes annual rows to /12 and
@@ -26,6 +26,7 @@ import { inferBucket } from "@/providers/_core/buckets";
 import type { LocalOfficeFormState } from "@/lib/quote-state";
 import { mergeQuoteCostLines } from "@/lib/cost-merge";
 import { calculateGraceMarkMarkup } from "@/lib/gracemark-markup";
+import { calculateGraceMarkSeveranceLine } from "@/lib/gracemark-severance";
 import type { CalculatedPapayaLine } from "@/lib/papaya-calc";
 
 /**
@@ -137,6 +138,10 @@ export function computeMergedMonthlyTotal(
     localOffice: localOffice ?? undefined,
     papayaCosts: papayaLines,
     providerMonthlySeveranceAccrual: quote.monthly.severance_accrual,
+    graceMarkSeveranceFallback: calculateGraceMarkSeveranceLine({
+      countryCode: quote.request.country_code,
+      annualSalary: quote.request.annual_salary,
+    }),
   });
 
   const employerCostMonthly = employerCostLines
