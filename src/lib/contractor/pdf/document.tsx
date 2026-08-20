@@ -3,6 +3,7 @@
 import React from "react";
 import {
   Document,
+  Font,
   Image,
   Page,
   StyleSheet,
@@ -12,8 +13,26 @@ import {
 
 import { BRAND } from "@/lib/theme";
 
-// Local prop types — keep this document self-contained. The caller adapts
-// upstream domain models into this shape; the document is a dumb renderer.
+// Register Inter font for crisp, executive typography
+Font.register({
+  family: "Inter",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_eeA.woff",
+      fontWeight: 400,
+    },
+    {
+      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hjp-Ek-_eeA.woff",
+      fontWeight: 600,
+    },
+    {
+      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjp-Ek-_eeA.woff",
+      fontWeight: 700,
+    },
+  ],
+});
+
+// Local prop types — keep this document self-contained.
 export interface ICPdfRateInfo {
   payRateHourly: string;
   payRateMonthly: string;
@@ -45,8 +64,6 @@ export interface ICPdfData {
   logoSrc: string;
 }
 
-// Caller may also pass optional slug hints used by the export helper to derive
-// a filename. They're not consumed by the renderer.
 export interface ContractorPdfProps {
   data: ICPdfData;
   contractorSlug?: string;
@@ -55,191 +72,207 @@ export interface ContractorPdfProps {
 
 const styles = StyleSheet.create({
   page: {
-    padding: 24,
-    fontFamily: "Helvetica",
+    paddingTop: 28,
+    paddingBottom: 44,
+    paddingHorizontal: 32,
+    fontFamily: "Inter",
     fontSize: 9,
     color: BRAND.text,
+    backgroundColor: "#ffffff",
   },
-  logoContainer: {
-    alignItems: "center",
-    marginBottom: 12,
-  },
-  logo: {
-    width: 150,
-    height: 62,
-    objectFit: "contain",
-  },
-  header: {
-    marginBottom: 12,
-    textAlign: "center",
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: BRAND.text,
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 10,
-    color: BRAND.textSecondary,
-  },
-  section: {
-    marginBottom: 12,
-  },
-  sectionTitle: {
-    fontSize: 12,
-    fontWeight: "bold",
-    color: BRAND.text,
-    marginBottom: 8,
+  headerBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    paddingBottom: 12,
     borderBottomWidth: 1.5,
     borderBottomColor: BRAND.border,
-    paddingBottom: 3,
+    marginBottom: 16,
   },
-  infoGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-    marginBottom: 8,
+  logo: {
+    width: 140,
+    height: 52,
+    objectFit: "contain",
   },
-  infoItem: {
-    width: "48%",
+  headerMeta: {
+    textAlign: "right",
   },
-  infoLabel: {
+  headerDocTitle: {
+    fontSize: 10,
+    fontWeight: 700,
+    color: BRAND.text,
+    textTransform: "uppercase",
+    letterSpacing: 0.6,
+  },
+  headerDocSubtitle: {
     fontSize: 8,
     color: BRAND.textSecondary,
+    marginTop: 3,
+  },
+  overviewStrip: {
+    flexDirection: "row",
+    backgroundColor: BRAND.bgContainer,
+    borderWidth: 1,
+    borderColor: BRAND.border,
+    borderRadius: 6,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginBottom: 16,
+    justifyContent: "space-between",
+  },
+  overviewItem: {
+    flex: 1,
+  },
+  overviewLabel: {
+    fontSize: 7,
+    fontWeight: 600,
+    color: BRAND.textMuted,
+    textTransform: "uppercase",
+    letterSpacing: 0.4,
     marginBottom: 2,
   },
-  infoValue: {
-    fontSize: 10,
-    fontWeight: "bold",
+  overviewValue: {
+    fontSize: 9,
+    fontWeight: 600,
     color: BRAND.text,
+  },
+  section: {
+    marginBottom: 16,
+  },
+  sectionTitle: {
+    fontSize: 10.5,
+    fontWeight: 700,
+    color: BRAND.text,
+    marginBottom: 8,
+    letterSpacing: -0.1,
   },
   rateCards: {
     flexDirection: "row",
-    gap: 6,
-    marginBottom: 10,
+    gap: 8,
+    marginBottom: 8,
   },
   rateCard: {
     flex: 1,
-    padding: 8,
-    borderRadius: 4,
-    borderWidth: 1.5,
-  },
-  rateCardPrimary: {
+    padding: 10,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: BRAND.border,
     backgroundColor: BRAND.bgContainer,
-    borderColor: BRAND.primary,
   },
-  rateCardSecondary: {
-    backgroundColor: BRAND.primarySoft,
+  rateCardHighlight: {
     borderColor: BRAND.primary,
+    backgroundColor: BRAND.bgContainer,
   },
   rateCardLabel: {
-    fontSize: 7,
+    fontSize: 7.5,
     color: BRAND.textSecondary,
-    marginBottom: 3,
+    marginBottom: 4,
     textTransform: "uppercase",
-    fontWeight: "bold",
+    fontWeight: 700,
+    letterSpacing: 0.4,
   },
   rateCardValue: {
-    fontSize: 11,
-    fontWeight: "bold",
+    fontSize: 13,
+    fontWeight: 700,
     marginBottom: 2,
+    color: BRAND.text,
   },
   rateCardValuePrimary: {
     color: BRAND.primary,
-  },
-  rateCardValueSecondary: {
-    color: BRAND.primaryHover,
   },
   rateCardSecondaryValue: {
     fontSize: 8,
     color: BRAND.textSecondary,
   },
-  formulaBox: {
-    backgroundColor: BRAND.bgSubtle,
-    padding: 6,
-    borderRadius: 3,
-    marginBottom: 8,
-  },
-  formulaText: {
-    fontSize: 8,
-    color: BRAND.textSecondary,
-    textAlign: "center",
-  },
   costTable: {
     borderWidth: 1,
     borderColor: BRAND.border,
-    borderRadius: 4,
+    borderRadius: 6,
     overflow: "hidden",
   },
   costRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: BRAND.border,
+    borderBottomColor: "#f0ede6",
     paddingVertical: 6,
-    paddingHorizontal: 8,
+    paddingHorizontal: 10,
   },
   costRowLast: {
     borderBottomWidth: 0,
   },
   costRowHighlight: {
-    backgroundColor: BRAND.bgSubtle,
-  },
-  costRowTotal: {
-    backgroundColor: BRAND.text,
+    backgroundColor: "#faf9f6",
   },
   costLabel: {
     flex: 2,
-    fontSize: 9,
-  },
-  costLabelWhite: {
-    color: "#ffffff",
+    fontSize: 8.5,
+    color: BRAND.text,
   },
   costDescription: {
-    fontSize: 7,
+    fontSize: 7.5,
     color: BRAND.textMuted,
     marginTop: 1,
   },
   costValue: {
     flex: 1,
-    fontSize: 9,
-    fontWeight: "bold",
+    fontSize: 8.5,
+    fontWeight: 700,
     textAlign: "right",
+    color: BRAND.text,
   },
-  costValueWhite: {
-    color: "#ffffff",
-    fontSize: 10,
-  },
-  summaryBox: {
-    marginTop: 8,
-    padding: 8,
+  totalCard: {
+    marginTop: 10,
+    padding: 12,
     backgroundColor: BRAND.primarySoft,
-    borderRadius: 4,
-    borderWidth: 1.5,
+    borderRadius: 6,
+    borderWidth: 1,
     borderColor: BRAND.primary,
-  },
-  summaryRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  summaryLabel: {
-    fontSize: 9,
-    color: BRAND.primaryHover,
-    fontWeight: "bold",
-  },
-  summaryValue: {
-    fontSize: 11,
-    fontWeight: "bold",
+  totalLabel: {
+    fontSize: 9.5,
     color: BRAND.primary,
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: 0.4,
+  },
+  totalValue: {
+    fontSize: 13,
+    fontWeight: 700,
+    color: BRAND.primary,
+  },
+  markupRow: {
+    marginTop: 8,
+    padding: 8,
+    backgroundColor: BRAND.bgContainer,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: BRAND.border,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  markupLabel: {
+    fontSize: 8.5,
+    color: BRAND.textSecondary,
+    fontWeight: 600,
+  },
+  markupValue: {
+    fontSize: 9.5,
+    fontWeight: 700,
+    color: BRAND.text,
   },
   footer: {
     position: "absolute",
     bottom: 16,
-    left: 24,
-    right: 24,
-    textAlign: "center",
-    fontSize: 7,
+    left: 32,
+    right: 32,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontSize: 7.5,
     color: BRAND.textMuted,
     borderTopWidth: 1,
     borderTopColor: BRAND.border,
@@ -255,29 +288,50 @@ export function ContractorPdfDocument(
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* Logo */}
-        <View style={styles.logoContainer}>
+        {/* Executive Header */}
+        <View style={styles.headerBar}>
           <Image src={data.logoSrc} style={styles.logo} />
+          <View style={styles.headerMeta}>
+            <Text style={styles.headerDocTitle}>
+              Contractor Quotation Breakdown
+            </Text>
+            <Text style={styles.headerDocSubtitle}>
+              {data.contractorName ? `${data.contractorName} • ` : ""}{data.country}
+            </Text>
+          </View>
         </View>
 
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.title}>
-            Independent Contractor Quote Breakdown
-          </Text>
-          <Text style={styles.subtitle}>
-            {data.contractorName} • {data.country}
-          </Text>
+        {/* Overview Strip */}
+        <View style={styles.overviewStrip}>
+          <View style={styles.overviewItem}>
+            <Text style={styles.overviewLabel}>Country / Currency</Text>
+            <Text style={styles.overviewValue}>
+              {data.country} ({data.currency})
+            </Text>
+          </View>
+          <View style={styles.overviewItem}>
+            <Text style={styles.overviewLabel}>Duration</Text>
+            <Text style={styles.overviewValue}>{data.contractDuration}</Text>
+          </View>
+          <View style={styles.overviewItem}>
+            <Text style={styles.overviewLabel}>Payment Frequency</Text>
+            <Text style={styles.overviewValue}>{data.paymentFrequency}</Text>
+          </View>
+          <View style={styles.overviewItem}>
+            <Text style={styles.overviewLabel}>Work Hours</Text>
+            <Text style={styles.overviewValue}>
+              {data.rateInfo.workedHours} hrs/mo
+            </Text>
+          </View>
         </View>
 
         {/* Rate Overview Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Rate Overview</Text>
-
           <View style={styles.rateCards}>
-            <View style={[styles.rateCard, styles.rateCardPrimary]}>
+            <View style={styles.rateCard}>
               <Text style={styles.rateCardLabel}>Pay Rate (Contractor)</Text>
-              <Text style={[styles.rateCardValue, styles.rateCardValuePrimary]}>
+              <Text style={styles.rateCardValue}>
                 {data.rateInfo.payRateHourly}/hr
               </Text>
               <Text style={styles.rateCardSecondaryValue}>
@@ -285,7 +339,7 @@ export function ContractorPdfDocument(
               </Text>
             </View>
 
-            <View style={[styles.rateCard, styles.rateCardPrimary]}>
+            <View style={[styles.rateCard, styles.rateCardHighlight]}>
               <Text style={styles.rateCardLabel}>Bill Rate (Client)</Text>
               <Text style={[styles.rateCardValue, styles.rateCardValuePrimary]}>
                 {data.rateInfo.billRateHourly}/hr
@@ -295,11 +349,11 @@ export function ContractorPdfDocument(
               </Text>
             </View>
 
-            <View style={[styles.rateCard, styles.rateCardSecondary]}>
-              <Text style={styles.rateCardLabel}>Agency Fee (Markup)</Text>
-              <Text
-                style={[styles.rateCardValue, styles.rateCardValueSecondary]}
-              >
+            <View style={styles.rateCard}>
+              <Text style={styles.rateCardLabel}>
+                Agency Fee ({data.rateInfo.markupPercentage}% Markup)
+              </Text>
+              <Text style={styles.rateCardValue}>
                 {data.rateInfo.agencyFeeHourly}/hr
               </Text>
               <Text style={styles.rateCardSecondaryValue}>
@@ -307,20 +361,11 @@ export function ContractorPdfDocument(
               </Text>
             </View>
           </View>
-
-          <View style={styles.formulaBox}>
-            <Text style={styles.formulaText}>
-              Bill Rate = Pay Rate × (1 + {data.rateInfo.markupPercentage}%
-              markup) | Monthly conversions assume {data.rateInfo.workedHours}{" "}
-              hours per month
-            </Text>
-          </View>
         </View>
 
         {/* Monthly Cost Breakdown Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Monthly Cost Breakdown</Text>
-
           <View style={styles.costTable}>
             {data.costBreakdown.map((item, index) => (
               <View
@@ -346,50 +391,29 @@ export function ContractorPdfDocument(
             ))}
           </View>
 
-          <View style={[styles.costTable, { marginTop: 8 }]}>
-            <View style={[styles.costRow, styles.costRowTotal, styles.costRowLast]}>
-              <Text style={[styles.costLabel, styles.costLabelWhite]}>
-                Total Client Cost per Month
-              </Text>
-              <Text style={[styles.costValue, styles.costValueWhite]}>
-                {data.totalClientCost}
-              </Text>
-            </View>
+          {/* Total Client Cost Callout */}
+          <View style={styles.totalCard}>
+            <Text style={styles.totalLabel}>Total Client Cost / Month</Text>
+            <Text style={styles.totalValue}>{data.totalClientCost}</Text>
           </View>
 
-          <View style={styles.summaryBox}>
-            <View style={styles.summaryRow}>
-              <Text style={styles.summaryLabel}>Monthly Markup</Text>
-              <Text style={styles.summaryValue}>{data.monthlyMarkup}</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Contract Details Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Contract Details</Text>
-
-          <View style={styles.infoGrid}>
-            <View style={styles.infoItem}>
-              <Text style={styles.infoLabel}>Contract Duration</Text>
-              <Text style={styles.infoValue}>{data.contractDuration}</Text>
-            </View>
-            <View style={styles.infoItem}>
-              <Text style={styles.infoLabel}>Payment Frequency</Text>
-              <Text style={styles.infoValue}>{data.paymentFrequency}</Text>
-            </View>
-            <View style={styles.infoItem}>
-              <Text style={styles.infoLabel}>Currency</Text>
-              <Text style={styles.infoValue}>{data.currency}</Text>
-            </View>
+          {/* Monthly Markup Summary */}
+          <View style={styles.markupRow}>
+            <Text style={styles.markupLabel}>
+              Monthly Markup (Agency Margin)
+            </Text>
+            <Text style={styles.markupValue}>{data.monthlyMarkup}</Text>
           </View>
         </View>
 
         {/* Footer */}
-        <View style={styles.footer}>
-          <Text>
-            Generated by GraceMark • {new Date().toLocaleDateString()}
-          </Text>
+        <View style={styles.footer} fixed>
+          <Text>Confidential • Prepared by GraceMark</Text>
+          <Text
+            render={({ pageNumber, totalPages }) =>
+              `Page ${pageNumber} of ${totalPages}`
+            }
+          />
         </View>
       </Page>
     </Document>
