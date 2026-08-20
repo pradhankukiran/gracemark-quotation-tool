@@ -3,7 +3,6 @@
 import React from "react";
 import {
   Document,
-  Font,
   Image,
   Page,
   StyleSheet,
@@ -12,25 +11,10 @@ import {
 } from "@react-pdf/renderer";
 
 import { BRAND } from "@/lib/theme";
+import { registerPdfFonts } from "@/lib/pdf-fonts";
 
-// Register Inter font for crisp, executive typography
-Font.register({
-  family: "Inter",
-  fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_eeA.woff",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hjp-Ek-_eeA.woff",
-      fontWeight: 600,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjp-Ek-_eeA.woff",
-      fontWeight: 700,
-    },
-  ],
-});
+// Ensure local Inter fonts are registered
+registerPdfFonts();
 
 // Local prop types — keep this document self-contained.
 export interface AcidTestPdfItem {
