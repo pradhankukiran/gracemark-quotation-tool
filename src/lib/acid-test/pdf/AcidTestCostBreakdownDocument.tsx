@@ -267,7 +267,7 @@ export function AcidTestCostBreakdownDocument(
                   <Text
                     style={[styles.cell, styles.amountCell, styles.amountBold]}
                   >
-                    {category.usdTotal ?? "—"}
+                    {category.usdTotal ?? "-"}
                   </Text>
                 )}
               </View>
@@ -286,7 +286,7 @@ export function AcidTestCostBreakdownDocument(
                   </Text>
                   {showUSD && (
                     <Text style={[styles.cell, styles.amountCell]}>
-                      {item.usd ?? "—"}
+                      {item.usd ?? "-"}
                     </Text>
                   )}
                 </View>
@@ -312,7 +312,7 @@ export function AcidTestCostBreakdownDocument(
           <Text style={styles.billRateAmount}>{data.monthlyCard.localValue}</Text>
           {data.monthlyCard.usdValue ? (
             <Text style={styles.billRateUsd}>
-              ≈ {data.monthlyCard.usdValue} USD / month
+              USD: {data.monthlyCard.usdValue} / month
             </Text>
           ) : null}
           <View style={styles.billRateMetaRow}>
@@ -390,7 +390,7 @@ export function AcidTestCostBreakdownDocument(
                       isTotalRow ? styles.totalAmount : {},
                     ]}
                   >
-                    {item.usd ?? "—"}
+                    {item.usd ?? "-"}
                   </Text>
                 )}
               </View>
