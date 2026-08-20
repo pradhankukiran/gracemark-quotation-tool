@@ -63,33 +63,45 @@ function StatusPill({ row }: { row: ModalRow }) {
         style={{
           backgroundColor: BRAND.bgSubtle,
           color: BRAND.textSecondary,
-          borderColor: BRAND.bgSubtle,
+          border: "none",
+          fontSize: 11,
+          fontWeight: 600,
           marginInlineEnd: 0,
         }}
       >
-        Anchor
+        ANCHOR
       </Tag>
     );
   }
   if (row.isRecommended && row.inRange) {
     return (
-      <Tag color="success" style={{ marginInlineEnd: 0 }}>
-        Recommended
+      <Tag
+        style={{
+          backgroundColor: BRAND.primarySoft,
+          color: BRAND.primary,
+          border: "none",
+          fontSize: 11,
+          fontWeight: 600,
+          marginInlineEnd: 0,
+        }}
+      >
+        RECOMMENDED
       </Tag>
     );
   }
   if (row.inRange) {
     return (
       <Tag
-        color="success"
         style={{
+          backgroundColor: BRAND.bgSubtle,
+          color: BRAND.textSecondary,
+          border: "none",
+          fontSize: 11,
+          fontWeight: 500,
           marginInlineEnd: 0,
-          backgroundColor: BRAND.primarySoft,
-          borderColor: BRAND.primarySoft,
-          color: BRAND.primary,
         }}
       >
-        In band
+        IN BAND
       </Tag>
     );
   }
@@ -98,11 +110,13 @@ function StatusPill({ row }: { row: ModalRow }) {
       style={{
         backgroundColor: BRAND.dangerSoft,
         color: BRAND.danger,
-        borderColor: BRAND.dangerSoft,
+        border: "none",
+        fontSize: 11,
+        fontWeight: 500,
         marginInlineEnd: 0,
       }}
     >
-      Out of band
+      OUT OF BAND
     </Tag>
   );
 }

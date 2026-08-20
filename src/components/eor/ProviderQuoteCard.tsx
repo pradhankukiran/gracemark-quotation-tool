@@ -240,12 +240,11 @@ function CountryColumnHeader({
             <div style={{ marginTop: 2 }}>
               <Typography.Text
                 type="secondary"
-                italic
-                style={{ fontSize: 12 }}
+                style={{ fontSize: 12, color: BRAND.textMuted }}
               >
                 {quoteType === "all_inclusive"
-                  ? "All-inclusive monthly · termination amortized · excludes one-time costs."
-                  : "Recurring monthly · excludes one-time and termination costs."}
+                  ? "All-inclusive (excl. one-time)"
+                  : "Recurring only (excl. one-time)"}
               </Typography.Text>
             </div>
           ) : null}
@@ -625,6 +624,7 @@ export function ProviderQuoteCard({
       {firstOk && firstOk.result.quote ? (
         <div style={{ marginTop: 24 }}>
           <Collapse
+            ghost
             items={[
               {
                 key: "raw",

@@ -415,40 +415,43 @@ function ContractorQuoteBody({
           message="USD conversion unavailable — showing local currency only"
         />
       ) : null}
-      {/* Context strip: flag · contractor · country · currency */}
+      {/* Context strip: flag · country · currency · contractor */}
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap",
           alignItems: "center",
-          columnGap: 16,
-          rowGap: 8,
-          fontSize: 16,
-          lineHeight: 1.6,
-          color: BRAND.text,
+          flexWrap: "wrap",
+          padding: "12px 16px",
+          background: BRAND.bgContainer,
+          border: `1px solid ${BRAND.border}`,
+          borderRadius: 10,
         }}
       >
-        <CountryFlag
-          code={form.country_code}
-          width={FLAG_SIZES.lg}
-          height={FLAG_SIZES.lg}
-          alt={`${countryLabel} flag`}
-          style={{
-            display: "inline-block",
-            verticalAlign: "middle",
-            borderRadius: 3,
-            marginRight: 4,
-          }}
-        />
-        <span>{countryLabel}</span>
-        <span style={{ color: BRAND.border }}>·</span>
-        <span style={{ color: BRAND.textSecondary }}>{currency}</span>
-        {form.contractor_name ? (
-          <>
-            <span style={{ color: BRAND.border }}>·</span>
-            <strong>{form.contractor_name}</strong>
-          </>
-        ) : null}
+        <Space size="middle" wrap split={<span style={{ color: BRAND.textMuted }}>·</span>}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <CountryFlag
+              code={form.country_code}
+              width={FLAG_SIZES.md}
+              height={FLAG_SIZES.md}
+              alt={`${countryLabel} flag`}
+              style={{ borderRadius: 3 }}
+            />
+            <Typography.Text strong style={{ fontSize: 16 }}>
+              {countryLabel}
+            </Typography.Text>
+          </span>
+          <Typography.Text style={{ color: BRAND.textSecondary }}>
+            {currency}
+          </Typography.Text>
+          {form.contractor_name ? (
+            <Typography.Text strong style={{ color: BRAND.text }}>
+              {form.contractor_name}
+            </Typography.Text>
+          ) : null}
+          <Typography.Text style={{ color: BRAND.textSecondary }}>
+            {quote.rate_basis === "hourly" ? "Hourly rate" : "Monthly rate"} · {workedHours} hrs/mo
+          </Typography.Text>
+        </Space>
       </div>
 
       {/* KPI cards: Pay Rate · Bill Rate · Agency Fee */}
@@ -485,25 +488,11 @@ function ContractorQuoteBody({
             secondary={agencyFeeSecondary}
             secondaryUnit={secondaryUnit}
             currency={currency}
-            caption={`Pay Rate × ${quote.markup_percentage.toFixed(2)}% markup = Agency Fee`}
             usdPrimary={showUsdColumn ? toUsd(agencyFeePrimary) : undefined}
             usdSecondary={showUsdColumn ? toUsd(agencyFeeSecondary) : undefined}
           />
         </Col>
       </Row>
-
-      {/* Formula caption */}
-      <Typography.Text
-        italic
-        style={{
-          fontSize: 13,
-          color: BRAND.textSecondary,
-          display: "block",
-        }}
-      >
-        Bill Rate = Pay Rate × (1 + {quote.markup_percentage.toFixed(2)}%
-        markup) · Monthly conversions assume {workedHours} hours per month
-      </Typography.Text>
 
       {/* Monthly Cost Breakdown */}
       <Card title="Monthly Cost Breakdown">
@@ -564,18 +553,10 @@ function ContractorQuoteBody({
         </Space>
       </Card>
 
-      {/* Monthly Bill Rate Total */}
+      {/* Monthly Bill Rate & Markup Summary */}
       <Card styles={{ body: { padding: 32 } }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 16,
-            flexWrap: "wrap",
-          }}
-        >
-          <div>
+        <Row gutter={[24, 24]} align="middle">
+          <Col xs={24} sm={12}>
             <div
               style={{
                 fontSize: 12,
@@ -599,54 +580,59 @@ function ContractorQuoteBody({
             >
               {formatMoney(quote.monthly_bill_rate, currency)}
             </div>
-          </div>
-          {showUsdColumn && fxLocalToUsd ? (
-            <UsdEquivalent
-              amountLocal={quote.monthly_bill_rate}
-              fx={fxLocalToUsd}
-            />
-          ) : null}
-        </div>
-      </Card>
-
-      {/* Monthly Markup summary */}
-      <Card styles={{ body: { padding: 32 } }}>
-        <Row gutter={[24, 0]}>
-          <Col xs={24} sm={showUsdColumn ? 12 : 24}>
-            <MarkupStat
-              label="Monthly Markup"
-              value={formatMoney(quote.monthly_markup, currency)}
-              color={BRAND.text}
-            />
+            {showUsdColumn && fxLocalToUsd ? (
+              <div
+                style={{
+                  ...TABULAR,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: BRAND.textSecondary,
+                  marginTop: 4,
+                }}
+              >
+                ≈ {formatUsd(toUsd(quote.monthly_bill_rate))} USD
+              </div>
+            ) : null}
           </Col>
-          {showUsdColumn ? (
-            <Col xs={24} sm={12}>
-              <MarkupStat
-                label="USD Equivalent"
-                value={
-                  quote.net_margin_usd !== null
-                    ? formatUsd(quote.net_margin_usd)
-                    : "—"
-                }
-                color={
-                  quote.net_margin_usd !== null
-                    ? BRAND.text
-                    : BRAND.textMuted
-                }
-              />
-            </Col>
-          ) : null}
+          <Col xs={24} sm={12}>
+            <div
+              style={{
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: BRAND.textSecondary,
+                marginBottom: 6,
+              }}
+            >
+              Monthly Markup
+            </div>
+            <div
+              style={{
+                ...TABULAR,
+                fontSize: 32,
+                fontWeight: 700,
+                color: BRAND.primary,
+                lineHeight: 1.1,
+              }}
+            >
+              {formatMoney(quote.monthly_markup, currency)}
+            </div>
+            {showUsdColumn && quote.net_margin_usd !== null ? (
+              <div
+                style={{
+                  ...TABULAR,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: BRAND.textSecondary,
+                  marginTop: 4,
+                }}
+              >
+                ≈ {formatUsd(quote.net_margin_usd)} USD
+              </div>
+            ) : null}
+          </Col>
         </Row>
-        <Typography.Text
-          style={{
-            display: "block",
-            marginTop: SPACING.md,
-            fontSize: 13,
-            color: BRAND.textSecondary,
-          }}
-        >
-          Target {">="} $1,000 USD / month
-        </Typography.Text>
       </Card>
 
       {/* Total Client Cost footer — warm EOR highlight card */}

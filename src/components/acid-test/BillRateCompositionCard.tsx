@@ -144,6 +144,12 @@ export function BillRateCompositionCard({
 }: BillRateCompositionCardProps) {
   return (
     <Card title="Bill Rate Composition">
+      <Typography.Paragraph
+        type="secondary"
+        style={{ marginTop: -4, marginBottom: 20, fontSize: 13 }}
+      >
+        Monthly breakdown of employer cost, provider fee, and GraceMark markup.
+      </Typography.Paragraph>
       <Row gutter={[24, 24]}>
         <StatRow
           label="Employer Cost"

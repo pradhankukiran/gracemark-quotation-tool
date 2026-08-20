@@ -218,8 +218,8 @@ export function RecommendedProviderCard({
   const basisLabel = costBasis === "all_inclusive" ? "All-inclusive" : "Statutory";
 
   const reasonLine = isDeel
-    ? `Deel is the anchor — no provider beats it within the ±4% band. Cost basis: ${basisLabel}.`
-    : `${formatSignedPct(variancePct)} vs Deel (${formatMoney(deelPrice, currency)}) · Cost basis: ${basisLabel}`;
+    ? `Anchor provider · ${basisLabel} cost basis`
+    : `${formatSignedPct(variancePct)} vs Deel anchor (${formatMoney(deelPrice, currency)}) · ${basisLabel}`;
 
   return (
     <Card styles={{ body: { padding: 32 } }}>

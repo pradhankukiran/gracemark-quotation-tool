@@ -40,6 +40,12 @@ export function AcidTestInputs({
 }: AcidTestInputsProps) {
   return (
     <Card title="Inputs">
+      <Typography.Paragraph
+        type="secondary"
+        style={{ marginTop: -4, marginBottom: 20, fontSize: 13 }}
+      >
+        Adjust bill rate, duration, or markup to evaluate assignment profitability.
+      </Typography.Paragraph>
       <Row gutter={[24, 16]}>
         <Col xs={24} md={8}>
           <Typography.Text
@@ -146,12 +152,6 @@ export function AcidTestInputs({
             }}
             step={1}
           />
-          <Typography.Text
-            type="secondary"
-            style={{ display: "block", marginTop: 6, fontSize: 12 }}
-          >
-            {markupDescription}
-          </Typography.Text>
         </Col>
       </Row>
     </Card>

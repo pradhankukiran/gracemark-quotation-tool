@@ -3,9 +3,7 @@
 import {
   Button,
   Card,
-  Checkbox,
   Col,
-  Divider,
   Form,
   Input,
   InputNumber,
@@ -14,7 +12,6 @@ import {
   Select,
   Space,
   Switch,
-  Typography,
 } from "antd";
 import { ClearOutlined } from "@ant-design/icons";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -504,25 +501,12 @@ export function ContractorForm() {
             </Col>
           </Row>
 
-          {/* USD display toggle — only shown for non-USD currencies. Unlike
-              the legacy "deferred until submit" version, this toggle FX-
-              converts `pay_rate` atomically when flipped so the user sees
-              the working currency change live in the rate input.
-
-              `displayInUSD` lives OUTSIDE antd's Form store as a plain
-              `useState<boolean>` slice. The Switch is fully controlled by
-              React state — no `Form.Item name="display_in_usd"` wrap, no
-              `Form.useWatch`. This matches the legacy `useICForm` pattern
-              (see `/gracemark-quote/app/ic-calculator/hooks/useICForm.ts`
-              line 101) where `displayInUSD` is a `useState<boolean>` slice
-              alongside the rest of `formData`. The Form.Item below is for
-              layout/label only; it has no `name` prop. */}
+          {/* USD display toggle — only shown for non-USD currencies. */}
           {currencyCode && currencyCode !== "USD" && (
             <Row gutter={[24, 0]}>
-              <Col xs={24}>
+              <Col xs={24} md={12}>
                 <Form.Item
                   label="Show in USD"
-                  tooltip={`Convert all amounts to USD instead of ${currencyCode} live in the form.`}
                   style={{ marginBottom: 0 }}
                   validateStatus={toggleError ? "error" : undefined}
                   help={toggleError ?? undefined}
@@ -722,50 +706,31 @@ export function ContractorForm() {
             <Col xs={24} md={12}>
               <Form.Item
                 name="background_check_required"
-                label=" "
+                label="Background check needed"
                 valuePropName="checked"
               >
-                <Checkbox>Background check required</Checkbox>
+                <Switch />
               </Form.Item>
             </Col>
           </Row>
-
-          {/* Read-only "estimated fees" affordance — matches the legacy IC
-              form, which surfaced background-check + transaction-cost fees in
-              the form itself. Here we just show the shape; the actual values
-              are computed (via FX) on the result page after submission. */}
-          <Row gutter={[24, 0]}>
-            <Col xs={24}>
-              <Typography.Text type="secondary">
-                Estimated fees: — background check &middot; — transaction cost
-                <Typography.Text
-                  type="secondary"
-                  style={{ marginLeft: 8, fontStyle: "italic" }}
-                >
-                  (calculated on the next step)
-                </Typography.Text>
-              </Typography.Text>
-            </Col>
-          </Row>
-
-          <Divider />
-
-          <Form.Item style={{ marginBottom: 0 }}>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <Button
-                type="primary"
-                size="large"
-                htmlType="submit"
-                loading={navigating}
-                // Block submit while a currency toggle is mid-FX so we don't
-                // ship a half-converted snapshot to the result page.
-                disabled={togglePending}
-              >
-                Generate quote
-              </Button>
-            </div>
-          </Form.Item>
         </Card>
+
+        {/* ---------- Submit ---------- */}
+        <Form.Item style={{ marginBottom: 0 }}>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Button
+              type="primary"
+              size="large"
+              htmlType="submit"
+              loading={navigating}
+              // Block submit while a currency toggle is mid-FX so we don't
+              // ship a half-converted snapshot to the result page.
+              disabled={togglePending}
+            >
+              Generate quote
+            </Button>
+          </div>
+        </Form.Item>
       </Space>
     </Form>
   );

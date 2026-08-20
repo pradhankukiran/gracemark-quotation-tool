@@ -63,8 +63,8 @@ export function ProviderComparisonTable({
   algorithmicWinnerId,
 }: ProviderComparisonTableProps) {
   const rows = useMemo<TableRow[]>(() => {
-    // Sort by price descending so the most expensive provider is at the top.
-    const sorted = [...analyzed].sort((a, b) => b.price - a.price);
+    // Sort by price ascending to match the VarianceScale chart above it.
+    const sorted = [...analyzed].sort((a, b) => a.price - b.price);
     const overrideActive =
       selectedProviderId != null &&
       algorithmicWinnerId != null &&
@@ -143,7 +143,7 @@ export function ProviderComparisonTable({
         return (
           <span
             style={{
-              color: inRange ? BRAND.primary : "#dc2626",
+              color: inRange ? BRAND.primary : BRAND.danger,
               fontWeight: 600,
               fontSize: 13,
               fontVariantNumeric: "tabular-nums",
@@ -175,19 +175,18 @@ export function ProviderComparisonTable({
       {/*
        * One-off global style for the selected-row highlight. Scoped by the
        * `provider-comparison-selected-row` class we apply via `rowClassName`
-       * so it doesn't leak into other tables. We use the `!important` flag
-       * because antd's row-hover background otherwise wins the cascade.
+       * so it doesn't leak into other tables.
        */}
       <style jsx global>{`
         .provider-comparison-selected-row > td {
-          background: ${BRAND.bgSubtle} !important;
+          background: rgba(4, 120, 87, 0.08) !important;
         }
       `}</style>
       <Table<TableRow>
         columns={columns}
         dataSource={rows}
         pagination={false}
-        size="large"
+        size="middle"
         rowKey="key"
         rowClassName={(row) =>
           row.isCurrentSelection ? "provider-comparison-selected-row" : ""
@@ -206,10 +205,11 @@ function StatusTag({ kind }: { kind: TableRow["statusKind"] }) {
             backgroundColor: BRAND.bgSubtle,
             color: BRAND.textSecondary,
             border: "none",
-            fontWeight: 500,
+            fontSize: 11,
+            fontWeight: 600,
           }}
         >
-          Anchor
+          ANCHOR
         </Tag>
       );
     case "recommended":
@@ -219,49 +219,53 @@ function StatusTag({ kind }: { kind: TableRow["statusKind"] }) {
             backgroundColor: BRAND.primarySoft,
             color: BRAND.primary,
             border: "none",
+            fontSize: 11,
             fontWeight: 600,
           }}
         >
-          Recommended
+          RECOMMENDED
         </Tag>
       );
     case "your_pick":
       return (
         <Tag
           style={{
-            backgroundColor: BRAND.primary,
-            color: "#ffffff",
-            border: "none",
+            backgroundColor: BRAND.primarySoft,
+            color: BRAND.primary,
+            border: `1px solid ${BRAND.primary}`,
+            fontSize: 11,
             fontWeight: 600,
           }}
         >
-          Your pick
+          YOUR PICK
         </Tag>
       );
     case "in_band":
       return (
         <Tag
           style={{
-            backgroundColor: BRAND.primarySoft,
-            color: BRAND.primary,
+            backgroundColor: BRAND.bgSubtle,
+            color: BRAND.textSecondary,
             border: "none",
+            fontSize: 11,
             fontWeight: 500,
           }}
         >
-          In band
+          IN BAND
         </Tag>
       );
     case "out_of_band":
       return (
         <Tag
           style={{
-            backgroundColor: "#fef2f2",
-            color: "#dc2626",
+            backgroundColor: BRAND.dangerSoft,
+            color: BRAND.danger,
             border: "none",
+            fontSize: 11,
             fontWeight: 500,
           }}
         >
-          Out of band
+          OUT OF BAND
         </Tag>
       );
   }
