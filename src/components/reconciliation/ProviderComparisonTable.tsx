@@ -107,15 +107,12 @@ export function ProviderComparisonTable({
       dataIndex: "displayName",
       key: "provider",
       render: (_: unknown, row) => (
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <ProviderLogo
             providerId={row.providerId}
             fallback={row.displayName}
             height={20}
           />
-          <span style={{ fontWeight: 600, fontSize: 14, color: BRAND.text }}>
-            {row.displayName}
-          </span>
         </div>
       ),
     },
@@ -168,7 +165,13 @@ export function ProviderComparisonTable({
   ];
 
   return (
-    <Card title="All Providers Comparison" styles={{ body: { padding: 0 } }}>
+    <Card title="All Providers Comparison">
+      <Typography.Paragraph
+        type="secondary"
+        style={{ marginTop: -4, marginBottom: 20, fontSize: 13 }}
+      >
+        Detailed cost and variance breakdown for every analyzed provider relative to Deel.
+      </Typography.Paragraph>
       {/*
        * One-off global style for the selected-row highlight. Scoped by the
        * `provider-comparison-selected-row` class we apply via `rowClassName`

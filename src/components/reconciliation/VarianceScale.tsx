@@ -202,9 +202,6 @@ export function VarianceScale({
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <ProviderLogo providerId={p.provider} fallback={displayName} height={18} />
-                  <span style={{ fontSize: 13, fontWeight: 600, color: BRAND.text }}>
-                    {displayName}
-                  </span>
                   {isDeel ? (
                     <Tag style={{ background: BRAND.bgSubtle, color: BRAND.textSecondary, border: "none", fontSize: 11 }}>
                       ANCHOR
